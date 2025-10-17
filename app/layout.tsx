@@ -22,7 +22,7 @@ export default function RootLayout({
         <header className="bg-white shadow-md py-4">
           <div className="container mx-auto px-4 flex items-center space-x-4">
             <Image 
-              src="/logo.jpg" 
+              src="/logo.png" 
               alt="City Pathology Laboratory Logo" 
               width={100} 
               height={100} 
