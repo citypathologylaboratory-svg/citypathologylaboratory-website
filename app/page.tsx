@@ -11,14 +11,13 @@ export default function Home() {
               <a href="/book-appointment" className="bg-white text-primary-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
                 Book Appointment
               </a>
-              <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" rel="noopener noreferrer" className="bg-green-500 hover:bg-green-600 px-8 py-3 rounded-lg font-semibold transition">
-                WhatsApp Us
+              <a href="https://wa.me/919409277144" target="_blank" rel="noopener noreferrer" className="bg-green-500 hover:bg-green-600 px-8 py-3 rounded-lg font-semibold transition">
+                WhatsApp for Appointments, Bookings, Queries
               </a>
             </div>
           </div>
         </div>
       </section>
-
       {/* Why Choose Us Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -57,7 +56,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Doctors Profiles Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
@@ -71,9 +69,9 @@ export default function Home() {
               <p className="text-primary-600 text-center mb-4 font-semibold">MD Pathology, Chief Pathologist</p>
               <p className="text-gray-600 text-center mb-4">15+ years of experience in clinical pathology</p>
               <ul className="text-gray-700 space-y-2">
-                <li>✓ Specialized in hematology and clinical chemistry</li>
-                <li>✓ Former consultant at leading hospitals</li>
-                <li>✓ Published researcher in diagnostic medicine</li>
+                ✓ Specialized in hematology and clinical chemistry
+                ✓ Former consultant at leading hospitals
+                ✓ Published researcher in diagnostic medicine
               </ul>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-primary-600">
@@ -84,15 +82,14 @@ export default function Home() {
               <p className="text-primary-600 text-center mb-4 font-semibold">MD Pathology, Senior Consultant</p>
               <p className="text-gray-600 text-center mb-4">12+ years of experience in diagnostic pathology</p>
               <ul className="text-gray-700 space-y-2">
-                <li>✓ Expert in histopathology and cytology</li>
-                <li>✓ Specialized in cancer diagnostics</li>
-                <li>✓ Certified in molecular pathology</li>
+                ✓ Expert in histopathology and cytology
+                ✓ Specialized in cancer diagnostics
+                ✓ Certified in molecular pathology
               </ul>
             </div>
           </div>
         </div>
       </section>
-
       {/* Services Overview */}
       <section className="py-16 bg-primary-50">
         <div className="container mx-auto px-4">
@@ -122,7 +119,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-primary-600 to-primary-800 text-white">
         <div className="container mx-auto px-4 text-center">
