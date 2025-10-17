@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaPhone, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 
@@ -11,8 +10,7 @@ const doctors = [
     name: 'Dr. Sunil Nagori',
     qualifications: 'M.B.B.S., D.C.P., C.I.H.',
     roles: ['Consultant Pathologist', 'Industrial Physician'],
-    description: 'Specializing in clinical pathology and occupational health with extensive experience in diagnostic services.',
-    image: '/images/dr-sunil.jpg' // Add actual images
+    description: 'Specializing in clinical pathology and occupational health with extensive experience in diagnostic services.'
   },
   {
     id: 2,
@@ -20,8 +18,7 @@ const doctors = [
     name: 'Dr. Shalin Nagori',
     qualifications: 'M.B.B.S., M.D.(Path), P.G.C.I.H.',
     roles: ['Consultant Pathologist', 'Industrial Physician'],
-    description: 'Expert in anatomical and clinical pathology with postgraduate certification in industrial health.',
-    image: '/images/dr-shalin.jpg'
+    description: 'Expert in anatomical and clinical pathology with postgraduate certification in industrial health.'
   }
 ];
 
@@ -145,14 +142,6 @@ export default function Home() {
   }, []);
 
   const handleWhatsAppClick = () => {
-    // Analytics tracking
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'whatsapp_click', {
-        event_category: 'engagement',
-        event_label: 'appointment_booking'
-      });
-    }
-    // Pre-fill WhatsApp message
     const message = encodeURIComponent('Hello! I would like to book an appointment at City Pathology Laboratory.');
     window.open(`https://wa.me/919409277144?text=${message}`, '_blank');
   };
@@ -163,25 +152,9 @@ export default function Home() {
         <title>City Pathology Laboratory - Reliable Diagnostic Services</title>
         <meta name="description" content="Providing accurate, reliable diagnostic services with cutting-edge technology and expert pathologists. Book appointments online or via WhatsApp." />
         <meta name="keywords" content="pathology, diagnostic services, laboratory, blood tests, health checkup" />
-        <meta property="og:title" content="City Pathology Laboratory" />
-        <meta property="og:description" content="Advanced diagnostic services with expert pathologists" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://citypathlab.com" />
-        <link rel="canonical" href="https://citypathlab.com" />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "MedicalBusiness",
-            "name": "City Pathology Laboratory",
-            "description": "Reliable diagnostic services with expert pathologists",
-            "telephone": "+919409277144",
-            "url": "https://citypathlab.com"
-          })}
-        </script>
       </Head>
 
       <main className="min-h-screen">
-        {/* Hero Section */}
         <motion.section
           initial={{ opacity: 0 }}
           animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
@@ -232,7 +205,6 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* Why Choose Us */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <motion.h2 
@@ -251,7 +223,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Doctors Section */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <motion.h2 
@@ -269,7 +240,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CTA Section */}
         <CTASection
           title="Ready to Get Started?"
           description="Book your appointment today for comprehensive diagnostic services with our expert team."
@@ -289,7 +259,6 @@ export default function Home() {
           ]}
         />
 
-        {/* Trust Indicators */}
         <section className="py-12 bg-primary-50">
           <div className="container mx-auto px-4 text-center">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
