@@ -1,99 +1,67 @@
 # City Pathology Laboratory Website
 
-A modern, responsive website for City Pathology Laboratory built with Next.js 13, TypeScript, and Tailwind CSS. This website provides easy access to pathology services, test information, online booking, and WhatsApp support.
+![City Pathology Laboratory Logo](/public/logo.jpg)
 
-## 🚀 Features
+A modern, responsive website for City Pathology Laboratory built with Next.js 14, TypeScript, and Tailwind CSS.
 
-- **Modern Design**: Clean, professional UI with gradient accents and smooth animations
-- **Responsive Layout**: Fully responsive design that works on all devices
-- **Online Booking**: Integrated Calendly widget for easy appointment scheduling
-- **WhatsApp Integration**: Direct WhatsApp chat support for instant communication ([+91 94092 77144](https://wa.me/919409277144))
-- **Test Catalog**: Comprehensive listing of available pathology tests with pricing
-- **Doctor Profiles**: Detailed information about experienced pathologists
-- **Contact Form**: Easy-to-use contact form for inquiries
-- **SEO Optimized**: Built with Next.js for excellent SEO performance
+## ✨ Features
 
-## 👨‍⚕️ Our Expert Pathologists
+- **Modern Design**: Clean and professional interface
+- **Responsive**: Works perfectly on all devices
+- **Fast**: Built with Next.js for optimal performance
+- **SEO Optimized**: Proper meta tags and structure
+- **Easy to Customize**: Well-organized code structure
 
-### Dr. Sunil Nagori
-**Qualifications:** M.B.B.S., D.C.P., C.I.H.  
-**Designation:** Consultant Pathologist and Industrial Physician
+## 🛠️ Tech Stack
 
-Dr. Sunil Nagori specializes in clinical pathology and occupational health with extensive experience in diagnostic services. His expertise ensures accurate diagnoses and comprehensive patient care.
-
-### Dr. Shalin Nagori
-**Qualifications:** M.B.B.S., M.D.(Path), P.G.C.I.H.  
-**Designation:** Consultant Pathologist and Industrial Physician
-
-Dr. Shalin Nagori is an expert in anatomical and clinical pathology with postgraduate certification in industrial health. His dedication to excellence in diagnostic medicine ensures reliable and precise test results.
-
-## 📦 Tech Stack
-
-- **Framework**: Next.js 13 with App Router
+- **Framework**: Next.js 14 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
-- **Deployment**: Vercel-ready
-- **Booking**: Calendly Integration
-- **Communication**: WhatsApp Direct Link Integration
+- **Icons**: Lucide React
 
-## 🛠️ Getting Started
+## 📦 Installation
 
-### Prerequisites
-
-- Node.js 18.x or higher
-- npm or yarn package manager
-
-### Installation
-
-1. Clone the repository:
 ```bash
+# Clone the repository
 git clone https://github.com/citypathologylaboratory-svg/citypathologylaboratory-website.git
+
+# Navigate to project directory
 cd citypathologylaboratory-website
-```
 
-2. Install dependencies:
-```bash
+# Install dependencies
 npm install
-# or
-yarn install
-```
 
-3. Run the development server:
-```bash
+# Run development server
 npm run dev
-# or
-yarn dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the website.
+Open [http://localhost:3000](http://localhost:3000) to view the website.
 
-## 📝 Configuration
+## 📁 Project Structure
 
-### WhatsApp Integration
-
-The WhatsApp number is configured in multiple locations:
-- Homepage hero section
-- Navigation bar
-- Contact page
-- About page
-
-To update the WhatsApp number, search for `919409277144` in the codebase and replace with your number.
-
-### Calendly Integration
-
-The booking system uses Calendly. To update:
-1. Sign up for Calendly at [calendly.com](https://calendly.com)
-2. Get your Calendly scheduling link
-3. Update the `NEXT_PUBLIC_CALENDLY_URL` in your environment variables
-4. The link is used in `app/book-appointment/page.tsx`
+```
+citypathologylaboratory-website/
+├── app/
+│   ├── about/          # About page
+│   ├── book-appointment/ # Appointment booking page
+│   ├── contact/        # Contact page
+│   ├── tests/          # Tests/services page
+│   ├── globals.css     # Global styles
+│   ├── layout.tsx      # Root layout with header
+│   └── page.tsx        # Homepage
+├── public/
+│   └── logo.jpg        # City Pathology Laboratory logo
+├── next.config.js      # Next.js configuration
+├── tailwind.config.js  # Tailwind CSS configuration
+└── tsconfig.json       # TypeScript configuration
+```
 
 ## 📄 Pages
 
-- **Home** (`/`): Main landing page with services overview, doctor profiles, and call-to-action
-- **About** (`/about`): Information about the laboratory, mission, values, and pathologists
-- **Services** (`/services`): Detailed list of pathology services
-- **Tests** (`/tests`): Comprehensive test catalog with descriptions and pricing
-- **Book Appointment** (`/book-appointment`): Integrated Calendly booking widget
+- **Home** (`/`): Landing page with overview and services
+- **About** (`/about`): Information about the laboratory
+- **Tests** (`/tests`): List of available medical tests
+- **Book Appointment** (`/book-appointment`): Online appointment booking
 - **Contact** (`/contact`): Contact form and location information
 
 ## 🎨 Customization
@@ -131,6 +99,7 @@ All content can be easily updated in the respective page files under the `app` d
 ### Other Platforms
 
 The website can be deployed to any platform that supports Next.js:
+
 - Netlify
 - AWS Amplify
 - Railway
@@ -148,6 +117,7 @@ This project is private and proprietary to City Pathology Laboratory.
 ## 🤝 Contributing
 
 For internal contributions, please follow the standard Git workflow:
+
 1. Create a feature branch
 2. Make your changes
 3. Submit a pull request for review
