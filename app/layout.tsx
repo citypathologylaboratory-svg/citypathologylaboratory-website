@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -21,8 +22,17 @@ export default function RootLayout({
         <nav className="bg-primary-600 text-white shadow-lg">
           <div className="container mx-auto px-4 py-4">
             <div className="flex justify-between items-center">
-              <div className="text-2xl font-bold">
-                <a href="/">City Pathology Laboratory</a>
+              <div className="flex items-center space-x-4">
+                <a href="/" className="flex items-center space-x-3">
+                  <Image 
+                    src="/logo.jpg" 
+                    alt="City Pathology Laboratory Logo" 
+                    width={50} 
+                    height={50}
+                    className="rounded"
+                  />
+                  <span className="text-2xl font-bold">City Pathology Laboratory</span>
+                </a>
               </div>
               <div className="hidden md:flex space-x-6">
                 <a href="/" className="hover:text-primary-200 transition">Home</a>
@@ -78,7 +88,7 @@ export default function RootLayout({
               </div>
             </div>
             <div className="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
-              <p>&copy; 2025 City Pathology Laboratory. All rights reserved.</p>
+              © 2025 City Pathology Laboratory. All rights reserved.
             </div>
           </div>
         </footer>
