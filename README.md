@@ -9,9 +9,23 @@ A modern, responsive website for City Pathology Laboratory built with Next.js 13
 - **Online Booking**: Integrated Calendly widget for easy appointment scheduling
 - **WhatsApp Integration**: Direct WhatsApp chat support for instant communication ([+91 94092 77144](https://wa.me/919409277144))
 - **Test Catalog**: Comprehensive listing of available pathology tests with pricing
-- **Doctor Profiles**: Information about experienced pathologists
+- **Doctor Profiles**: Detailed information about experienced pathologists
 - **Contact Form**: Easy-to-use contact form for inquiries
 - **SEO Optimized**: Built with Next.js for excellent SEO performance
+
+## 👨‍⚕️ Our Expert Pathologists
+
+### Dr. Sunil Nagori
+**Qualifications:** M.B.B.S., D.C.P., C.I.H.  
+**Designation:** Consultant Pathologist and Industrial Physician
+
+Dr. Sunil Nagori specializes in clinical pathology and occupational health with extensive experience in diagnostic services. His expertise ensures accurate diagnoses and comprehensive patient care.
+
+### Dr. Shalin Nagori
+**Qualifications:** M.B.B.S., M.D.(Path), P.G.C.I.H.  
+**Designation:** Consultant Pathologist and Industrial Physician
+
+Dr. Shalin Nagori is an expert in anatomical and clinical pathology with postgraduate certification in industrial health. His dedication to excellence in diagnostic medicine ensures reliable and precise test results.
 
 ## 📦 Tech Stack
 
@@ -57,82 +71,87 @@ yarn dev
 
 ### WhatsApp Integration
 
-The WhatsApp number is already configured throughout the website:
-- **Number**: +91 94092 77144
-- **Link Format**: `https://wa.me/919409277144`
-- **Locations**: Homepage, Contact page, Book Appointment page
-- **Label**: "WhatsApp for Appointments, Bookings, Queries"
+The WhatsApp number is configured in multiple locations:
+- Homepage hero section
+- Navigation bar
+- Contact page
+- About page
 
-To update the WhatsApp number in the future, search and replace `919409277144` with your new number (without spaces or special characters).
+To update the WhatsApp number, search for `919409277144` in the codebase and replace with your number.
 
 ### Calendly Integration
 
-Update your Calendly username in `app/book-appointment/page.tsx`:
-```typescript
-data-url="https://calendly.com/YOUR_CALENDLY_USERNAME?hide_gdpr_banner=1"
+The booking system uses Calendly. To update:
+1. Sign up for Calendly at [calendly.com](https://calendly.com)
+2. Get your Calendly scheduling link
+3. Update the `NEXT_PUBLIC_CALENDLY_URL` in your environment variables
+4. The link is used in `app/book-appointment/page.tsx`
+
+## 📄 Pages
+
+- **Home** (`/`): Main landing page with services overview, doctor profiles, and call-to-action
+- **About** (`/about`): Information about the laboratory, mission, values, and pathologists
+- **Services** (`/services`): Detailed list of pathology services
+- **Tests** (`/tests`): Comprehensive test catalog with descriptions and pricing
+- **Book Appointment** (`/book-appointment`): Integrated Calendly booking widget
+- **Contact** (`/contact`): Contact form and location information
+
+## 🎨 Customization
+
+### Colors
+
+The website uses a primary color scheme defined in `tailwind.config.js`. To customize:
+
+```javascript
+theme: {
+  extend: {
+    colors: {
+      primary: {
+        50: '#eff6ff',
+        // ... add your custom colors
+      }
+    }
+  }
+}
 ```
 
-### Customization
+### Content
 
-#### Content Updates
-- **Homepage**: Edit `app/page.tsx`
-- **About Us**: Edit `app/about/page.tsx`
-- **Tests**: Update test listings in `app/tests/page.tsx`
-- **Doctor Profiles**: Modify doctor information in `app/page.tsx` and `app/about/page.tsx`
-
-#### Navigation
-
-Update navigation links in `app/layout.tsx`
-
-## 📝 Pages
-
-- **Home** (`/`): Landing page with hero section, Why Choose Us, doctor profiles, and services overview
-- **About Us** (`/about`): Company information, mission, vision, values, and team details
-- **Tests** (`/tests`): Comprehensive catalog of all available laboratory tests with pricing
-- **Book Appointment** (`/book-appointment`): Online appointment booking with Calendly integration
-- **Contact** (`/contact`): Contact form, location, hours, and WhatsApp integration
-
-## 🎨 Color Scheme
-
-The website uses a professional medical color palette:
-- Primary: Blue tones (#0369a1, #075985)
-- Accent: Green for WhatsApp integration (#22c55e)
-- Background: White and light gray (#f9fafb)
-
-## 📱 WhatsApp Features
-
-- **Direct Chat Links**: Clicking WhatsApp buttons opens chat directly
-- **Pre-filled Messages**: Some links include pre-filled inquiry messages
-- **Availability**: Marked as 24/7 available for patient convenience
-- **Multiple Access Points**: Available on homepage, contact page, and booking page
+All content can be easily updated in the respective page files under the `app` directory.
 
 ## 🚀 Deployment
 
-The website is ready to deploy on Vercel:
+### Vercel (Recommended)
 
 1. Push your code to GitHub
-2. Import the repository in Vercel
-3. Deploy with default settings
-4. Your website will be live instantly!
+2. Import your repository in Vercel
+3. Configure environment variables if needed
+4. Deploy!
 
-## 🆘 Support
+### Other Platforms
 
-For issues and questions:
-- Open an issue on GitHub
-- Contact: info@citypathlab.com
-- WhatsApp: [+91 94092 77144](https://wa.me/919409277144) - WhatsApp for Appointments, Bookings, Queries
+The website can be deployed to any platform that supports Next.js:
+- Netlify
+- AWS Amplify
+- Railway
+- DigitalOcean App Platform
+
+## 📞 Contact Information
+
+**WhatsApp:** [+91 94092 77144](https://wa.me/919409277144)  
+**Website:** City Pathology Laboratory
 
 ## 📄 License
 
-This project is created for City Pathology Laboratory.
+This project is private and proprietary to City Pathology Laboratory.
 
-## 🙏 Acknowledgments
+## 🤝 Contributing
 
-- Built with [Next.js](https://nextjs.org/)
-- Styled with [Tailwind CSS](https://tailwindcss.com/)
-- Appointment booking via [Calendly](https://calendly.com/)
-- Icons and emojis for better UX
+For internal contributions, please follow the standard Git workflow:
+1. Create a feature branch
+2. Make your changes
+3. Submit a pull request for review
 
 ---
 
-**Ready to deploy?** Push your changes to GitHub and deploy to Vercel with one click! 🚀
+**Built with ❤️ for City Pathology Laboratory**
