@@ -1,5 +1,4 @@
 'use client'
-
 import { useEffect } from 'react'
 
 export default function BookAppointment() {
@@ -46,8 +45,8 @@ export default function BookAppointment() {
                 <div className="text-5xl mb-4">📧</div>
                 <h3 className="text-xl font-bold mb-3">Home Collection</h3>
                 <p className="text-gray-600 mb-4">Request home sample collection service</p>
-                <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" rel="noopener noreferrer" className="text-green-500 font-semibold hover:text-green-600">
-                  WhatsApp Us
+                <a href="https://wa.me/919409277144" target="_blank" rel="noopener noreferrer" className="text-green-500 font-semibold hover:text-green-600">
+                  WhatsApp for Appointments, Bookings, Queries
                 </a>
               </div>
             </div>
@@ -64,7 +63,7 @@ export default function BookAppointment() {
                 className="calendly-inline-widget" 
                 data-url="https://calendly.com/YOUR_CALENDLY_USERNAME?hide_gdpr_banner=1" 
                 style={{ minWidth: '320px', height: '700px' }}
-              ></div>
+              />
               
               <div className="mt-8 p-6 bg-primary-50 rounded-lg">
                 <h3 className="text-xl font-bold mb-4 text-primary-700">Before Your Appointment</h3>
@@ -91,8 +90,8 @@ export default function BookAppointment() {
                 <div className="text-center">
                   <div className="text-4xl mb-3">💬</div>
                   <h4 className="font-bold mb-2">WhatsApp</h4>
-                  <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" rel="noopener noreferrer" className="text-green-500 font-semibold hover:text-green-600">
-                    Chat with us
+                  <a href="https://wa.me/919409277144" target="_blank" rel="noopener noreferrer" className="text-green-500 font-semibold hover:text-green-600">
+                    WhatsApp for Appointments, Bookings, Queries
                   </a>
                   <p className="text-sm text-gray-500">Available 24/7</p>
                 </div>
