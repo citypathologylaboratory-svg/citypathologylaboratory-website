@@ -148,4 +148,53 @@ export default function BookAppointment() {
                     className="flex items-center justify-center h-96 bg-gray-50 rounded-lg"
                   >
                     <div className="text-center">
-                      <div className="animate-spin h-12 w-12 border-4 border-primary-600 border-t-transparent
+                      <div className="animate-spin h-12 w-12 border-4 border-primary-600 border-t-transparent rounded-full mx-auto mb-4"></div>
+                      <p className="text-gray-600">Loading scheduler...</p>
+                    </div>
+                  </motion.div>
+                ) : widgetError ? (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="p-8 bg-red-50 border border-red-200 rounded-lg text-center"
+                  >
+                    <FaExclamationTriangle className="text-4xl text-red-500 mx-auto mb-4" />
+                    <h3 className="text-xl font-bold mb-2">Scheduler Unavailable</h3>
+                    <p className="text-gray-600 mb-4">
+                      The scheduling tool is temporarily unavailable. Please contact us directly or check your Calendly setup.
+                    </p>
+                    <button
+                      onClick={handleWhatsAppBooking}
+                      className="bg-green-500 text-white px-6 py-3 rounded-lg font-semibold"
+                    >
+                      📱 Book via WhatsApp
+                    </button>
+                    <p className="text-sm text-gray-500 mt-2">
+                      Tip: Ensure your event type URL is correct (e.g., /industrial-health-checkup).
+                    </p>
+                  </motion.div>
+                ) : (
+                  <div className="calendly-inline-widget" style={{ minWidth: '320px', height: '700px' }} />
+                )}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Fallback Contact */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 text-center">
+            <h3 className="text-2xl font-bold mb-4">Need Assistance?</h3>
+            <p className="text-gray-600 mb-6">Contact our team for immediate support.</p>
+            <button
+              onClick={handleWhatsAppBooking}
+              className="bg-green-500 text-white px-8 py-4 rounded-lg font-bold hover:bg-green-600 transition-all"
+            >
+              📱 WhatsApp +91 94092 77144
+            </button>
+          </div>
+        </section>
+      </main>
+    </>
+  )
+}
