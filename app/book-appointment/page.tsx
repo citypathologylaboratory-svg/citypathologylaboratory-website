@@ -10,6 +10,10 @@ export default function BookAppointment() {
   const [bookingSuccess, setBookingSuccess] = useState(false)
   const calendlyRef = useRef(null)
 
+  // Use your profile URL as a fallback; replace with exact event URL when available
+  const CALENDLY_BASE_URL = 'https://calendly.com/citypathologylaboratory'
+  const CALENDLY_EVENT_URL = 'https://calendly.com/citypathologylaboratory/industrial-health-checkup-30min' // Replace with exact event slug
+
   useEffect(() => {
     const loadCalendly = () => {
       if (!document.querySelector('script[src*="calendly.com"]')) {
@@ -22,24 +26,24 @@ export default function BookAppointment() {
           if (window.Calendly && calendlyRef.current) {
             try {
               window.Calendly.initInlineWidget({
-                url: 'https://calendly.com/citypathologylaboratory/[YOUR_EXACT_EVENT_SLUG]', // Replace with real slug, e.g., 'industrial-health-checkup'
+                url: CALENDLY_EVENT_URL, // Must be a specific event URL
                 parentElement: calendlyRef.current,
                 prefill: { name: '', email: '' },
                 preferences: {
                   theme: 'light',
                   hideGDPRBanner: true,
-                  primaryColor: '2563eb', // Your brand blue
+                  primaryColor: '2563eb',
+                  textColor: 'ffffff',
                 },
                 success: () => {
                   setBookingSuccess(true)
-                  // WhatsApp notification
                   const message = encodeURIComponent('🎉 New industrial health checkup booked via Calendly!')
                   window.open(`https://wa.me/919409277144?text=${message}`, '_blank')
                 },
-                error: () => {
+                error: (e) => {
                   setWidgetError(true)
-                  console.error('Calendly widget error - check URL')
-                }
+                  console.error('Calendly error:', e)
+                },
               })
             } catch (err) {
               setWidgetError(true)
@@ -47,7 +51,10 @@ export default function BookAppointment() {
             }
           }
         }
-        script.onerror = () => setWidgetError(true) // Fallback on script fail
+        script.onerror = () => {
+          setWidgetError(true)
+          console.error('Failed to load Calendly script')
+        }
         document.body.appendChild(script)
       } else {
         setCalendlyLoaded(true)
@@ -64,21 +71,29 @@ export default function BookAppointment() {
 
   const handleWhatsAppBooking = () => {
     const message = encodeURIComponent(
-      `🏭 Industrial Health Checkup Request\nCompany: \nEmployees: \nType: Pre-employment/Annual\nDate: \n\nSchedule group session?`
+      `🏭 Industrial Health Checkup Request\nCompany: \nEmployees: \nType: Pre-employment/Annual\nDate: \n\nSchedule now?`
     )
     window.open(`https://wa.me/919409277144?text=${message}`, '_blank')
   }
 
+  const scrollToCalendly = () => {
+    document.getElementById('calendly-section')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   if (bookingSuccess) {
     return (
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="min-h-screen bg-green-50 flex items-center justify-center py-12">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 flex items-center justify-center py-12"
+      >
         <div className="max-w-md w-full bg-white rounded-xl shadow-xl p-8 text-center">
           <FaCheckCircle className="text-6xl text-green-500 mx-auto mb-4" />
-          <h1 className="text-3xl font-bold text-green-600 mb-4">Booked Successfully!</h1>
-          <p className="text-gray-600 mb-6">Check your email for confirmation. We'll contact you soon.</p>
-          <div className="space-y-3">
+          <h1 className="text-3xl font-bold text-green-600 mb-4">Booking Confirmed!</h1>
+          <p className="text-gray-600 mb-6">Check your email for details. We'll follow up soon.</p>
+          <div className="space-y-4">
             <button onClick={handleWhatsAppBooking} className="w-full bg-green-500 text-white py-3 rounded-lg font-semibold">
-              📱 WhatsApp Confirmation
+              📱 Confirm via WhatsApp
             </button>
             <button onClick={() => window.location.reload()} className="w-full bg-gray-500 text-white py-3 rounded-lg font-semibold">
               Book Another
@@ -92,60 +107,45 @@ export default function BookAppointment() {
   return (
     <>
       <Head>
-        <title>Book Appointment - City Pathology Laboratory</title>
-        <meta name="description" content="Schedule industrial health checkups and consultations." />
+        <title>Book Industrial Health Checkup | City Pathology Laboratory</title>
+        <meta name="description" content="Schedule your industrial health checkup with certified pathologists at City Pathology Laboratory." />
+        <meta name="keywords" content="industrial health checkup, pre-employment screening, corporate wellness, occupational health" />
+        <meta name="robots" content="index, follow" />
       </Head>
       <main className="min-h-screen">
-        {/* Hero */}
-        <section className="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-20">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">Book Industrial Health Checkup</h1>
-            <p className="text-xl mb-8">30-minute consultations with expert pathologists</p>
-            <button onClick={() => document.getElementById('calendly-section')?.scrollIntoView({ behavior: 'smooth' })} className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold">
+        {/* Hero Section */}
+        <motion.section
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 text-white py-20 relative overflow-hidden"
+        >
+          <div className="container mx-auto px-4 text-center relative z-10">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">Industrial Health Checkups</h1>
+            <p className="text-xl mb-8 max-w-2xl mx-auto">Book a consultation with our expert pathologists.</p>
+            <button
+              onClick={scrollToCalendly}
+              className="bg-white text-primary-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all"
+            >
               Schedule Now
             </button>
           </div>
-        </section>
+        </motion.section>
 
         {/* Calendly Section */}
         <section id="calendly-section" className="py-16 bg-white">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-8">Select Your Slot</h2>
-            <div ref={calendlyRef} className="max-w-4xl mx-auto">
-              {!calendlyLoaded ? (
-                <div className="flex items-center justify-center h-96 bg-gray-50 rounded-lg">
-                  <div className="text-center">
-                    <div className="animate-spin h-12 w-12 border-4 border-blue-600 border-t-transparent mx-auto mb-4 rounded-full"></div>
-                    <p>Loading scheduler...</p>
-                  </div>
-                </div>
-              ) : widgetError ? (
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center p-8 bg-red-50 border border-red-200 rounded-lg">
-                  <FaExclamationTriangle className="text-4xl text-red-500 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold mb-2">Scheduler Temporarily Unavailable</h3>
-                  <p className="text-gray-600 mb-4">Please check back soon or contact us directly.</p>
-                  <button onClick={handleWhatsAppBooking} className="bg-green-500 text-white px-6 py-3 rounded-lg font-semibold">
-                    📱 Book via WhatsApp
-                  </button>
-                  <p className="text-sm text-gray-500 mt-4">Tip: Verify your Calendly event URL in account settings.</p>
-                </motion.div>
-              ) : (
-                <div className="calendly-inline-widget" style={{ minWidth: '320px', height: '700px' }} />
-              )}
-            </div>
-          </div>
-        </section>
-
-        {/* Fallback CTA */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 text-center">
-            <h3 className="text-2xl font-bold mb-4">Need Help Booking?</h3>
-            <button onClick={handleWhatsAppBooking} className="bg-green-500 text-white px-8 py-4 rounded-lg font-bold">
-              📱 WhatsApp +91 94092 77144
-            </button>
-          </div>
-        </section>
-      </main>
-    </>
-  )
-}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="max-w-4xl mx-auto"
+            >
+              <h2 className="text-3xl font-bold text-center mb-8">Book Your 30-Min Consultation</h2>
+              <div ref={calendlyRef} className="rounded-xl overflow-hidden">
+                {!calendlyLoaded ? (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="flex items-center justify-center h-96 bg-gray-50 rounded-lg"
+                  >
+                    <div className="text-center">
+                      <div className="animate-spin h-12 w-12 border-4 border-primary-600 border-t-transparent
