@@ -27,8 +27,9 @@ export default function RootLayout({
                   <Image 
                     src="/logo.jpg" 
                     alt="City Pathology Laboratory Logo" 
-                    width={50} 
-                    height={50}
+                    width={120} 
+                    height={120}
+                    priority
                     className="rounded"
                   />
                   <span className="text-2xl font-bold">City Pathology Laboratory</span>
