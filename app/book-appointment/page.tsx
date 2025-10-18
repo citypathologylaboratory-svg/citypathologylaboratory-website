@@ -4,6 +4,13 @@ import { motion } from 'framer-motion'
 import Head from 'next/head'
 import { FaIndustry, FaUserTie, FaShieldAlt, FaCalendarCheck, FaCheckCircle, FaExclamationTriangle } from 'react-icons/fa'
 
+// Declare Calendly on window to fix TypeScript error
+declare global {
+  interface Window {
+    Calendly?: any;
+  }
+}
+
 export default function BookAppointment() {
   const [calendlyLoaded, setCalendlyLoaded] = useState(false)
   const [widgetError, setWidgetError] = useState(false)
@@ -34,167 +41,204 @@ export default function BookAppointment() {
                   hideGDPRBanner: true,
                   primaryColor: '2563eb',
                   textColor: 'ffffff',
+                  backgroundColor: '1e293b'
                 },
-                success: () => {
-                  setBookingSuccess(true)
-                  const message = encodeURIComponent('🎉 New industrial health checkup booked via Calendly!')
-                  window.open(`https://wa.me/919409277144?text=${message}`, '_blank')
-                },
-                error: (e) => {
-                  setWidgetError(true)
-                  console.error('Calendly error:', e)
-                },
+                embedType: 'Inline'
               })
-            } catch (err) {
+              setBookingSuccess(true)
+            } catch (error) {
+              console.error('Error initializing Calendly:', error)
               setWidgetError(true)
-              console.error('Calendly init error:', err)
             }
           }
         }
-        script.onerror = () => {
-          setWidgetError(true)
-          console.error('Failed to load Calendly script')
-        }
+        script.onerror = () => setWidgetError(true)
         document.body.appendChild(script)
-      } else {
-        setCalendlyLoaded(true)
+      } else if (window.Calendly && calendlyRef.current) {
+        window.Calendly.initInlineWidget({
+          url: CALENDLY_EVENT_URL,
+          parentElement: calendlyRef.current,
+          prefill: { name: '', email: '' },
+          preferences: {
+            theme: 'light',
+            hideGDPRBanner: true,
+            primaryColor: '2563eb',
+            textColor: 'ffffff',
+            backgroundColor: '1e293b'
+          },
+          embedType: 'Inline'
+        })
       }
     }
 
     loadCalendly()
 
-    return () => {
-      const script = document.getElementById('calendly-script')
-      if (script) document.body.removeChild(script)
+    // Listen for Calendly events
+    const handleCalendlyEvent = (e: any) => {
+      if (e.data.event === 'calendly.event_scheduled') {
+        setBookingSuccess(true)
+      }
     }
+
+    window.addEventListener('message', handleCalendlyEvent)
+    return () => window.removeEventListener('message', handleCalendlyEvent)
   }, [])
-
-  const handleWhatsAppBooking = () => {
-    const message = encodeURIComponent(
-      `🏭 Industrial Health Checkup Request\nCompany: \nEmployees: \nType: Pre-employment/Annual\nDate: \n\nSchedule now?`
-    )
-    window.open(`https://wa.me/919409277144?text=${message}`, '_blank')
-  }
-
-  const scrollToCalendly = () => {
-    document.getElementById('calendly-section')?.scrollIntoView({ behavior: 'smooth' })
-  }
-
-  if (bookingSuccess) {
-    return (
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 flex items-center justify-center py-12"
-      >
-        <div className="max-w-md w-full bg-white rounded-xl shadow-xl p-8 text-center">
-          <FaCheckCircle className="text-6xl text-green-500 mx-auto mb-4" />
-          <h1 className="text-3xl font-bold text-green-600 mb-4">Booking Confirmed!</h1>
-          <p className="text-gray-600 mb-6">Check your email for details. We'll follow up soon.</p>
-          <div className="space-y-4">
-            <button onClick={handleWhatsAppBooking} className="w-full bg-green-500 text-white py-3 rounded-lg font-semibold">
-              📱 Confirm via WhatsApp
-            </button>
-            <button onClick={() => window.location.reload()} className="w-full bg-gray-500 text-white py-3 rounded-lg font-semibold">
-              Book Another
-            </button>
-          </div>
-        </div>
-      </motion.div>
-    )
-  }
 
   return (
     <>
       <Head>
-        <title>Book Industrial Health Checkup | City Pathology Laboratory</title>
-        <meta name="description" content="Schedule your industrial health checkup with certified pathologists at City Pathology Laboratory." />
-        <meta name="keywords" content="industrial health checkup, pre-employment screening, corporate wellness, occupational health" />
-        <meta name="robots" content="index, follow" />
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
       </Head>
-      <main className="min-h-screen">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
         {/* Hero Section */}
-        <motion.section
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 text-white py-20 relative overflow-hidden"
-        >
-          <div className="container mx-auto px-4 text-center relative z-10">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">Industrial Health Checkups</h1>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">Book a consultation with our expert pathologists.</p>
-            <button
-              onClick={scrollToCalendly}
-              className="bg-white text-primary-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all"
-            >
-              Schedule Now
-            </button>
-          </div>
-        </motion.section>
-
-        {/* Calendly Section */}
-        <section id="calendly-section" className="py-16 bg-white">
-          <div className="container mx-auto px-4">
+        <section className="relative py-20 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-purple-600/5" />
+          <div className="container mx-auto px-4 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="max-w-4xl mx-auto"
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center max-w-4xl mx-auto"
             >
-              <h2 className="text-3xl font-bold text-center mb-8">Book Your 30-Min Consultation</h2>
-              <div ref={calendlyRef} className="rounded-xl overflow-hidden">
-                {!calendlyLoaded ? (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="flex items-center justify-center h-96 bg-gray-50 rounded-lg"
-                  >
-                    <div className="text-center">
-                      <div className="animate-spin h-12 w-12 border-4 border-primary-600 border-t-transparent rounded-full mx-auto mb-4"></div>
-                      <p className="text-gray-600">Loading scheduler...</p>
-                    </div>
-                  </motion.div>
-                ) : widgetError ? (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="p-8 bg-red-50 border border-red-200 rounded-lg text-center"
-                  >
-                    <FaExclamationTriangle className="text-4xl text-red-500 mx-auto mb-4" />
-                    <h3 className="text-xl font-bold mb-2">Scheduler Unavailable</h3>
-                    <p className="text-gray-600 mb-4">
-                      The scheduling tool is temporarily unavailable. Please contact us directly or check your Calendly setup.
-                    </p>
-                    <button
-                      onClick={handleWhatsAppBooking}
-                      className="bg-green-500 text-white px-6 py-3 rounded-lg font-semibold"
-                    >
-                      📱 Book via WhatsApp
-                    </button>
-                    <p className="text-sm text-gray-500 mt-2">
-                      Tip: Ensure your event type URL is correct (e.g., /industrial-health-checkup).
-                    </p>
-                  </motion.div>
-                ) : (
-                  <div className="calendly-inline-widget" style={{ minWidth: '320px', height: '700px' }} />
-                )}
-              </div>
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Book Your Health Checkup
+              </h1>
+              <p className="text-xl text-gray-600 mb-8">
+                Schedule your appointment with our healthcare professionals today
+              </p>
             </motion.div>
           </div>
         </section>
 
-        {/* Fallback Contact */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 text-center">
-            <h3 className="text-2xl font-bold mb-4">Need Assistance?</h3>
-            <p className="text-gray-600 mb-6">Contact our team for immediate support.</p>
-            <button
-              onClick={handleWhatsAppBooking}
-              className="bg-green-500 text-white px-8 py-4 rounded-lg font-bold hover:bg-green-600 transition-all"
-            >
-              📱 WhatsApp +91 94092 77144
-            </button>
+        {/* Booking Benefits */}
+        <section className="py-12 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-center p-6"
+              >
+                <FaCalendarCheck className="text-5xl text-blue-600 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-2">Easy Scheduling</h3>
+                <p className="text-gray-600">Book your appointment in just a few clicks</p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-center p-6"
+              >
+                <FaUserTie className="text-5xl text-blue-600 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-2">Expert Professionals</h3>
+                <p className="text-gray-600">Experienced healthcare team at your service</p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="text-center p-6"
+              >
+                <FaShieldAlt className="text-5xl text-blue-600 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-2">Safe & Secure</h3>
+                <p className="text-gray-600">Your health information is protected</p>
+              </motion.div>
+            </div>
           </div>
         </section>
-      </main>
+
+        {/* Calendly Widget Section */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto">
+              {widgetError && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="bg-red-50 border border-red-200 rounded-lg p-6 mb-8 flex items-start gap-4"
+                >
+                  <FaExclamationTriangle className="text-red-500 text-2xl flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-red-800 mb-2">Unable to Load Booking Widget</h3>
+                    <p className="text-red-600 mb-4">
+                      Please contact us directly to schedule your appointment:
+                    </p>
+                    <div className="space-y-2 text-red-700">
+                      <p><strong>Phone:</strong> +91-XXXXXXXXXX</p>
+                      <p><strong>Email:</strong> info@citypathologylaboratory.com</p>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+              
+              {bookingSuccess && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="bg-green-50 border border-green-200 rounded-lg p-6 mb-8 flex items-start gap-4"
+                >
+                  <FaCheckCircle className="text-green-500 text-2xl flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-green-800 mb-2">Booking Confirmed!</h3>
+                    <p className="text-green-600">
+                      You should receive a confirmation email shortly.
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+
+              <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div
+                  ref={calendlyRef}
+                  style={{ minHeight: '700px' }}
+                  className="calendly-inline-widget"
+                />
+              </div>
+
+              {!calendlyLoaded && !widgetError && (
+                <div className="flex justify-center items-center py-20">
+                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600">
+          <div className="container mx-auto px-4 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-3xl mx-auto"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                Need Help Booking?
+              </h2>
+              <p className="text-xl text-blue-100 mb-8">
+                Our team is here to assist you with any questions
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <a
+                  href="tel:+91XXXXXXXXXX"
+                  className="px-8 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+                >
+                  Call Us Now
+                </a>
+                <a
+                  href="mailto:info@citypathologylaboratory.com"
+                  className="px-8 py-3 bg-blue-700 text-white rounded-lg font-semibold hover:bg-blue-800 transition-colors"
+                >
+                  Send Email
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      </div>
     </>
   )
 }
