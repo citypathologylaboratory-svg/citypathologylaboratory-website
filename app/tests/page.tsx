@@ -79,11 +79,11 @@ export default function Tests() {
   }
 
   return (
-    <div style={{ maxWidth: '900px', margin: '2rem auto', padding: '1rem' }}>
-      <h1 style={{ textAlign: 'center', marginBottom: '2rem', color: '#2c3e50' }}>Our Tests</h1>
+    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem' }}>
+      <h1 style={{ textAlign: 'center', color: '#2c3e50', marginBottom: '2rem' }}>Our Tests</h1>
       
       {Object.entries(categories).map(([category, tests]) => (
-        <div key={category} style={{ marginBottom: '1rem', border: '1px solid #ddd', borderRadius: '8px', overflow: 'hidden' }}>
+        <div key={category} style={{ marginBottom: '1.5rem', border: '1px solid #ddd', borderRadius: '8px', overflow: 'hidden' }}>
           <button
             onClick={() => toggleCategory(category)}
             style={{
@@ -115,23 +115,26 @@ export default function Tests() {
                     borderBottom: index < tests.length - 1 ? '1px solid #eee' : 'none',
                     display: 'flex',
                     justifyContent: 'space-between',
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    gap: '1rem'
                   }}>
-                    <span style={{ color: '#2c3e50' }}>{test}</span>
+                    <span style={{ color: '#2c3e50', flex: 1, fontSize: '1rem' }}>{test}</span>
                     <button
                       onClick={() => openWhatsApp(test)}
                       style={{
                         backgroundColor: '#25D366',
                         color: 'white',
                         border: 'none',
-                        padding: '0.5rem 1rem',
+                        padding: '0.6rem 1.2rem',
                         borderRadius: '5px',
                         cursor: 'pointer',
                         fontSize: '0.9rem',
                         display: 'flex',
                         alignItems: 'center',
                         gap: '0.3rem',
-                        transition: 'background-color 0.3s ease'
+                        transition: 'background-color 0.3s ease',
+                        whiteSpace: 'nowrap',
+                        flexShrink: 0
                       }}
                       onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#128C7E'}
                       onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#25D366'}
