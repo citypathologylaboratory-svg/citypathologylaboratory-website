@@ -31,7 +31,7 @@ export default function RootLayout({
                   height={80} 
                   priority 
                 />
-                <h1 className="text-2xl font-bold text-gray-800">City Pathology Laboratory</h1>
+                <h1 className="text-2xl font-bold text-gray-800 animate-fade-in">City Pathology Laboratory</h1>
               </div>
             </div>
             <nav className="border-t border-gray-200">
@@ -42,12 +42,12 @@ export default function RootLayout({
                   </Link>
                 </li>
                 <li>
-                  <Link href="/tests/blood" className="text-gray-700 hover:text-primary-600 font-medium transition">
+                  <Link href="/tests" className="text-gray-700 hover:text-primary-600 font-medium transition">
                     Blood Tests
                   </Link>
                 </li>
                 <li>
-                  <Link href="/tests/urine" className="text-gray-700 hover:text-primary-600 font-medium transition">
+                  <Link href="/tests" className="text-gray-700 hover:text-primary-600 font-medium transition">
                     Urine Tests
                   </Link>
                 </li>
@@ -64,6 +64,16 @@ export default function RootLayout({
                 <li>
                   <Link href="/vaccination" className="text-gray-700 hover:text-primary-600 font-medium transition">
                     Vaccination
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="text-gray-700 hover:text-primary-600 font-medium transition">
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/book-appointment" className="bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 font-medium transition">
+                    Book Appointment
                   </Link>
                 </li>
               </ul>
