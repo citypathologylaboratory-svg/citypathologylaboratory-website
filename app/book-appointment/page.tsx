@@ -49,14 +49,10 @@ export default function BookAppointment() {
                 preferences: {
                   theme: 'light',
                   hideGDPRBanner: true,
-                  primaryColor: '2563eb',
-                  textColor: 'ffffff',
-                  backgroundColor: '1e293b'
                 },
-                embedType: 'Inline'
               })
-            } catch (error) {
-              console.error('Failed to initialize Calendly widget:', error)
+            } catch (err) {
+              console.error('Failed to initialize Calendly widget:', err)
               setWidgetError(true)
             }
           }
@@ -66,192 +62,173 @@ export default function BookAppointment() {
           setWidgetError(true)
         }
         document.body.appendChild(script)
-
-        // Also add CSS
-        const cssLink = document.createElement('link')
-        cssLink.rel = 'stylesheet'
-        cssLink.href = 'https://assets.calendly.com/assets/external/widget.css'
-        document.head.appendChild(cssLink)
-      } else {
-        setCalendlyLoaded(true)
-        if (window.Calendly && calendlyRef.current) {
-          try {
-            window.Calendly.initInlineWidget({
-              url: CALENDLY_EVENT_URL,
-              parentElement: calendlyRef.current,
-              prefill: { name: '', email: '' },
-              preferences: {
-                theme: 'light',
-                hideGDPRBanner: true,
-                primaryColor: '2563eb',
-                textColor: 'ffffff',
-                backgroundColor: '1e293b'
-              },
-              embedType: 'Inline'
-            })
-          } catch (error) {
-            console.error('Failed to initialize Calendly widget:', error)
-            setWidgetError(true)
-          }
+      } else if (window.Calendly && calendlyRef.current) {
+        // Calendly already loaded
+        try {
+          window.Calendly.initInlineWidget({
+            url: CALENDLY_EVENT_URL,
+            parentElement: calendlyRef.current,
+            prefill: { name: '', email: '' },
+            preferences: {
+              theme: 'light',
+              hideGDPRBanner: true,
+            },
+          })
+        } catch (err) {
+          console.error('Failed to initialize Calendly widget:', err)
+          setWidgetError(true)
         }
       }
     }
 
-    const timer = setTimeout(loadCalendly, 100)
-    return () => clearTimeout(timer)
+    loadCalendly()
   }, [])
 
-  const bookingTypes = [
-    {
-      icon: <FaIndustry className="text-4xl mb-4 text-blue-500" />,
-      title: 'Industrial Health Checkup',
-      description: 'Comprehensive health screenings for corporate employees and industrial workers.',
-      features: [
-        'Pre-employment medical exams',
-        'Periodic health checkups',
-        'Fitness certificates',
-        'Occupational health assessments'
-      ]
-    },
-    {
-      icon: <FaUserTie className="text-4xl mb-4 text-green-500" />,
-      title: 'Executive Health Package',
-      description: 'Premium health checkup packages designed for busy executives and professionals.',
-      features: [
-        'Full body checkup',
-        'Cardiac evaluation',
-        'Stress assessment',
-        'Nutritional counseling'
-      ]
-    },
-    {
-      icon: <FaShieldAlt className="text-4xl mb-4 text-purple-500" />,
-      title: 'Preventive Care',
-      description: 'Early detection and preventive health screenings for long-term wellness.',
-      features: [
-        'Cancer screening',
-        'Diabetes management',
-        'Thyroid profile',
-        'Vitamin deficiency tests'
-      ]
-    }
-  ]
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+    <div className="min-h-screen bg-gray-50">
       <Head>
-        <title>Book Appointment - City Pathology Laboratory</title>
-        <meta name="description" content="Schedule your health checkup appointment with City Pathology Laboratory. Expert diagnostics and comprehensive health packages." />
+        <title>Book Appointment | City Pathology Laboratory</title>
+        <meta name="description" content="Book your appointment with City Pathology Laboratory" />
       </Head>
 
-      {/* Hero Section with Calendly Button */}
-      <section className="relative overflow-hidden py-20 px-4">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10"></div>
-        <div className="container mx-auto max-w-6xl relative z-10">
+      {/* Hero Section */}
+      <section className="py-20 px-4 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+        <div className="container mx-auto max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-12"
+            className="text-center"
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-5xl font-bold text-gray-900 mb-4">
               Book Your Appointment
             </h1>
-            <p className="text-xl text-blue-200 mb-8">
-              Schedule your health checkup conveniently online
+            <p className="text-xl text-gray-600 mb-8">
+              Choose the service that best fits your needs
             </p>
-            
-            {/* Primary Calendly Button */}
-            <div className="flex flex-col items-center gap-4">
-              <button
-                onClick={openCalendlyPopup}
-                className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all transform hover:scale-105 shadow-lg flex items-center gap-3"
-              >
-                <FaCalendarCheck className="text-2xl" />
-                Book via Calendly
-              </button>
-              <p className="text-sm text-blue-300">
-                Click above to schedule your appointment instantly
-              </p>
-            </div>
           </motion.div>
-
-          {/* Booking Types */}
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {bookingTypes.map((type, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20 hover:border-blue-400/50 transition-all"
-              >
-                <div className="flex flex-col items-center text-center">
-                  {type.icon}
-                  <h3 className="text-xl font-semibold text-white mb-3">{type.title}</h3>
-                  <p className="text-blue-200 mb-4 text-sm">{type.description}</p>
-                  <ul className="text-left space-y-2 w-full">
-                    {type.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm text-blue-100">
-                        <FaCheckCircle className="text-green-400 mt-1 flex-shrink-0" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* Calendly Inline Widget Section */}
-      <section className="py-12 px-4">
-        <div className="container mx-auto max-w-6xl">
+      {/* Industrial Health Check-up Section - NEW */}
+      <section className="py-16 px-4 bg-gradient-to-r from-blue-500 to-blue-700">
+        <div className="container mx-auto max-w-4xl">
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="bg-white/10 backdrop-blur-lg rounded-xl p-8 border border-white/20"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="bg-white rounded-2xl p-8 shadow-2xl"
           >
-            <h2 className="text-3xl font-bold text-white mb-6 text-center">
-              Schedule Your Appointment
+            <div className="flex items-center justify-center mb-6">
+              <FaIndustry className="text-5xl text-blue-600 mr-4" />
+              <h2 className="text-4xl font-bold text-gray-900">
+                Book Industrial Health Check-up
+              </h2>
+            </div>
+            <p className="text-lg text-gray-600 text-center mb-8">
+              Comprehensive health screenings for your workforce. Ensure compliance and employee well-being with our professional industrial health check-up services.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <button
+                onClick={openCalendlyPopup}
+                className="bg-blue-600 text-white hover:bg-blue-700 font-bold py-4 px-8 rounded-lg transition-all flex items-center gap-3 text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
+              >
+                <FaCalendarCheck className="text-2xl" />
+                Schedule Industrial Health Check-up
+              </button>
+              <a
+                href={CALENDLY_EVENT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-transparent border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-bold py-4 px-8 rounded-lg transition-all text-lg"
+              >
+                Open Booking in New Tab
+              </a>
+            </div>
+            <div className="mt-8 p-6 bg-blue-50 rounded-lg">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3 flex items-center">
+                <FaShieldAlt className="text-blue-600 mr-2" />
+                What's Included:
+              </h3>
+              <ul className="text-gray-700 space-y-2">
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-green-500 mr-2 mt-1" />
+                  <span>Complete physical examination</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-green-500 mr-2 mt-1" />
+                  <span>Blood tests and pathology screening</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-green-500 mr-2 mt-1" />
+                  <span>Vision and hearing tests</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-green-500 mr-2 mt-1" />
+                  <span>Detailed health report</span>
+                </li>
+              </ul>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Calendly Widget Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Or Book Any Appointment Below
             </h2>
-            
-            {/* Calendly Widget Error Fallback */}
+            <p className="text-xl text-gray-600">
+              Select your preferred date and time
+            </p>
+          </motion.div>
+
+          {/* Calendly Inline Widget */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="bg-white rounded-xl shadow-lg p-4"
+          >
             {widgetError ? (
-              <div className="bg-yellow-500/20 border border-yellow-500/50 rounded-lg p-6 text-center">
-                <FaExclamationTriangle className="text-yellow-400 text-4xl mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-3">
-                  Widget Not Loading?
+              <div className="text-center py-12 px-4">
+                <FaExclamationTriangle className="text-5xl text-yellow-500 mx-auto mb-4" />
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  Unable to Load Booking Widget
                 </h3>
-                <p className="text-blue-200 mb-6">
-                  No problem! You can book directly through Calendly.
+                <p className="text-gray-600 mb-6">
+                  Please try one of the options below to book your appointment.
                 </p>
-                <a
-                  href={CALENDLY_EVENT_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all"
-                >
-                  <FaCalendarCheck className="text-xl" />
-                  Open Calendly in New Tab
-                </a>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <button
+                    onClick={openCalendlyPopup}
+                    className="bg-blue-600 text-white hover:bg-blue-700 font-bold py-3 px-6 rounded-lg transition-all"
+                  >
+                    Open Booking Popup
+                  </button>
+                  <a
+                    href={CALENDLY_EVENT_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-bold py-3 px-6 rounded-lg transition-all"
+                  >
+                    Book in New Tab
+                  </a>
+                </div>
               </div>
             ) : (
-              <>
-                {/* Calendly Inline Widget */}
-                <div
-                  ref={calendlyRef}
-                  style={{ minHeight: '700px' }}
-                  className="calendly-inline-widget"
-                />
-                {!calendlyLoaded && !widgetError && (
-                  <div className="flex justify-center items-center py-20">
-                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-                  </div>
-                )}
-              </>
+              <div
+                ref={calendlyRef}
+                className="calendly-inline-widget"
+                style={{ minWidth: '320px', height: '700px' }}
+              />
             )}
           </motion.div>
         </div>
