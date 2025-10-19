@@ -2,143 +2,311 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary-600 to-primary-800 text-white py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl font-bold mb-6">Welcome to City Pathology Laboratory</h1>
-            <p className="text-xl mb-8">Providing accurate, reliable diagnostic services with cutting-edge technology and expert pathologists.</p>
-            <div className="flex gap-4">
-              <a href="https://wa.me/919409277144" target="_blank" rel="noopener noreferrer" className="bg-green-500 hover:bg-green-600 px-8 py-3 rounded-lg font-semibold transition">
-                WhatsApp for Appointments, Bookings, Queries
-              </a>
+      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center fade-in">
+            <div className="mb-8">
+              <img
+                src="/logo.jpg"
+                alt="City Pathology Laboratory"
+                className="h-24 w-24 mx-auto rounded-full border-4 border-yellow-400 shadow-2xl mb-4 pulse"
+              />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Industrial Health Check Up Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 text-primary-700">Industrial Health Check Up</h2>
-          <div className="max-w-4xl mx-auto bg-gradient-to-br from-primary-50 to-white p-8 rounded-xl shadow-lg border-2 border-primary-200">
-            <p className="text-lg text-gray-700 mb-6 text-center">
-              Book your Industrial Health Check Up appointment through our Calendly scheduling system for a convenient and efficient experience.
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 gradient-text">
+              Welcome to City Pathology Laboratory
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 text-blue-100">
+              Providing accurate, reliable diagnostic services with cutting-edge technology 
+              and expert pathologists in Halol, Gujarat.
             </p>
-            <div className="flex justify-center">
-              <a href="https://calendly.com/citypathologylaboratory/30min" target="_blank" rel="noopener noreferrer" className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg font-semibold transition inline-block">
-                Book Industrial Health Check Up
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a 
+                href="https://wa.me/919409277144"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-whatsapp px-8 py-4 text-lg"
+              >
+                📱 WhatsApp for Instant Support
+              </a>
+              <a 
+                href="/book-appointment"
+                className="btn btn-gold px-8 py-4 text-lg"
+              >
+                📅 Book Appointment
               </a>
             </div>
           </div>
         </div>
+        {/* Background Pattern */}
+        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent"></div>
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 text-primary-700">Why Choose Us</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition">
-              <div className="text-primary-600 text-4xl mb-4">🔬</div>
-              <h3 className="text-2xl font-bold mb-3">Advanced Technology</h3>
-              <p className="text-gray-600">State-of-the-art equipment ensuring accurate and timely results for all diagnostic tests.</p>
+      <section className="section bg-white">
+        <div className="section-header">
+          <h2 className="section-title">Why Choose City Pathology Laboratory?</h2>
+          <p className="section-subtitle">
+            With years of expertise and state-of-the-art equipment, we provide reliable 
+            diagnostic services that healthcare professionals and patients trust.
+          </p>
+        </div>
+        
+        <div className="grid-3">
+          <div className="card fade-in">
+            <div className="icon-wrapper">
+              🔬
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition">
-              <div className="text-primary-600 text-4xl mb-4">👨‍⚕️</div>
-              <h3 className="text-2xl font-bold mb-3">Expert Pathologists</h3>
-              <p className="text-gray-600">Highly qualified and experienced pathologists dedicated to providing precise diagnostics.</p>
+            <h3 className="text-xl font-bold mb-3">Advanced Technology</h3>
+            <p>
+              State-of-the-art laboratory equipment ensuring precise and accurate test results 
+              with the latest diagnostic technologies.
+            </p>
+          </div>
+          
+          <div className="card fade-in">
+            <div className="icon-wrapper icon-gold">
+              ⚡
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition">
-              <div className="text-primary-600 text-4xl mb-4">⚡</div>
-              <h3 className="text-2xl font-bold mb-3">Quick Results</h3>
-              <p className="text-gray-600">Fast turnaround time without compromising on quality and accuracy.</p>
+            <h3 className="text-xl font-bold mb-3">Quick Results</h3>
+            <p>
+              Fast turnaround time for most tests with same-day and next-day reporting 
+              available for urgent cases.
+            </p>
+          </div>
+          
+          <div className="card fade-in">
+            <div className="icon-wrapper">
+              👨‍⚕️
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition">
-              <div className="text-primary-600 text-4xl mb-4">🏥</div>
-              <h3 className="text-2xl font-bold mb-3">Comprehensive Tests</h3>
-              <p className="text-gray-600">Wide range of pathology and diagnostic tests available under one roof.</p>
+            <h3 className="text-xl font-bold mb-3">Expert Pathologists</h3>
+            <p>
+              Experienced and certified pathologists providing accurate interpretations 
+              and detailed reports.
+            </p>
+          </div>
+          
+          <div className="card fade-in">
+            <div className="icon-wrapper icon-gold">
+              💰
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition">
-              <div className="text-primary-600 text-4xl mb-4">💯</div>
-              <h3 className="text-2xl font-bold mb-3">Quality Assurance</h3>
-              <p className="text-gray-600">Stringent quality control measures ensuring reliable and trustworthy results.</p>
+            <h3 className="text-xl font-bold mb-3">Affordable Pricing</h3>
+            <p>
+              Competitive pricing without compromising on quality. We believe healthcare 
+              should be accessible to all.
+            </p>
+          </div>
+          
+          <div className="card fade-in">
+            <div className="icon-wrapper">
+              📱
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition">
-              <div className="text-primary-600 text-4xl mb-4">💼</div>
-              <h3 className="text-2xl font-bold mb-3">Corporate Health</h3>
-              <p className="text-gray-600">Specialized services for employee health screenings and industrial health programs.</p>
+            <h3 className="text-xl font-bold mb-3">Digital Reports</h3>
+            <p>
+              Get your reports digitally via WhatsApp or email. Easy to share with 
+              your doctors and keep for records.
+            </p>
+          </div>
+          
+          <div className="card fade-in">
+            <div className="icon-wrapper icon-gold">
+              🏥
             </div>
+            <h3 className="text-xl font-bold mb-3">Convenient Location</h3>
+            <p>
+              Strategically located in Halol near Old Bus Stand, easily accessible 
+              with ample parking space.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 text-primary-700">Our Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-gradient-to-br from-primary-50 to-white p-6 rounded-lg shadow-md hover:shadow-xl transition border border-primary-200">
-              <div className="text-primary-600 text-3xl mb-3">🩸</div>
-              <h3 className="text-xl font-bold mb-2 text-primary-800">Blood Tests</h3>
-              <p className="text-gray-600">Complete blood count, blood sugar, lipid profile, and more.</p>
+      {/* Our Services Section */}
+      <section className="section bg-gradient-to-br from-blue-50 to-white">
+        <div className="section-header">
+          <h2 className="section-title">Our Comprehensive Services</h2>
+          <p className="section-subtitle">
+            Complete range of pathology services under one roof with modern facilities 
+            and expert medical professionals.
+          </p>
+        </div>
+        
+        <div className="grid-2">
+          <div className="card slide-in">
+            <div className="card-header">
+              <h3 className="text-2xl font-bold flex items-center gap-2">
+                <span className="text-3xl">🩺</span>
+                Routine Blood Tests
+              </h3>
             </div>
-            <div className="bg-gradient-to-br from-primary-50 to-white p-6 rounded-lg shadow-md hover:shadow-xl transition border border-primary-200">
-              <div className="text-primary-600 text-3xl mb-3">🧪</div>
-              <h3 className="text-xl font-bold mb-2 text-primary-800">Urine Tests</h3>
-              <p className="text-gray-600">Urinalysis, urine culture, and kidney function tests.</p>
+            <ul className="space-y-2 text-gray-600">
+              <li>• Complete Blood Count (CBC)</li>
+              <li>• Blood Sugar (Fasting & PP)</li>
+              <li>• Lipid Profile</li>
+              <li>• Liver Function Tests</li>
+              <li>• Kidney Function Tests</li>
+              <li>• Thyroid Profile</li>
+            </ul>
+          </div>
+          
+          <div className="card slide-in">
+            <div className="card-header">
+              <h3 className="text-2xl font-bold flex items-center gap-2">
+                <span className="text-3xl">🧪</span>
+                Specialized Testing
+              </h3>
             </div>
-            <div className="bg-gradient-to-br from-primary-50 to-white p-6 rounded-lg shadow-md hover:shadow-xl transition border border-primary-200">
-              <div className="text-primary-600 text-3xl mb-3">🏭</div>
-              <h3 className="text-xl font-bold mb-2 text-primary-800">Industrial Health</h3>
-              <p className="text-gray-600">Pre-employment and periodic health check-ups for employees.</p>
+            <ul className="space-y-2 text-gray-600">
+              <li>• Cardiac Markers</li>
+              <li>• Tumor Markers</li>
+              <li>• Hormone Testing</li>
+              <li>• Infectious Disease Screening</li>
+              <li>• Allergy Testing</li>
+              <li>• Vitamin & Mineral Analysis</li>
+            </ul>
+          </div>
+          
+          <div className="card slide-in">
+            <div className="card-header">
+              <h3 className="text-2xl font-bold flex items-center gap-2">
+                <span className="text-3xl">🏭</span>
+                Industrial Health Checkups
+              </h3>
             </div>
-            <div className="bg-gradient-to-br from-primary-50 to-white p-6 rounded-lg shadow-md hover:shadow-xl transition border border-primary-200">
-              <div className="text-primary-600 text-3xl mb-3">💉</div>
-              <h3 className="text-xl font-bold mb-2 text-primary-800">Vaccination</h3>
-              <p className="text-gray-600">Complete vaccination services for all age groups.</p>
+            <p className="text-gray-600 mb-4">
+              Comprehensive health screening packages for industrial workers and corporate employees.
+            </p>
+            <a 
+              href="/industrial-health-checkup"
+              className="btn btn-primary"
+            >
+              Learn More
+            </a>
+          </div>
+          
+          <div className="card slide-in">
+            <div className="card-header">
+              <h3 className="text-2xl font-bold flex items-center gap-2">
+                <span className="text-3xl">📋</span>
+                Health Packages
+              </h3>
             </div>
+            <p className="text-gray-600 mb-4">
+              Comprehensive health checkup packages tailored for different age groups and health needs.
+            </p>
+            <a 
+              href="/tests"
+              className="btn btn-gold"
+            >
+              View Packages
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Meet Our Doctors Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 text-primary-700">Meet Our Expert Pathologists</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {/* Dr. Sunil Nagori */}
-            <div className="bg-gradient-to-br from-primary-50 to-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all border-2 border-primary-200">
-              <div className="flex items-center mb-6">
-                <div className="w-24 h-24 bg-primary-600 rounded-full flex items-center justify-center text-white text-3xl font-bold mr-6">
-                  SN
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-primary-800 mb-2">Dr. Sunil Nagori</h3>
-                  <p className="text-lg font-semibold text-primary-600">M.B.B.S., D.C.P., C.I.H.</p>
-                </div>
+      {/* Meet Our Pathologists Section */}
+      <section className="section bg-white">
+        <div className="section-header">
+          <h2 className="section-title">Meet Our Expert Pathologists</h2>
+          <p className="section-subtitle">
+            Our team of experienced and certified pathologists ensures accurate 
+            diagnosis and quality healthcare services.
+          </p>
+        </div>
+        
+        <div className="grid-2">
+          <div className="card fade-in">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                Dr
               </div>
-              <div className="space-y-3">
-                <p className="text-gray-700 font-medium">✓ Consultant Pathologist</p>
-                <p className="text-gray-700 font-medium">✓ Industrial Physician</p>
-                <p className="text-gray-600 mt-4">Specializing in clinical pathology and occupational health with extensive experience in diagnostic services.</p>
+              <div>
+                <h3 className="text-xl font-bold text-blue-800">Dr. [Name]</h3>
+                <p className="text-gray-600">Chief Pathologist</p>
               </div>
             </div>
-            {/* Dr. Shalin Nagori */}
-            <div className="bg-gradient-to-br from-primary-50 to-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all border-2 border-primary-200">
-              <div className="flex items-center mb-6">
-                <div className="w-24 h-24 bg-primary-600 rounded-full flex items-center justify-center text-white text-3xl font-bold mr-6">
-                  SN
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-primary-800 mb-2">Dr. Shalin Nagori</h3>
-                  <p className="text-lg font-semibold text-primary-600">M.B.B.S., M.D.(Path), P.G.C.I.H.</p>
-                </div>
+            <p className="text-gray-600">
+              Years of experience in clinical pathology with specialization in 
+              diagnostic testing and laboratory management.
+            </p>
+          </div>
+          
+          <div className="card fade-in">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                Dr
               </div>
-              <div className="space-y-3">
-                <p className="text-gray-700 font-medium">✓ Consultant Pathologist</p>
-                <p className="text-gray-700 font-medium">✓ Industrial Physician</p>
-                <p className="text-gray-600 mt-4">Expert in anatomical and clinical pathology with postgraduate certification in industrial health.</p>
+              <div>
+                <h3 className="text-xl font-bold text-blue-800">Dr. [Name]</h3>
+                <p className="text-gray-600">Senior Pathologist</p>
               </div>
+            </div>
+            <p className="text-gray-600">
+              Expert in molecular diagnostics and specialized testing with 
+              commitment to accurate and timely results.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact & Location Section */}
+      <section className="section bg-gradient-to-br from-gray-100 to-blue-50">
+        <div className="section-header">
+          <h2 className="section-title">Visit Us Today</h2>
+          <p className="section-subtitle">
+            Conveniently located in Halol with easy access and ample parking.
+          </p>
+        </div>
+        
+        <div className="grid-2">
+          <div className="card">
+            <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+              <span className="text-2xl">📍</span>
+              Our Location
+            </h3>
+            <p className="text-gray-600 mb-4">
+              Opp. Old Bus Stand, Near Jaydeep Petrol Pump<br />
+              Halol, Gujarat 389350
+            </p>
+            <div className="space-y-3">
+              <a 
+                href="tel:+919409277144" 
+                className="flex items-center gap-2 text-blue-600 hover:text-blue-800"
+              >
+                <span>📞</span> +91-94092 77144
+              </a>
+              <p className="flex items-center gap-2 text-gray-600">
+                <span>🕒</span> Mon-Sat: 8:00 AM - 8:00 PM
+              </p>
+            </div>
+          </div>
+          
+          <div className="card">
+            <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+              <span className="text-2xl">🚀</span>
+              Quick Actions
+            </h3>
+            <div className="space-y-3">
+              <a 
+                href="https://wa.me/919409277144"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-whatsapp w-full"
+              >
+                💬 Chat on WhatsApp
+              </a>
+              <a 
+                href="/book-appointment"
+                className="btn btn-primary w-full"
+              >
+                📅 Book Appointment
+              </a>
+              <a 
+                href="/contact"
+                className="btn btn-gold w-full"
+              >
+                📧 Contact Us
+              </a>
             </div>
           </div>
         </div>
