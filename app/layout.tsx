@@ -22,15 +22,15 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen flex flex-col">
         {/* Header Navigation */}
-        <header className="sticky top-0 z-50 bg-white shadow-lg border-b-4 border-blue-800">
-          <div className="gradient-bg-navy py-2">
+        <header className="sticky top-0 z-50 bg-white shadow-lg border-b-4 border-blue-600">
+          <div className="gradient-bg-blue py-2">
             <div className="container mx-auto px-4 md:px-6 flex items-center justify-between text-white text-sm">
               <div className="flex items-center gap-4">
-                <a href="tel:+919409277144" className="hover:text-amber-300 transition flex items-center gap-1">
+                <a href="tel:+919409277144" className="hover:text-orange-300 transition flex items-center gap-1">
                   <span>📞</span> +91-94092 77144
                 </a>
                 <span className="hidden md:inline">|</span>
-                <a href="mailto:citypathologylab@gmail.com" className="hidden md:flex items-center gap-1 hover:text-amber-300 transition">
+                <a href="mailto:citypathologylab@gmail.com" className="hidden md:flex items-center gap-1 hover:text-orange-300 transition">
                   <span>✉️</span> citypathologylab@gmail.com
                 </a>
               </div>
@@ -43,14 +43,14 @@ export default function RootLayout({
           <nav className="container mx-auto px-4 md:px-6">
             <div className="flex items-center justify-between py-4">
               {/* Logo & Name */}
-              <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition">
-                <img 
+              <Link className="flex items-center gap-3 hover:opacity-80 transition" href="/">
+                <img
                   src="/logo.jpg" 
                   alt="City Pathology Laboratory" 
-                  className="h-12 w-12 rounded-full border-2 border-amber-500"
+                  className="h-12 w-12 rounded-full border-2 border-orange-500"
                 />
                 <div>
-                  <h1 className="text-xl font-bold text-blue-900">City Pathology Laboratory</h1>
+                  <h1 className="text-xl font-bold text-blue-600">City Pathology Laboratory</h1>
                   <p className="text-xs text-gray-600">Excellence in Diagnostics</p>
                 </div>
               </Link>
@@ -58,27 +58,27 @@ export default function RootLayout({
               {/* Desktop Navigation */}
               <ul className="hidden md:flex items-center gap-6 text-sm font-medium">
                 <li>
-                  <Link href="/" className="text-gray-700 hover:text-blue-900 transition">
+                  <Link className="text-gray-700 hover:text-blue-600 transition" href="/">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about" className="text-gray-700 hover:text-blue-900 transition">
+                  <Link className="text-gray-700 hover:text-blue-600 transition" href="/about">
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="/tests" className="text-gray-700 hover:text-blue-900 transition">
+                  <Link className="text-gray-700 hover:text-blue-600 transition" href="/tests">
                     Our Tests
                   </Link>
                 </li>
                 <li>
-                  <Link href="/industrial-health-checkup" className="text-gray-700 hover:text-blue-900 transition">
+                  <Link className="text-gray-700 hover:text-blue-600 transition" href="/industrial-health-checkup">
                     Industrial Health Checkup
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-gray-700 hover:text-blue-900 transition">
+                  <Link className="text-gray-700 hover:text-blue-600 transition" href="/contact">
                     Contact
                   </Link>
                 </li>
@@ -103,50 +103,50 @@ export default function RootLayout({
         </main>
 
         {/* Footer */}
-        <footer className="bg-gradient-to-br from-blue-900 to-blue-800 text-white py-12">
+        <footer className="bg-gradient-to-br from-blue-600 to-green-600 text-white py-12">
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {/* About */}
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <img 
+                  <img
                     src="/logo.jpg" 
                     alt="City Pathology Laboratory" 
-                    className="h-12 w-12 rounded-full border-2 border-amber-400"
+                    className="h-12 w-12 rounded-full border-2 border-orange-400"
                   />
                   <h3 className="text-lg font-bold">City Pathology Laboratory</h3>
                 </div>
-                <p className="text-blue-100 text-sm">
+                <p className="text-blue-50 text-sm">
                   Providing accurate and reliable diagnostic services with state-of-the-art technology and expert pathologists.
                 </p>
               </div>
               
               {/* Quick Links */}
               <div>
-                <h4 className="text-lg font-bold mb-4 text-amber-400">Quick Links</h4>
+                <h4 className="text-lg font-bold mb-4 text-orange-400">Quick Links</h4>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <Link href="/" className="text-blue-100 hover:text-amber-300 transition">
+                    <Link className="text-blue-50 hover:text-orange-300 transition" href="/">
                       Home
                     </Link>
                   </li>
                   <li>
-                    <Link href="/about" className="text-blue-100 hover:text-amber-300 transition">
+                    <Link className="text-blue-50 hover:text-orange-300 transition" href="/about">
                       About Us
                     </Link>
                   </li>
                   <li>
-                    <Link href="/tests" className="text-blue-100 hover:text-amber-300 transition">
+                    <Link className="text-blue-50 hover:text-orange-300 transition" href="/tests">
                       Our Tests
                     </Link>
                   </li>
                   <li>
-                    <Link href="/industrial-health-checkup" className="text-blue-100 hover:text-amber-300 transition">
+                    <Link className="text-blue-50 hover:text-orange-300 transition" href="/industrial-health-checkup">
                       Industrial Health Checkup
                     </Link>
                   </li>
                   <li>
-                    <Link href="/contact" className="text-blue-100 hover:text-amber-300 transition">
+                    <Link className="text-blue-50 hover:text-orange-300 transition" href="/contact">
                       Contact Us
                     </Link>
                   </li>
@@ -155,21 +155,21 @@ export default function RootLayout({
               
               {/* Contact Info */}
               <div>
-                <h4 className="text-lg font-bold mb-4 text-amber-400">Contact Info</h4>
-                <ul className="space-y-2 text-sm text-blue-100">
+                <h4 className="text-lg font-bold mb-4 text-orange-400">Contact Info</h4>
+                <ul className="space-y-2 text-sm text-blue-50">
                   <li className="flex items-start gap-2">
-                    <span>📍</span>
-                    <span>Near Railway Station, Halol, Gujarat 389350</span>
+                    📍
+                    Near Railway Station, Halol, Gujarat 389350
                   </li>
                   <li className="flex items-center gap-2">
-                    <span>📞</span>
-                    <a href="tel:+919409277144" className="hover:text-amber-300 transition">
+                    📞
+                    <a className="hover:text-orange-300 transition" href="tel:+919409277144">
                       +91-94092 77144
                     </a>
                   </li>
                   <li className="flex items-center gap-2">
-                    <span>✉️</span>
-                    <a href="mailto:citypathologylab@gmail.com" className="hover:text-amber-300 transition break-all">
+                    ✉️
+                    <a className="hover:text-orange-300 transition break-all" href="mailto:citypathologylab@gmail.com">
                       citypathologylab@gmail.com
                     </a>
                   </li>
@@ -178,8 +178,8 @@ export default function RootLayout({
               
               {/* Book Appointment */}
               <div>
-                <h4 className="text-lg font-bold mb-4 text-amber-400">Book Appointment</h4>
-                <p className="text-blue-100 text-sm mb-4">
+                <h4 className="text-lg font-bold mb-4 text-orange-400">Book Appointment</h4>
+                <p className="text-blue-50 text-sm mb-4">
                   Schedule your appointment online or contact us directly.
                 </p>
                 <div className="space-y-2">
@@ -203,8 +203,8 @@ export default function RootLayout({
               </div>
             </div>
             
-            <div className="border-t border-blue-700 mt-8 pt-6 text-center text-sm text-blue-200">
-              <p>&copy; {new Date().getFullYear()} City Pathology Laboratory. All rights reserved.</p>
+            <div className="border-t border-blue-400 mt-8 pt-6 text-center text-sm text-blue-50">
+              © {new Date().getFullYear()} City Pathology Laboratory. All rights reserved.
             </div>
           </div>
         </footer>
