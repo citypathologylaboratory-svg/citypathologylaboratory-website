@@ -1,87 +1,41 @@
-import type { Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
-import './globals.css'
+import './globals.css';
+import Image from "next/image";
 
-export const metadata: Metadata = {
-  title: 'City Pathology Laboratory - Quality Diagnostic Services',
-  description: 'Professional pathology and diagnostic services with expert pathologists. Book appointments online through Calendly. Available on WhatsApp.',
-  keywords: 'pathology, laboratory, diagnostic services, medical tests, blood tests, pathologist',
-}
+export const metadata = {
+  title: "City Pathology Laboratory Halol – Accurate, Ethical Diagnostics",
+  description: "Halol’s trusted pathology lab for blood tests, urine tests, industrial health checks, and FNAC. Led by Dr. Sunil Nagori and Dr. Shalin Nagori.",
+  keywords: "Pathology Lab Halol, Blood Test, Urine Test, Industrial Health Check, FNAC, City Pathology Laboratory, Dr. Sunil Nagori, Dr. Shalin Nagori"
+};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-      </head>
       <body>
-        <header className="bg-white shadow-md">
-          <div className="container mx-auto px-4">
-            <div className="flex items-center justify-between py-4">
-              <div className="flex items-center space-x-4">
-                <Image 
-                  src="/logo.png" 
-                  alt="City Pathology Laboratory Logo" 
-                  width={80} 
-                  height={80} 
-                  priority 
-                />
-                <h1 className="text-2xl font-bold text-gray-800 animate-fade-in">City Pathology Laboratory</h1>
-              </div>
-            </div>
-            <nav className="border-t border-gray-200">
-              <ul className="flex flex-wrap items-center justify-center gap-8 py-4">
-                <li>
-                  <Link href="/" className="text-gray-700 hover:text-primary-600 font-medium transition">
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/tests" className="text-gray-700 hover:text-primary-600 font-medium transition">
-                    Blood Tests
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/tests" className="text-gray-700 hover:text-primary-600 font-medium transition">
-                    Urine Tests
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about" className="text-gray-700 hover:text-primary-600 font-medium transition">
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/first-aid-training" className="text-gray-700 hover:text-primary-600 font-medium transition">
-                    First Aid Training
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/vaccination" className="text-gray-700 hover:text-primary-600 font-medium transition">
-                    Vaccination
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="text-gray-700 hover:text-primary-600 font-medium transition">
-                    Contact
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/book-appointment" className="bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 font-medium transition">
-                    Book Appointment
-                  </Link>
-                </li>
-              </ul>
-            </nav>
+        <header className="bg-white shadow-md pb-2">
+          <h1 className="text-4xl text-center py-3 font-extrabold text-blue-900 tracking-tight animate-pulse">
+            City Pathology Laboratory
+          </h1>
+          <div className="flex justify-center items-center mb-2">
+            <Image
+              src="/plane_fnac_ribbon.png"
+              alt="FNAC Test Available"
+              width={420}
+              height={90}
+              priority
+            />
           </div>
+          <nav aria-label="Main navigation">
+            <ul className="flex flex-wrap justify-center gap-7 sm:gap-10 py-2 text-lg font-semibold text-gray-800">
+              <li><a href="/" className="hover:text-blue-700">Home</a></li>
+              <li><a href="/tests" className="hover:text-blue-700" title="Lab Investigation (Blood & Urine)">Laboratory Investigation</a></li>
+              <li><a href="/industrial-health-checkup" className="hover:text-blue-700">Industrial Health Check Up</a></li>
+              <li><a href="/about" className="hover:text-blue-700">About Us</a></li>
+              <li><a href="/contact" className="hover:text-blue-700">Contact Us</a></li>
+            </ul>
+          </nav>
         </header>
-        {children}
+        <main>{children}</main>
       </body>
     </html>
-  )
+  );
 }
