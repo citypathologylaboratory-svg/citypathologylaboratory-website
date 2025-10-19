@@ -4,24 +4,16 @@
 @tailwind utilities;
 
 :root {
-  /* Fresh Blue, Green, Orange & White Color Palette */
-  --primary-blue: #2563eb; /* Blue 600 */
-  --primary-blue-light: #60a5fa; /* Blue 400 */
-  --primary-blue-dark: #1e40af; /* Blue 800 */
-  
-  --secondary-green: #10b981; /* Green 500 */
-  --secondary-green-light: #34d399; /* Green 400 */
-  --secondary-green-dark: #059669; /* Green 600 */
-  
-  --accent-orange: #f97316; /* Orange 500 */
-  --accent-orange-light: #fb923c; /* Orange 400 */
-  --accent-orange-dark: #ea580c; /* Orange 600 */
-  
-  --white: #ffffff;
-  --gray-light: #f3f4f6;
-  --gray-dark: #1f2937;
-  --text-primary: #111827;
-  --text-secondary: #6b7280;
+  /* Updated Color Palette */
+  --primary: #1976D2;
+  --primary-hover: #1565C0;
+  --secondary: #43A047;
+  --background: #F5F7FA;
+  --card-container: #FFFFFF;
+  --button: #1976D2;
+  --button-hover: #1565C0;
+  --text: #222C36;
+  --heading: #0D47A1;
 }
 
 * {
@@ -32,16 +24,16 @@
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  color: var(--text-primary);
+  color: var(--text);
   line-height: 1.6;
-  background: var(--white);
+  background: var(--background);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   line-height: 1.2;
-  color: var(--gray-dark);
+  color: var(--heading);
 }
 
 h1 { font-size: 3rem; }
@@ -53,17 +45,17 @@ h6 { font-size: 1rem; }
 
 p {
   margin-bottom: 1rem;
-  color: var(--text-secondary);
+  color: var(--text);
 }
 
 a {
-  color: var(--primary-blue);
+  color: var(--primary);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: var(--accent-orange);
+  color: var(--primary-hover);
 }
 
 /* Layout */
@@ -81,7 +73,7 @@ a:hover {
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 3rem;
-  color: var(--primary-blue);
+  color: var(--primary);
 }
 
 /* Buttons */
@@ -98,28 +90,29 @@ a:hover {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-light) 100%);
-  color: var(--white);
+  background: var(--button);
+  color: var(--card-container);
 }
 
 .btn-primary:hover {
+  background: var(--button-hover);
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 10px 25px rgba(25, 118, 210, 0.3);
 }
 
 .btn-secondary {
-  background: linear-gradient(135deg, var(--secondary-green) 0%, var(--secondary-green-light) 100%);
-  color: var(--white);
+  background: var(--secondary);
+  color: var(--card-container);
 }
 
 .btn-secondary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 10px 25px rgba(67, 160, 71, 0.3);
 }
 
 /* Cards */
 .card {
-  background: var(--white);
+  background: var(--card-container);
   border-radius: 1rem;
   padding: 2rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -159,7 +152,7 @@ select,
 textarea {
   width: 100%;
   padding: 0.875rem 1rem;
-  border: 2px solid var(--gray-light);
+  border: 2px solid var(--background);
   border-radius: 0.5rem;
   font-size: 1rem;
   font-family: 'Inter', sans-serif;
@@ -170,7 +163,7 @@ input:focus,
 select:focus,
 textarea:focus {
   outline: none;
-  border-color: var(--primary-blue);
+  border-color: var(--primary);
 }
 
 textarea {
@@ -184,22 +177,18 @@ textarea {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-green) 50%, var(--accent-orange) 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.gradient-bg-blue {
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-light) 100%);
+.gradient-bg-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
 }
 
-.gradient-bg-green {
-  background: linear-gradient(135deg, var(--secondary-green) 0%, var(--secondary-green-light) 100%);
-}
-
-.gradient-bg-orange {
-  background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-orange-light) 100%);
+.gradient-bg-secondary {
+  background: linear-gradient(135deg, var(--secondary) 0%, #66BB6A 100%);
 }
 
 /* Responsive */
