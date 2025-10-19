@@ -27,11 +27,11 @@ export default function RootLayout({
             <div className="container mx-auto px-4 md:px-6 flex items-center justify-between text-white text-sm">
               <div className="flex items-center gap-4">
                 <a href="tel:+919409277144" className="hover:text-orange-300 transition flex items-center gap-1">
-                  <span>📞</span> +91-94092 77144
+                  📞 +91-94092 77144
                 </a>
                 <span className="hidden md:inline">|</span>
                 <a href="mailto:citypathologylab@gmail.com" className="hidden md:flex items-center gap-1 hover:text-orange-300 transition">
-                  <span>✉️</span> citypathologylab@gmail.com
+                  ✉️ citypathologylab@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-2">
@@ -45,7 +45,7 @@ export default function RootLayout({
               {/* Logo & Name */}
               <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition">
                 <img 
-                  src="/City-Pathology-Laboratory-Blue.jpg" 
+                  src="/City-Pathology-Laboratory-Blue.jpg"
                   alt="City Pathology Laboratory" 
                   className="h-12 w-12 rounded-full border-2 border-orange-500"
                 />
@@ -110,7 +110,7 @@ export default function RootLayout({
               <div>
                 <div className="flex items-center gap-3 mb-4">
                   <img 
-                    src="/City-Pathology-Laboratory-Blue.jpg" 
+                    src="/City-Pathology-Laboratory-Blue.jpg"
                     alt="City Pathology Laboratory" 
                     className="h-12 w-12 rounded-full border-2 border-orange-400"
                   />
