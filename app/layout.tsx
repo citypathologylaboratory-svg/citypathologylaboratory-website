@@ -1,5 +1,11 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import './globals.css';
+
+export const metadata = {
+  title: 'City Pathology Laboratory - Halol, Gujarat',
+  description: 'Leading pathology laboratory in Halol offering comprehensive diagnostic services',
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -28,7 +34,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 City Pathology Laboratory
               </span>
             </motion.div>
-
             <ul className="flex gap-6 font-medium text-gray-700 text-lg">
               {[
                 { href: '/', label: 'Home' },
@@ -54,7 +59,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </ul>
           </nav>
         </motion.header>
-
         {/* Main Content */}
         <motion.main
           initial={{ opacity: 0 }}
@@ -71,7 +75,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
           </motion.div>
         </motion.main>
-
         {/* Footer */}
         <motion.footer
           initial={{ y: 40, opacity: 0 }}
