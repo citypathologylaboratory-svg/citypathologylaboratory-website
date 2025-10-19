@@ -2,26 +2,25 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20 relative overflow-hidden">
+      <section className="bg-gradient-to-br from-blue-600 via-blue-500 to-green-500 text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center fade-in">
             <div className="mb-8">
-              <img 
-                src="/logo.jpg" 
+                              src="/logo.jpg" 
                 alt="City Pathology Laboratory" 
-                className="h-24 w-24 mx-auto rounded-full border-4 border-amber-400 shadow-2xl mb-4 pulse"
+                className="h-24 w-24 mx-auto rounded-full border-4 border-orange-400 shadow-2xl mb-4 pulse"
               />
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 gradient-text">
               Welcome to City Pathology Laboratory
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100">
+            <p className="text-xl md:text-2xl mb-8 text-blue-50">
               Providing accurate, reliable diagnostic services with cutting-edge technology 
               and expert pathologists in Halol, Gujarat.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
+              <a
                 href="https://wa.me/919409277144"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -29,7 +28,7 @@ export default function Home() {
               >
                 📱 WhatsApp for Instant Support
               </a>
-              <a 
+              <a
                 href="https://calendly.com/your-calendly-link"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -83,15 +82,15 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="card">
               <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
-                <span>🏭</span>
+                🏭
                 Industrial Health Checkups
               </h3>
               <p className="text-gray-600 mb-4">
                 Comprehensive health screening packages for industrial workforce.
               </p>
-              <a 
+              <a
                 href="/industrial-health-checkup" 
-                className="text-blue-900 hover:text-amber-500 font-semibold"
+                className="text-blue-600 hover:text-orange-500 font-semibold"
               >
                 Learn More →
               </a>
@@ -99,15 +98,15 @@ export default function Home() {
             
             <div className="card">
               <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
-                <span>🧪</span>
+                🧪
                 Clinical Pathology
               </h3>
               <p className="text-gray-600 mb-4">
                 Complete blood count, urine analysis, and body fluid examinations.
               </p>
-              <a 
+              <a
                 href="/tests" 
-                className="text-blue-900 hover:text-amber-500 font-semibold"
+                className="text-blue-600 hover:text-orange-500 font-semibold"
               >
                 View Tests →
               </a>
@@ -115,15 +114,15 @@ export default function Home() {
             
             <div className="card">
               <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
-                <span>🩸</span>
+                🩸
                 Hematology
               </h3>
               <p className="text-gray-600 mb-4">
                 Blood disorder diagnosis, CBC, hemoglobin tests, and more.
               </p>
-              <a 
+              <a
                 href="/tests" 
-                className="text-blue-900 hover:text-amber-500 font-semibold"
+                className="text-blue-600 hover:text-orange-500 font-semibold"
               >
                 View Tests →
               </a>
@@ -131,15 +130,15 @@ export default function Home() {
             
             <div className="card">
               <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
-                <span>🦠</span>
+                🦠
                 Microbiology
               </h3>
               <p className="text-gray-600 mb-4">
                 Culture and sensitivity tests for bacterial and fungal infections.
               </p>
-              <a 
+              <a
                 href="/tests" 
-                className="text-blue-900 hover:text-amber-500 font-semibold"
+                className="text-blue-600 hover:text-orange-500 font-semibold"
               >
                 View Tests →
               </a>
@@ -147,15 +146,15 @@ export default function Home() {
             
             <div className="card">
               <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
-                <span>💉</span>
+                💉
                 Biochemistry
               </h3>
               <p className="text-gray-600 mb-4">
                 Blood sugar, lipid profile, liver and kidney function tests.
               </p>
-              <a 
+              <a
                 href="/tests" 
-                className="text-blue-900 hover:text-amber-500 font-semibold"
+                className="text-blue-600 hover:text-orange-500 font-semibold"
               >
                 View Tests →
               </a>
@@ -163,15 +162,15 @@ export default function Home() {
             
             <div className="card">
               <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
-                <span>🧬</span>
+                🧬
                 Serology
               </h3>
               <p className="text-gray-600 mb-4">
                 Antibody testing, infectious disease screening, and immunology.
               </p>
-              <a 
+              <a
                 href="/tests" 
-                className="text-blue-900 hover:text-amber-500 font-semibold"
+                className="text-blue-600 hover:text-orange-500 font-semibold"
               >
                 View Tests →
               </a>
@@ -181,23 +180,23 @@ export default function Home() {
       </section>
 
       {/* Book Appointment Section with Calendly */}
-      <section className="py-16 bg-gradient-to-br from-blue-900 to-blue-700 text-white">
+      <section className="py-16 bg-gradient-to-br from-green-500 to-blue-600 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-6">Book Your Appointment</h2>
-            <p className="text-xl mb-8 text-blue-100">
+            <p className="text-xl mb-8 text-blue-50">
               Schedule your industrial health checkup or diagnostic test appointment easily.
             </p>
             <div className="bg-white rounded-lg p-2">
               {/* Calendly inline widget */}
-              <div 
+              <div
                 className="calendly-inline-widget" 
                 data-url="https://calendly.com/your-calendly-link"
                 style={{minWidth: '320px', height: '630px'}}
               ></div>
             </div>
-            <p className="mt-6 text-sm text-blue-200">
-              Or contact us directly via <a href="https://wa.me/919409277144" className="underline hover:text-amber-400" target="_blank" rel="noopener noreferrer">WhatsApp</a> or <a href="tel:+919409277144" className="underline hover:text-amber-400">phone</a>.
+            <p className="mt-6 text-sm text-blue-50">
+              Or contact us directly via <a className="underline hover:text-orange-300" href="https://wa.me/919409277144" target="_blank" rel="noopener noreferrer">WhatsApp</a> or <a className="underline hover:text-orange-300" href="tel:+919409277144">phone</a>.
             </p>
           </div>
         </div>
@@ -214,8 +213,8 @@ export default function Home() {
                 Location
               </h3>
               <p className="text-gray-600">
-                City Pathology Laboratory<br />
-                Near Railway Station,<br />
+                City Pathology Laboratory<br/>
+                Near Railway Station,<br/>
                 Halol, Gujarat 389350
               </p>
             </div>
@@ -226,14 +225,14 @@ export default function Home() {
                 Phone
               </h3>
               <div className="space-y-3">
-                <a 
+                <a
                   href="tel:+919409277144" 
-                  className="flex items-center gap-2 text-blue-900 hover:text-amber-500"
+                  className="flex items-center gap-2 text-blue-600 hover:text-orange-500"
                 >
-                  <span>📞</span> +91-94092 77144
+                  📞 +91-94092 77144
                 </a>
                 <p className="flex items-center gap-2 text-gray-600">
-                  <span>🕒</span> Mon-Sat: 8:00 AM - 8:00 PM
+                  🕒 Mon-Sat: 8:00 AM - 8:00 PM
                 </p>
               </div>
             </div>
@@ -244,7 +243,7 @@ export default function Home() {
                 Quick Actions
               </h3>
               <div className="space-y-3">
-                <a 
+                <a
                   href="https://wa.me/919409277144"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -252,7 +251,7 @@ export default function Home() {
                 >
                   💬 Chat on WhatsApp
                 </a>
-                <a 
+                <a
                   href="https://calendly.com/your-calendly-link"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -260,7 +259,7 @@ export default function Home() {
                 >
                   📅 Book Appointment
                 </a>
-                <a 
+                <a
                   href="/contact"
                   className="btn btn-secondary w-full"
                 >
