@@ -121,7 +121,9 @@ export default function ContactPage() {
                     💬 Chat on WhatsApp
                   </a>
                   <a 
-                    href="/book-appointment"
+                    href="https://calendly.com/citypathologylaboratory/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="btn btn-primary w-full"
                   >
                     📅 Book Appointment
@@ -140,12 +142,12 @@ export default function ContactPage() {
               </h2>
             </div>
             
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
-                <label htmlFor="name" className="form-label">
+                <label className="form-label" htmlFor="name">
                   Full Name *
                 </label>
-                <input
+                <input 
                   type="text"
                   id="name"
                   name="name"
@@ -158,10 +160,10 @@ export default function ContactPage() {
               </div>
               
               <div>
-                <label htmlFor="email" className="form-label">
+                <label className="form-label" htmlFor="email">
                   Email Address *
                 </label>
-                <input
+                <input 
                   type="email"
                   id="email"
                   name="email"
@@ -174,10 +176,10 @@ export default function ContactPage() {
               </div>
               
               <div>
-                <label htmlFor="phone" className="form-label">
+                <label className="form-label" htmlFor="phone">
                   Phone Number
                 </label>
-                <input
+                <input 
                   type="tel"
                   id="phone"
                   name="phone"
@@ -189,10 +191,10 @@ export default function ContactPage() {
               </div>
               
               <div>
-                <label htmlFor="message" className="form-label">
+                <label className="form-label" htmlFor="message">
                   Message *
                 </label>
-                <textarea
+                <textarea 
                   id="message"
                   name="message"
                   value={formData.message}
@@ -204,7 +206,7 @@ export default function ContactPage() {
                 ></textarea>
               </div>
               
-              <button
+              <button 
                 type="submit"
                 className="btn btn-primary w-full py-3 text-lg"
               >
@@ -228,7 +230,7 @@ export default function ContactPage() {
           </div>
           
           <div className="aspect-video w-full rounded-lg overflow-hidden border border-gray-200">
-            <iframe
+            <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.0984475793746!2d73.47089831541495!3d22.30685394781649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc7c8f5a5a5a5%3A0x5a5a5a5a5a5a5a5!2sHalol%2C%20Gujarat%20389350!5e0!3m2!1sen!2sin!4v1640000000000!5m2!1sen!2sin"
               width="100%"
               height="100%"
