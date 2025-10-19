@@ -45,9 +45,7 @@ export default function RootLayout({
               {/* Logo & Name */}
               <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition">
                 <img 
-                  src="/City-Pathology-Laboratory-Blue.jpg"
-                  alt="City Pathology Laboratory" 
-                  className="h-12 w-12 rounded-full border-2 border-orange-500"
+                  <img src="/City-Pathology-Laboratory-Blue.jpg" alt="City Pathology Laboratory" className="h-12 w-12 rounded-full border-2 border-orange-500" />
                 />
                 <div>
                   <h1 className="text-xl font-bold text-blue-600">City Pathology Laboratory</h1>
@@ -110,9 +108,7 @@ export default function RootLayout({
               <div>
                 <div className="flex items-center gap-3 mb-4">
                   <img 
-                    src="/City-Pathology-Laboratory-Blue.jpg"
-                    alt="City Pathology Laboratory" 
-                    className="h-12 w-12 rounded-full border-2 border-orange-400"
+                    <img src="/City-Pathology-Laboratory-Blue.jpg" alt="City Pathology Laboratory" className="h-12 w-12 rounded-full border-2 border-orange-500" />
                   />
                   <h3 className="text-lg font-bold">City Pathology Laboratory</h3>
                 </div>
