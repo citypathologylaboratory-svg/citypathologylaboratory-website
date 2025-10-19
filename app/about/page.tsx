@@ -141,11 +141,11 @@ export default function AboutUsPage() {
               </div>
               <h3 className="text-lg font-bold mb-2">Clinical Pathology</h3>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Complete Blood Count (CBC)</li>
-                <li>• Blood Chemistry Panels</li>
-                <li>• Liver & Kidney Function Tests</li>
-                <li>• Diabetes Monitoring</li>
-                <li>• Lipid Profiles</li>
+                • Complete Blood Count (CBC)<br />
+                • Blood Chemistry Panels<br />
+                • Liver & Kidney Function Tests<br />
+                • Diabetes Monitoring<br />
+                • Lipid Profiles
               </ul>
             </div>
             
@@ -155,11 +155,11 @@ export default function AboutUsPage() {
               </div>
               <h3 className="text-lg font-bold mb-2">Specialized Testing</h3>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Hormone Testing</li>
-                <li>• Cardiac Markers</li>
-                <li>• Tumor Markers</li>
-                <li>• Infectious Disease Screening</li>
-                <li>• Allergy Testing</li>
+                • Hormone Testing<br />
+                • Cardiac Markers<br />
+                • Tumor Markers<br />
+                • Infectious Disease Screening<br />
+                • Allergy Testing
               </ul>
             </div>
             
@@ -169,11 +169,11 @@ export default function AboutUsPage() {
               </div>
               <h3 className="text-lg font-bold mb-2">Industrial Health</h3>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Pre-employment Medical Exams</li>
-                <li>• Annual Health Checkups</li>
-                <li>• Occupational Health Screening</li>
-                <li>• Fitness for Duty Assessments</li>
-                <li>• Corporate Health Packages</li>
+                • Pre-employment Medical Exams<br />
+                • Annual Health Checkups<br />
+                • Occupational Health Screening<br />
+                • Fitness for Duty Assessments<br />
+                • Corporate Health Packages
               </ul>
             </div>
             
@@ -183,11 +183,11 @@ export default function AboutUsPage() {
               </div>
               <h3 className="text-lg font-bold mb-2">Health Packages</h3>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Comprehensive Health Checkups</li>
-                <li>• Age-specific Screening Packages</li>
-                <li>• Preventive Health Programs</li>
-                <li>• Family Health Packages</li>
-                <li>• Executive Health Checkups</li>
+                • Comprehensive Health Checkups<br />
+                • Age-specific Screening Packages<br />
+                • Preventive Health Programs<br />
+                • Family Health Packages<br />
+                • Executive Health Checkups
               </ul>
             </div>
             
@@ -197,11 +197,11 @@ export default function AboutUsPage() {
               </div>
               <h3 className="text-lg font-bold mb-2">Digital Services</h3>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>• WhatsApp Report Delivery</li>
-                <li>• Online Appointment Booking</li>
-                <li>• Digital Report Storage</li>
-                <li>• Test Result Notifications</li>
-                <li>• Consultation Support</li>
+                • WhatsApp Report Delivery<br />
+                • Online Appointment Booking<br />
+                • Digital Report Storage<br />
+                • Test Result Notifications<br />
+                • Consultation Support
               </ul>
             </div>
             
@@ -211,11 +211,11 @@ export default function AboutUsPage() {
               </div>
               <h3 className="text-lg font-bold mb-2">Quick Turnaround</h3>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Same-day Results Available</li>
-                <li>• Emergency Testing Services</li>
-                <li>• Fast Report Processing</li>
-                <li>• Priority Testing Options</li>
-                <li>• Extended Operating Hours</li>
+                • Same-day Results Available<br />
+                • Emergency Testing Services<br />
+                • Fast Report Processing<br />
+                • Priority Testing Options<br />
+                • Extended Operating Hours
               </ul>
             </div>
           </div>
@@ -292,7 +292,9 @@ export default function AboutUsPage() {
                 📞 Contact Us
               </a>
               <a 
-                href="/book-appointment"
+                href="https://calendly.com/citypathologylaboratory/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-gold px-8 py-3"
               >
                 📅 Book Appointment
