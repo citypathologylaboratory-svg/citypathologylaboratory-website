@@ -43,9 +43,9 @@ export default function RootLayout({
           <nav className="container mx-auto px-4 md:px-6">
             <div className="flex items-center justify-between py-4">
               {/* Logo & Name */}
-              <Link className="flex items-center gap-3 hover:opacity-80 transition" href="/">
+              <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition">
                 <img 
-                  src="/logo.jpg" 
+                  src="/City-Pathology-Laboratory-Blue.jpg" 
                   alt="City Pathology Laboratory" 
                   className="h-12 w-12 rounded-full border-2 border-orange-500"
                 />
@@ -58,27 +58,27 @@ export default function RootLayout({
               {/* Desktop Navigation */}
               <ul className="hidden md:flex items-center gap-6 text-sm font-medium">
                 <li>
-                  <Link className="text-gray-700 hover:text-blue-600 transition" href="/">
+                  <Link href="/" className="text-gray-700 hover:text-blue-600 transition">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-gray-700 hover:text-blue-600 transition" href="/about">
+                  <Link href="/about" className="text-gray-700 hover:text-blue-600 transition">
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-gray-700 hover:text-blue-600 transition" href="/tests">
+                  <Link href="/tests" className="text-gray-700 hover:text-blue-600 transition">
                     Our Tests
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-gray-700 hover:text-blue-600 transition" href="/industrial-health-checkup">
+                  <Link href="/industrial-health-checkup" className="text-gray-700 hover:text-blue-600 transition">
                     Industrial Health Checkup
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-gray-700 hover:text-blue-600 transition" href="/contact">
+                  <Link href="/contact" className="text-gray-700 hover:text-blue-600 transition">
                     Contact
                   </Link>
                 </li>
@@ -110,7 +110,7 @@ export default function RootLayout({
               <div>
                 <div className="flex items-center gap-3 mb-4">
                   <img 
-                    src="/logo.jpg" 
+                    src="/City-Pathology-Laboratory-Blue.jpg" 
                     alt="City Pathology Laboratory" 
                     className="h-12 w-12 rounded-full border-2 border-orange-400"
                   />
@@ -126,27 +126,27 @@ export default function RootLayout({
                 <h4 className="text-lg font-bold mb-4 text-orange-400">Quick Links</h4>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <Link className="text-blue-50 hover:text-orange-300 transition" href="/">
+                    <Link href="/" className="text-blue-50 hover:text-orange-300 transition">
                       Home
                     </Link>
                   </li>
                   <li>
-                    <Link className="text-blue-50 hover:text-orange-300 transition" href="/about">
+                    <Link href="/about" className="text-blue-50 hover:text-orange-300 transition">
                       About Us
                     </Link>
                   </li>
                   <li>
-                    <Link className="text-blue-50 hover:text-orange-300 transition" href="/tests">
+                    <Link href="/tests" className="text-blue-50 hover:text-orange-300 transition">
                       Our Tests
                     </Link>
                   </li>
                   <li>
-                    <Link className="text-blue-50 hover:text-orange-300 transition" href="/industrial-health-checkup">
+                    <Link href="/industrial-health-checkup" className="text-blue-50 hover:text-orange-300 transition">
                       Industrial Health Checkup
                     </Link>
                   </li>
                   <li>
-                    <Link className="text-blue-50 hover:text-orange-300 transition" href="/contact">
+                    <Link href="/contact" className="text-blue-50 hover:text-orange-300 transition">
                       Contact Us
                     </Link>
                   </li>
@@ -163,13 +163,13 @@ export default function RootLayout({
                   </li>
                   <li className="flex items-center gap-2">
                     📞
-                    <a className="hover:text-orange-300 transition" href="tel:+919409277144">
+                    <a href="tel:+919409277144" className="hover:text-orange-300 transition">
                       +91-94092 77144
                     </a>
                   </li>
                   <li className="flex items-center gap-2">
                     ✉️
-                    <a className="hover:text-orange-300 transition break-all" href="mailto:citypathologylab@gmail.com">
+                    <a href="mailto:citypathologylab@gmail.com" className="hover:text-orange-300 transition break-all">
                       citypathologylab@gmail.com
                     </a>
                   </li>
