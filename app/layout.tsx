@@ -44,7 +44,7 @@ export default function RootLayout({
             <div className="flex items-center justify-between py-4">
               {/* Logo & Name */}
               <Link className="flex items-center gap-3 hover:opacity-80 transition" href="/">
-                <img
+                <img 
                   src="/logo.jpg" 
                   alt="City Pathology Laboratory" 
                   className="h-12 w-12 rounded-full border-2 border-orange-500"
@@ -83,8 +83,8 @@ export default function RootLayout({
                   </Link>
                 </li>
                 <li>
-                  <a
-                    href="https://calendly.com/your-calendly-link"
+                  <a 
+                    href="https://calendly.com/citypathologylaboratory/30min"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-primary text-sm"
@@ -109,7 +109,7 @@ export default function RootLayout({
               {/* About */}
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <img
+                  <img 
                     src="/logo.jpg" 
                     alt="City Pathology Laboratory" 
                     className="h-12 w-12 rounded-full border-2 border-orange-400"
@@ -183,15 +183,15 @@ export default function RootLayout({
                   Schedule your appointment online or contact us directly.
                 </p>
                 <div className="space-y-2">
-                  <a
-                    href="https://calendly.com/your-calendly-link"
+                  <a 
+                    href="https://calendly.com/citypathologylaboratory/30min"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-secondary w-full text-sm"
                   >
                     📅 Book Now
                   </a>
-                  <a
+                  <a 
                     href="https://wa.me/919409277144"
                     target="_blank"
                     rel="noopener noreferrer"
