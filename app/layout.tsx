@@ -43,10 +43,8 @@ export default function RootLayout({
           <nav className="container mx-auto px-4 md:px-6">
             <div className="flex items-center justify-between py-4">
               {/* Logo & Name */}
-              <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition">
-                <img 
-                  <img src="/City-Pathology-Laboratory-Blue.jpg" alt="City Pathology Laboratory" className="h-12 w-12 rounded-full border-2 border-orange-500" />
-                />
+              <Link className="flex items-center gap-3 hover:opacity-80 transition" href="/">
+                <img src="/City Pathology Laboratory-Blue.png" alt="City Pathology Laboratory" className="h-12 w-12 rounded-full border-2 border-orange-500" />
                 <div>
                   <h1 className="text-xl font-bold text-blue-600">City Pathology Laboratory</h1>
                   <p className="text-xs text-gray-600">Excellence in Diagnostics</p>
@@ -56,32 +54,32 @@ export default function RootLayout({
               {/* Desktop Navigation */}
               <ul className="hidden md:flex items-center gap-6 text-sm font-medium">
                 <li>
-                  <Link href="/" className="text-gray-700 hover:text-blue-600 transition">
+                  <Link className="text-gray-700 hover:text-blue-600 transition" href="/">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about" className="text-gray-700 hover:text-blue-600 transition">
+                  <Link className="text-gray-700 hover:text-blue-600 transition" href="/about">
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="/tests" className="text-gray-700 hover:text-blue-600 transition">
+                  <Link className="text-gray-700 hover:text-blue-600 transition" href="/tests">
                     Our Tests
                   </Link>
                 </li>
                 <li>
-                  <Link href="/industrial-health-checkup" className="text-gray-700 hover:text-blue-600 transition">
+                  <Link className="text-gray-700 hover:text-blue-600 transition" href="/industrial-health-checkup">
                     Industrial Health Checkup
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-gray-700 hover:text-blue-600 transition">
+                  <Link className="text-gray-700 hover:text-blue-600 transition" href="/contact">
                     Contact
                   </Link>
                 </li>
                 <li>
-                  <a 
+                  <a
                     href="https://calendly.com/citypathologylaboratory/30min"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -107,9 +105,7 @@ export default function RootLayout({
               {/* About */}
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <img 
-                    <img src="/City-Pathology-Laboratory-Blue.jpg" alt="City Pathology Laboratory" className="h-12 w-12 rounded-full border-2 border-orange-500" />
-                  />
+                  <img src="/City Pathology Laboratory-Blue.png" alt="City Pathology Laboratory" className="h-12 w-12 rounded-full border-2 border-orange-500" />
                   <h3 className="text-lg font-bold">City Pathology Laboratory</h3>
                 </div>
                 <p className="text-blue-50 text-sm">
@@ -122,27 +118,27 @@ export default function RootLayout({
                 <h4 className="text-lg font-bold mb-4 text-orange-400">Quick Links</h4>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <Link href="/" className="text-blue-50 hover:text-orange-300 transition">
+                    <Link className="text-blue-50 hover:text-orange-300 transition" href="/">
                       Home
                     </Link>
                   </li>
                   <li>
-                    <Link href="/about" className="text-blue-50 hover:text-orange-300 transition">
+                    <Link className="text-blue-50 hover:text-orange-300 transition" href="/about">
                       About Us
                     </Link>
                   </li>
                   <li>
-                    <Link href="/tests" className="text-blue-50 hover:text-orange-300 transition">
+                    <Link className="text-blue-50 hover:text-orange-300 transition" href="/tests">
                       Our Tests
                     </Link>
                   </li>
                   <li>
-                    <Link href="/industrial-health-checkup" className="text-blue-50 hover:text-orange-300 transition">
+                    <Link className="text-blue-50 hover:text-orange-300 transition" href="/industrial-health-checkup">
                       Industrial Health Checkup
                     </Link>
                   </li>
                   <li>
-                    <Link href="/contact" className="text-blue-50 hover:text-orange-300 transition">
+                    <Link className="text-blue-50 hover:text-orange-300 transition" href="/contact">
                       Contact Us
                     </Link>
                   </li>
@@ -159,13 +155,13 @@ export default function RootLayout({
                   </li>
                   <li className="flex items-center gap-2">
                     📞
-                    <a href="tel:+919409277144" className="hover:text-orange-300 transition">
+                    <a className="hover:text-orange-300 transition" href="tel:+919409277144">
                       +91-94092 77144
                     </a>
                   </li>
                   <li className="flex items-center gap-2">
                     ✉️
-                    <a href="mailto:citypathologylab@gmail.com" className="hover:text-orange-300 transition break-all">
+                    <a className="hover:text-orange-300 transition break-all" href="mailto:citypathologylab@gmail.com">
                       citypathologylab@gmail.com
                     </a>
                   </li>
@@ -179,7 +175,7 @@ export default function RootLayout({
                   Schedule your appointment online or contact us directly.
                 </p>
                 <div className="space-y-2">
-                  <a 
+                  <a
                     href="https://calendly.com/citypathologylaboratory/30min"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -187,7 +183,7 @@ export default function RootLayout({
                   >
                     📅 Book Now
                   </a>
-                  <a 
+                  <a
                     href="https://wa.me/919409277144"
                     target="_blank"
                     rel="noopener noreferrer"
