@@ -35,6 +35,7 @@ export default function IndustrialHealthCheckupPage() {
             <h2 className="section-title">Popular Packages</h2>
             <p className="section-subtitle">Customizable as per your industry and regulatory needs</p>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Basic Package */}
             <div className="card border-2 border-blue-200 hover:border-blue-500 transition">
@@ -61,7 +62,7 @@ export default function IndustrialHealthCheckupPage() {
                 </li>
               </ul>
               <a 
-                href="https://calendly.com/your-calendly-link"
+                href="https://calendly.com/citypathologylaboratory/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary w-full text-center"
@@ -100,7 +101,7 @@ export default function IndustrialHealthCheckupPage() {
                 </li>
               </ul>
               <a 
-                href="https://calendly.com/your-calendly-link"
+                href="https://calendly.com/citypathologylaboratory/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-secondary w-full text-center"
@@ -138,7 +139,7 @@ export default function IndustrialHealthCheckupPage() {
                 </li>
               </ul>
               <a 
-                href="https://calendly.com/your-calendly-link"
+                href="https://calendly.com/citypathologylaboratory/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary w-full text-center"
@@ -179,15 +180,15 @@ export default function IndustrialHealthCheckupPage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Schedule Your Industrial Health Checkup Today</h2>
           <p className="text-xl mb-6 text-blue-100">Book online or contact us for group bookings and custom packages.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://calendly.com/your-calendly-link"
+            <a 
+              href="https://calendly.com/citypathologylaboratory/30min"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-secondary px-8 py-4 text-lg"
             >
               📅 Book Appointment
             </a>
-            <a
+            <a 
               href="https://wa.me/919409277144"
               target="_blank"
               rel="noopener noreferrer"
