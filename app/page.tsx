@@ -1,27 +1,19 @@
 export default function Home() {
   return (
     <main className="min-h-screen">
-      {/* Hero Section */}
+      {/* Know Your Pathologist Section */}
       <section className="bg-gradient-to-br from-blue-600 via-blue-500 to-green-500 text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center fade-in">
-            <div className="mb-8">
-              <img 
-                src="/logo.jpg" 
-                alt="City Pathology Laboratory" 
-                className="h-24 w-24 mx-auto rounded-full border-4 border-orange-400 shadow-2xl mb-4 pulse"
-              />
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 gradient-text">
-              Welcome to City Pathology Laboratory
-            </h1>
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 gradient-text">
+              Know Your Pathologist
+            </h2>
             <p className="text-xl md:text-2xl mb-8 text-blue-50">
-              Providing accurate, reliable diagnostic services with cutting-edge technology 
-              and expert pathologists in Halol, Gujarat.
+              Meet our experienced and dedicated pathologists who ensure accurate and reliable diagnostic services.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
+              <a
                 href="https://wa.me/919409277144"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -29,7 +21,7 @@ export default function Home() {
               >
                 📱 WhatsApp for Instant Support
               </a>
-              <a 
+              <a
                 href="https://calendly.com/citypathologylaboratory/30min"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -89,8 +81,8 @@ export default function Home() {
               <p className="text-gray-600 mb-4">
                 Comprehensive health screening packages for industrial workforce.
               </p>
-              <a 
-                href="/industrial-health-checkup" 
+              <a
+                href="/industrial-health-checkup"
                 className="text-blue-600 hover:text-orange-500 font-semibold"
               >
                 Learn More →
@@ -105,8 +97,8 @@ export default function Home() {
               <p className="text-gray-600 mb-4">
                 Complete blood count, urine analysis, and body fluid examinations.
               </p>
-              <a 
-                href="/tests" 
+              <a
+                href="/tests"
                 className="text-blue-600 hover:text-orange-500 font-semibold"
               >
                 View Tests →
@@ -121,8 +113,8 @@ export default function Home() {
               <p className="text-gray-600 mb-4">
                 Blood disorder diagnosis, CBC, hemoglobin tests, and more.
               </p>
-              <a 
-                href="/tests" 
+              <a
+                href="/tests"
                 className="text-blue-600 hover:text-orange-500 font-semibold"
               >
                 View Tests →
@@ -137,8 +129,8 @@ export default function Home() {
               <p className="text-gray-600 mb-4">
                 Culture and sensitivity tests for bacterial and fungal infections.
               </p>
-              <a 
-                href="/tests" 
+              <a
+                href="/tests"
                 className="text-blue-600 hover:text-orange-500 font-semibold"
               >
                 View Tests →
@@ -153,8 +145,8 @@ export default function Home() {
               <p className="text-gray-600 mb-4">
                 Blood sugar, lipid profile, liver and kidney function tests.
               </p>
-              <a 
-                href="/tests" 
+              <a
+                href="/tests"
                 className="text-blue-600 hover:text-orange-500 font-semibold"
               >
                 View Tests →
@@ -169,8 +161,8 @@ export default function Home() {
               <p className="text-gray-600 mb-4">
                 Antibody testing, infectious disease screening, and immunology.
               </p>
-              <a 
-                href="/tests" 
+              <a
+                href="/tests"
                 className="text-blue-600 hover:text-orange-500 font-semibold"
               >
                 View Tests →
@@ -190,8 +182,8 @@ export default function Home() {
             </p>
             <div className="bg-white rounded-lg p-2">
               {/* Calendly inline widget */}
-              <div 
-                className="calendly-inline-widget" 
+              <div
+                className="calendly-inline-widget"
                 data-url="https://calendly.com/citypathologylaboratory/30min"
                 style={{minWidth: '320px', height: '630px'}}
               ></div>
@@ -214,8 +206,8 @@ export default function Home() {
                 Location
               </h3>
               <p className="text-gray-600">
-                City Pathology Laboratory<br />
-                Near Railway Station,<br />
+                City Pathology Laboratory<br/>
+                Near Railway Station,<br/>
                 Halol, Gujarat 389350
               </p>
             </div>
@@ -226,8 +218,8 @@ export default function Home() {
                 Phone
               </h3>
               <div className="space-y-3">
-                <a 
-                  href="tel:+919409277144" 
+                <a
+                  href="tel:+919409277144"
                   className="flex items-center gap-2 text-blue-600 hover:text-orange-500"
                 >
                   📞 +91-94092 77144
@@ -244,7 +236,7 @@ export default function Home() {
                 Quick Actions
               </h3>
               <div className="space-y-3">
-                <a 
+                <a
                   href="https://wa.me/919409277144"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -252,7 +244,7 @@ export default function Home() {
                 >
                   💬 Chat on WhatsApp
                 </a>
-                <a 
+                <a
                   href="https://calendly.com/citypathologylaboratory/30min"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -260,7 +252,7 @@ export default function Home() {
                 >
                   📅 Book Appointment
                 </a>
-                <a 
+                <a
                   href="/contact"
                   className="btn btn-secondary w-full"
                 >
