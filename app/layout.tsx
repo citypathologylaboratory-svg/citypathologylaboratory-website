@@ -44,7 +44,7 @@ export default function RootLayout({
             <div className="flex items-center justify-between py-4">
               {/* Logo & Name */}
               <Link className="flex items-center gap-3 hover:opacity-80 transition" href="/">
-                <img src="/City Pathology Laboratory-Blue.png" alt="City Pathology Laboratory" className="h-12 w-12 rounded-full border-2 border-orange-500" />
+                <img src="/logo.jpg" alt="City Pathology Laboratory" className="h-12 w-12 rounded-full border-2 border-orange-500" />
                 <div>
                   <h1 className="text-xl font-bold text-blue-600">City Pathology Laboratory</h1>
                   <p className="text-xs text-gray-600">Excellence in Diagnostics</p>
@@ -105,7 +105,7 @@ export default function RootLayout({
               {/* About */}
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <img src="/City Pathology Laboratory-Blue.png" alt="City Pathology Laboratory" className="h-12 w-12 rounded-full border-2 border-orange-500" />
+                  <img src="/logo.jpg" alt="City Pathology Laboratory" className="h-12 w-12 rounded-full border-2 border-orange-500" />
                   <h3 className="text-lg font-bold">City Pathology Laboratory</h3>
                 </div>
                 <p className="text-blue-50 text-sm">
