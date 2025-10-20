@@ -1,18 +1,14 @@
 'use client'
 import { useState } from 'react'
-
 export default function Tests() {
   const [openCategory, setOpenCategory] = useState<string | null>(null)
-
   const toggleCategory = (category: string) => {
     setOpenCategory(openCategory === category ? null : category)
   }
-
   const openWhatsApp = (testName: string) => {
     const message = encodeURIComponent(`Hi, I would like to book an appointment for ${testName}`)
     window.open(`https://wa.me/919409277144?text=${message}`, '_blank')
   }
-
   const categories = {
     'Blood Tests': [
       'CBC',
@@ -29,77 +25,51 @@ export default function Tests() {
       'BLEEDING TIME',
       'CLOTTING TIME',
       'PROTHROMBIN TIME',
-      'APTT',
       'BLOOD GROUP',
       'HbA1c',
       'Beta-Thalessamia Screening',
       'Fasting Blood Sugar',
       'Post Prandial Blood Sugar',
       'Random Blood Sugar',
-      'Liver Function Tests (LFT)',
-      'Kidney Function Tests (KFT)',
-      'Lipid Profile',
-      'Thyroid Profile',
-      'Iron Profile',
-      'FERRITIN',
-      'Vitamin B12',
-      'Vitamin D',
-      'Calcium',
-      'Phosphorus',
-      'Uric Acid',
-      'Creatinine',
+      'Glucose Tolerance Test',
       'Urea',
-      'Bilirubin',
-      'SGOT/AST',
-      'SGPT/ALT',
+      'Creatinine',
+      'Calcium',
+      'Uric Acid',
+      'SGPT',
+      'SGOT',
       'Alkaline Phosphatase',
-      'Total Protein',
-      'Albumin',
-      'Globulin',
-      'A/G Ratio',
-      'GGT',
+      'Bilirubin Total and Direct',
+      'Protein Total, Albumin and Globulin',
+      'Lipid Profile',
+      'T3-T4-TSH',
+      'FT3-FT4',
+      '25-Oh Vitamin D',
+      'Active B12',
+      'LH',
+      'FSH',
+      'PRL',
+      'AMH',
+      'Total IgE',
+      'Widal',
+      'Beta HCG',
+      'RA Factor',
+      'HIV (1 and 2)',
+      'HBsAg',
+      'HCV',
     ],
     'Urine Tests': [
-      'Routine Urine Examination',
-      'Urine Culture',
-      'Microalbumin Urine',
-      'Creatinine Clearance',
-      '24 Hour Urine Protein',
-      'Urine Pregnancy Test',
+      'Urine Routine Micro',
+      'Urine ACR',
     ],
     'Stool Tests': [
       'Stool Routine Micro',
     ],
     'Special Tests': [
-      'Blood Culture',
-      'Sputum Culture',
-      'Pus Culture',
-      'Wound Swab Culture',
-      'Throat Swab Culture',
-      'Widal Test',
-      'HBsAg',
-      'HIV',
-      'VDRL',
-      'Anti HCV',
-      'Dengue NS1 Antigen',
-      'Dengue IgG/IgM',
-      'COVID-19 RT-PCR',
-      'COVID-19 Rapid Antigen',
+      'Semen Analysis',
       'FNAC',
-      'Biopsy',
-      'PAP Smear',
-      'PSA',
-      'CEA',
-      'CA 19-9',
-      'CA 125',
-      'AFP',
-      'Beta HCG',
-      'Troponin I',
-      'D-Dimer',
-      'CRP',
     ],
   }
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       {/* Hero Section */}
@@ -113,7 +83,6 @@ export default function Tests() {
           </p>
         </div>
       </section>
-
       {/* Tests Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
@@ -169,7 +138,6 @@ export default function Tests() {
           </div>
         </div>
       </section>
-
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
         <div className="container mx-auto px-4 text-center">
