@@ -1,4 +1,5 @@
 'use client';
+
 import React, { useState } from 'react';
 
 export default function ContactPage() {
@@ -31,7 +32,7 @@ export default function ContactPage() {
           <h1 className="section-title">Contact City Pathology Laboratory</h1>
           <p className="section-subtitle">
             Get in touch with us for appointments, inquiries, or any questions about our diagnostic services.
-            We're here to help you with professional and reliable pathology services in Halol, Gujarat.
+            We're here to help you with professional and reliable pathology services.
           </p>
         </div>
 
@@ -54,10 +55,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-semibold text-gray-800 mb-1">Our Location</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    City Pathology Laboratory<br />
-                    Opp. Old Bus Stand,<br />
-                    Near Jaydeep Petrol Pump,<br />
-                    Halol, Gujarat 389350
+                    2nd Floor Dwarkesh Chambers Near Bus Stand Halol
                   </p>
                 </div>
               </div>
@@ -102,7 +100,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-semibold text-gray-800 mb-1">Operating Hours</h3>
                   <p className="text-gray-600">
-                    Monday - Saturday: 8:00 AM - 8:00 PM<br />
+                    Monday - Saturday: 8:00 AM - 8:00 PM<br/>
                     Sunday: Closed
                   </p>
                 </div>
@@ -121,7 +119,7 @@ export default function ContactPage() {
                     💬 Chat on WhatsApp
                   </a>
                   <a 
-                    href="https://calendly.com/citypathologylaboratory/30min"
+                    href="https://calendly.com/citypathologylab-svg/30min"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-primary w-full"
@@ -142,9 +140,9 @@ export default function ContactPage() {
               </h2>
             </div>
             
-            <form className="space-y-4" onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="form-label" htmlFor="name">
+                <label htmlFor="name" className="form-label">
                   Full Name *
                 </label>
                 <input 
@@ -160,7 +158,7 @@ export default function ContactPage() {
               </div>
               
               <div>
-                <label className="form-label" htmlFor="email">
+                <label htmlFor="email" className="form-label">
                   Email Address *
                 </label>
                 <input 
@@ -176,7 +174,7 @@ export default function ContactPage() {
               </div>
               
               <div>
-                <label className="form-label" htmlFor="phone">
+                <label htmlFor="phone" className="form-label">
                   Phone Number
                 </label>
                 <input 
@@ -191,7 +189,7 @@ export default function ContactPage() {
               </div>
               
               <div>
-                <label className="form-label" htmlFor="message">
+                <label htmlFor="message" className="form-label">
                   Message *
                 </label>
                 <textarea 
@@ -244,10 +242,10 @@ export default function ContactPage() {
           
           <div className="mt-4 text-center">
             <p className="text-gray-600 mb-3">
-              We're conveniently located opposite the Old Bus Stand in Halol, making it easy for patients to reach us.
+              Visit us at 2nd Floor Dwarkesh Chambers Near Bus Stand Halol for all your diagnostic needs.
             </p>
             <a 
-              href="https://maps.google.com/?q=Halol+Gujarat+389350"
+              href="https://maps.google.com/?q=2nd+Floor+Dwarkesh+Chambers+Near+Bus+Stand+Halol"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-gold inline-flex items-center gap-2"
