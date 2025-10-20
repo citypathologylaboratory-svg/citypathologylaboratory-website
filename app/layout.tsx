@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import type { Metadata } from 'next';
 import './globals.css';
 
@@ -21,179 +20,148 @@ export default function RootLayout({
           <div className="nav-container">
             {/* Logo Section */}
             <div className="logo-section">
-              <div className="logo-icon">
-                <Image 
-                  src="/logo.jpg" 
-                  alt="City Pathology Laboratory Logo" 
-                  width={60} 
-                  height={60}
-                  className="object-contain"
-                  priority
-                />
-              </div>
+              <div className="logo-icon">🧪</div>
               <div className="logo-text">
                 <div className="text-xl md:text-2xl font-bold text-blue-600">
                   City Pathology Laboratory
                 </div>
-                <div className="text-xs md:text-sm text-gray-600">
-                  Professional Diagnostic Services
-                </div>
+                <div className="text-sm text-gray-600">Halol, Gujarat</div>
               </div>
             </div>
 
             {/* Navigation Links */}
             <div className="nav-links">
-              <Link className="nav-link" href="/">
-                🏠 Home
+              <Link href="/" className="nav-link">
+                Home
               </Link>
-              <Link className="nav-link" href="/tests">
-                🔬 Tests
+              <Link href="/about" className="nav-link">
+                About
               </Link>
-              <Link className="nav-link" href="/industrial-health-checkup">
-                🏭 Industrial
+              <Link href="/tests" className="nav-link">
+                Tests
               </Link>
-              <Link className="nav-link" href="/about">
-                ℹ️ About
+              <Link href="/industrial-health-checkup" className="nav-link">
+                Industrial Health
               </Link>
-              <Link className="nav-link" href="/contact">
-                📞 Contact
+              <Link href="/contact" className="nav-link">
+                Contact
               </Link>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="nav-cta">
-              <a
-                href="https://calendly.com/citypathologylaboratory/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-primary"
-              >
-                📅 Book Now
-              </a>
-            </div>
+            {/* CTA Button */}
+            <a
+              href="https://calendly.com/citypathologylaboratory/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-button"
+            >
+              📅 Book Appointment
+            </a>
           </div>
         </nav>
 
-        {/* Page Content */}
-        <main className="main-content">
-          {children}
-        </main>
+        {/* Main Content */}
+        <main>{children}</main>
 
         {/* Footer */}
         <footer className="footer">
           <div className="footer-container">
-            {/* Company Info */}
-            <div>
-              <div className="footer-logo">
-                <span className="text-3xl">
-                  <Image 
-                    src="/logo.jpg" 
-                    alt="City Pathology Laboratory Logo" 
-                    width={48} 
-                    height={48}
-                    className="object-contain inline-block"
-                  />
-                </span>
-                <div>
-                  <div className="text-xl font-bold text-orange-400">
-                    City Pathology Laboratory
-                  </div>
-                  <p className="text-blue-100 text-sm mt-1">
-                    Your Trusted Partner in Health Diagnostics
-                  </p>
+            <div className="footer-grid">
+              {/* About Section */}
+              <div className="footer-section">
+                <div className="footer-logo">
+                  <span className="text-3xl">🧪</span>
+                  <h3 className="footer-title">City Pathology Laboratory</h3>
                 </div>
+                <p className="footer-text">
+                  Trusted diagnostic services in Halol, Gujarat. NABL accredited
+                  laboratory with state-of-the-art facilities.
+                </p>
               </div>
-              <p className="text-blue-50 text-sm mt-4 max-w-md">
-                Providing accurate and reliable pathology services with state-of-the-art technology and expert care.
-              </p>
-            </div>
 
-            {/* Quick Links */}
-            <div>
-              <h4 className="text-lg font-bold mb-4 text-orange-400">Quick Links</h4>
-              <ul className="space-y-3">
-                <li>
-                  <Link className="text-blue-50 hover:text-orange-300 transition" href="/">
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link className="text-blue-50 hover:text-orange-300 transition" href="/tests">
-                    Available Tests
-                  </Link>
-                </li>
-                <li>
-                  <Link className="text-blue-50 hover:text-orange-300 transition" href="/industrial-health-checkup">
-                    Industrial Health Checkup
-                  </Link>
-                </li>
-                <li>
-                  <Link className="text-blue-50 hover:text-orange-300 transition" href="/about">
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link className="text-blue-50 hover:text-orange-300 transition" href="/contact">
-                    Contact Us
-                  </Link>
-                </li>
-              </ul>
-            </div>
+              {/* Quick Links */}
+              <div className="footer-section">
+                <h4 className="footer-heading">Quick Links</h4>
+                <ul className="footer-list">
+                  <li>
+                    <Link href="/about" className="footer-link">
+                      About Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/tests" className="footer-link">
+                      Our Tests
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/industrial-health-checkup" className="footer-link">
+                      Industrial Health Checkup
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/contact" className="footer-link">
+                      Contact Us
+                    </Link>
+                  </li>
+                </ul>
+              </div>
 
-            {/* Contact Info */}
-            <div>
-              <h4 className="text-lg font-bold mb-4 text-orange-400">Contact Us</h4>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-2">
-                  📍
-                  <span className="text-blue-50 text-sm">
-                    2nd Floor Dwarkesh Chambers Near Bus Stand Halol
-                  </span>
-                </li>
-                <li className="flex items-center gap-2">
-                  📞
-                  <a className="hover:text-orange-300 transition" href="tel:+919409277144">
-                    +91-94092 77144
-                  </a>
-                </li>
-                <li className="flex items-center gap-2">
-                  ✉️
-                  <a className="hover:text-orange-300 transition break-all" href="mailto:citypathologylab@gmail.com">
-                    citypathologylab@gmail.com
-                  </a>
-                </li>
-              </ul>
-            </div>
-            
-            {/* Book Appointment */}
-            <div>
-              <h4 className="text-lg font-bold mb-4 text-orange-400">Book Appointment</h4>
-              <p className="text-blue-50 text-sm mb-4">
-                Schedule your appointment online or contact us directly.
-              </p>
-              <div className="space-y-2">
-                <a
-                  href="https://calendly.com/citypathologylaboratory/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-secondary w-full text-sm"
-                >
-                  📅 Book Now
-                </a>
-                <a
-                  href="https://wa.me/919409277144"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-whatsapp w-full text-sm"
-                >
-                  📱 WhatsApp
-                </a>
+              {/* Contact Info */}
+              <div className="footer-section">
+                <h4 className="footer-heading">Contact Information</h4>
+                <ul className="footer-list">
+                  <li className="footer-contact-item">
+                    <span>📍</span>
+                    <span>2nd Floor Dwarkesh Chambers Near Bus Stand Halol</span>
+                  </li>
+                  <li className="footer-contact-item">
+                    <span>📞</span>
+                    <a href="tel:+919409277144" className="footer-link">
+                      +91 9409277144
+                    </a>
+                  </li>
+                  <li className="footer-contact-item">
+                    <span>📧</span>
+                    <a
+                      href="mailto:citypathologylaboratory@gmail.com"
+                      className="footer-link"
+                    >
+                      citypathologylaboratory@gmail.com
+                    </a>
+                  </li>
+                  <li className="footer-contact-item">
+                    <span>💬</span>
+                    <a
+                      href="https://wa.me/919409277144"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="footer-link"
+                    >
+                      WhatsApp Us
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Hours */}
+              <div className="footer-section">
+                <h4 className="footer-heading">Working Hours</h4>
+                <ul className="footer-list">
+                  <li className="footer-text">Monday - Saturday</li>
+                  <li className="footer-text">8:00 AM - 8:00 PM</li>
+                  <li className="footer-text mt-2">Sunday</li>
+                  <li className="footer-text">9:00 AM - 1:00 PM</li>
+                </ul>
               </div>
             </div>
-          </div>
-          
-          <div className="border-t border-blue-400 mt-8 pt-6 text-center text-sm text-blue-50">
-            © {new Date().getFullYear()} City Pathology Laboratory. All rights reserved.
+
+            {/* Bottom Bar */}
+            <div className="footer-bottom">
+              <p className="footer-copyright">
+                © {new Date().getFullYear()} City Pathology Laboratory. All rights
+                reserved.
+              </p>
+            </div>
           </div>
         </footer>
       </body>
