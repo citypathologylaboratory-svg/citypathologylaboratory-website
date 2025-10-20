@@ -1,194 +1,240 @@
 "use client";
+import { useState, useEffect } from 'react';
+
 export default function Home() {
+  const [planePosition, setPlanePosition] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+    const interval = setInterval(() => {
+      setPlanePosition((prev) => (prev >= 100 ? 0 : prev + 0.5));
+    }, 30);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <main className="min-h-screen bg-gray-50">
-      {/* Top Placard/Banner */}
-      <section className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 text-white py-6 shadow-lg">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="text-center md:text-left">
-              <h1 className="text-3xl md:text-4xl font-bold mb-2">City Pathology Laboratory</h1>
-              <p className="text-blue-100 text-lg">Trusted Healthcare Partner in Halol</p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href="https://calendly.com/citypathologylaboratory/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-3 bg-green-500 hover:bg-green-600 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-center"
-              >
-                📅 Book Appointment
-              </a>
-              <a
-                href="https://wa.me/919409277144"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-3 bg-white text-green-600 hover:bg-green-50 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-center"
-              >
-                💬 WhatsApp Support
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* Hero Section */}
-      <section className="bg-white py-12 md:py-16 border-b-4 border-blue-100">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4 md:mb-6">
-            Welcome to City Pathology Laboratory
-          </h2>
-          <p className="text-lg md:text-xl text-gray-600 mb-6 md:mb-8 max-w-3xl mx-auto">
-            Your trusted partner in healthcare diagnostics. We provide accurate, reliable, and timely pathology services with state-of-the-art technology and experienced professionals.
-          </p>
-          <div className="bg-blue-50 border-l-4 border-blue-500 p-4 md:p-6 max-w-2xl mx-auto rounded-lg shadow-sm">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4 text-gray-700">
-              <div className="flex items-center gap-2 text-sm md:text-base">
-                <span className="text-2xl">📍</span>
-                <span className="font-medium">2nd Floor Dwarkesh Chambers Near Bus Stand Halol</span>
-              </div>
-              <div className="hidden md:block text-blue-300">|</div>
-              <div className="flex items-center gap-2">
-                <span className="text-2xl">📞</span>
-                <a className="font-bold text-blue-600 hover:text-blue-800" href="tel:+919409277144">+91-94092 77144</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* Services Section */}
-      <section className="py-12 md:py-16 bg-gradient-to-b from-gray-50 to-white">
-        <div className="container mx-auto px-4">
-          <h3 className="text-2xl md:text-4xl font-bold text-center text-gray-800 mb-3 md:mb-4">
-            Our Services
-          </h3>
-          <p className="text-center text-gray-600 mb-8 md:mb-12 text-base md:text-lg">
-            Comprehensive diagnostic solutions for all your healthcare needs
+      {/* FNAC Plane Animation Section */}
+      <section className="bg-gradient-to-br from-blue-50 to-white py-16 md:py-24 overflow-hidden relative">
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
+            Fine Needle Aspiration Cytology (FNAC)
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            Precise, Painless, and Quick Diagnostic Procedure
           </p>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
-            {/* Industrial Health Checkup Card */}
-            <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-5 md:p-6 border-t-4 border-blue-500">
-              <div className="text-4xl mb-4">🏭</div>
-              <h4 className="text-lg md:text-xl font-bold text-gray-800 mb-3">Industrial Health Checkup</h4>
-              <p className="text-sm md:text-base text-gray-600 mb-4">
-                Comprehensive health assessments for workplace safety and employee wellness.
-              </p>
-              <a
-                href="/industrial-health-checkup"
-                className="inline-block text-blue-600 hover:text-blue-800 font-semibold text-sm md:text-base"
+          {/* Animated FNAC Plane */}
+          <div className="relative h-64 md:h-80 mb-8">
+            <div 
+              className="absolute transition-all duration-300 ease-linear"
+              style={{
+                left: `${planePosition}%`,
+                top: '50%',
+                transform: `translateY(-50%) ${planePosition > 50 ? 'scaleX(-1)' : ''}`,
+                opacity: isVisible ? 1 : 0
+              }}
+            >
+              <svg
+                width="120"
+                height="120"
+                viewBox="0 0 200 200"
+                className="drop-shadow-lg"
               >
-                Learn More →
-              </a>
+                {/* Needle body */}
+                <line
+                  x1="50"
+                  y1="100"
+                  x2="150"
+                  y2="100"
+                  stroke="#1976D2"
+                  strokeWidth="8"
+                  strokeLinecap="round"
+                />
+                {/* Needle tip */}
+                <polygon
+                  points="150,100 170,95 170,105"
+                  fill="#1565C0"
+                />
+                {/* Plunger */}
+                <rect
+                  x="40"
+                  y="90"
+                  width="20"
+                  height="20"
+                  fill="#43A047"
+                  rx="3"
+                />
+                {/* Sample droplet */}
+                <circle
+                  cx="165"
+                  cy="100"
+                  r="4"
+                  fill="#E53935"
+                  className="animate-pulse"
+                />
+              </svg>
             </div>
-            {/* FNAC Card */}
-            <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-5 md:p-6 border-t-4 border-purple-500">
-              <div className="text-4xl mb-4">💉</div>
-              <h4 className="text-lg md:text-xl font-bold text-gray-800 mb-3">FNAC</h4>
-              <p className="text-sm md:text-base text-gray-600 mb-4">
-                Fine Needle Aspiration Cytology for accurate tissue diagnosis with minimal invasion.
-              </p>
-              <a
-                href="/tests"
-                className="inline-block text-blue-600 hover:text-blue-800 font-semibold text-sm md:text-base"
-              >
-                Learn More →
-              </a>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+              <div className="text-4xl mb-3">⚡</div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Quick Results</h3>
+              <p className="text-gray-600">Same-day or next-day reports</p>
             </div>
-            {/* Hematology Card */}
-            <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-5 md:p-6 border-t-4 border-red-500">
-              <div className="text-4xl mb-4">🩸</div>
-              <h4 className="text-lg md:text-xl font-bold text-gray-800 mb-3">Hematology</h4>
-              <p className="text-sm md:text-base text-gray-600 mb-4">
-                Complete blood analysis including CBC, hemoglobin, and blood cell counts.
-              </p>
-              <a
-                href="/tests"
-                className="inline-block text-blue-600 hover:text-blue-800 font-semibold text-sm md:text-base"
-              >
-                Learn More →
-              </a>
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+              <div className="text-4xl mb-3">🎯</div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">High Accuracy</h3>
+              <p className="text-gray-600">Expert cytopathologist analysis</p>
             </div>
-            {/* Microbiology Card */}
-            <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-5 md:p-6 border-t-4 border-green-500">
-              <div className="text-4xl mb-4">🦠</div>
-              <h4 className="text-lg md:text-xl font-bold text-gray-800 mb-3">Microbiology</h4>
-              <p className="text-sm md:text-base text-gray-600 mb-4">
-                Bacterial, viral, and fungal culture tests for infection diagnosis.
-              </p>
-              <a
-                href="/tests"
-                className="inline-block text-blue-600 hover:text-blue-800 font-semibold text-sm md:text-base"
-              >
-                Learn More →
-              </a>
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+              <div className="text-4xl mb-3">💉</div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Minimal Discomfort</h3>
+              <p className="text-gray-600">Non-invasive procedure</p>
             </div>
-            {/* Biochemistry Card */}
-            <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-5 md:p-6 border-t-4 border-yellow-500">
-              <div className="text-4xl mb-4">🧪</div>
-              <h4 className="text-lg md:text-xl font-bold text-gray-800 mb-3">Biochemistry</h4>
-              <p className="text-sm md:text-base text-gray-600 mb-4">
-                Blood sugar, liver function, kidney function, and lipid profile tests.
-              </p>
-              <a
-                href="/tests"
-                className="inline-block text-blue-600 hover:text-blue-800 font-semibold text-sm md:text-base"
-              >
-                Learn More →
-              </a>
+          </div>
+
+          <div className="mt-10">
+            <a
+              href="https://calendly.com/citypathologylaboratory/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            >
+              📅 Book Your FNAC Appointment
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
+            Our Services
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <a href="/tests" className="block group">
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <div className="text-5xl mb-4">🔬</div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors">
+                  Pathology Tests
+                </h3>
+                <p className="text-gray-600">
+                  Comprehensive diagnostic testing services
+                </p>
+              </div>
+            </a>
+            <a href="/industrial-health-checkup" className="block group">
+              <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <div className="text-5xl mb-4">🏭</div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 group-hover:text-green-600 transition-colors">
+                  Industrial Health Checkup
+                </h3>
+                <p className="text-gray-600">
+                  Employee health screening packages
+                </p>
+              </div>
+            </a>
+            <a href="/about" className="block group">
+              <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <div className="text-5xl mb-4">👨‍⚕️</div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
+                  About Us
+                </h3>
+                <p className="text-gray-600">
+                  Meet our expert team and facilities
+                </p>
+              </div>
+            </a>
+            <a href="/contact" className="block group">
+              <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <div className="text-5xl mb-4">📞</div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 group-hover:text-orange-600 transition-colors">
+                  Contact Us
+                </h3>
+                <p className="text-gray-600">
+                  Get in touch for appointments
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-16 bg-gradient-to-br from-blue-50 to-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
+            Why Choose City Pathology Laboratory?
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="flex items-start space-x-4">
+              <div className="text-3xl flex-shrink-0">✅</div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">NABL Accredited</h3>
+                <p className="text-gray-600">Quality assured testing standards</p>
+              </div>
             </div>
-            {/* Serology Card */}
-            <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-5 md:p-6 border-t-4 border-pink-500">
-              <div className="text-4xl mb-4">🔬</div>
-              <h4 className="text-lg md:text-xl font-bold text-gray-800 mb-3">Serology</h4>
-              <p className="text-sm md:text-base text-gray-600 mb-4">
-                Antibody and antigen testing for infectious diseases and immunity.
-              </p>
-              <a
-                href="/tests"
-                className="inline-block text-blue-600 hover:text-blue-800 font-semibold text-sm md:text-base"
-              >
-                Learn More →
-              </a>
+            <div className="flex items-start space-x-4">
+              <div className="text-3xl flex-shrink-0">⏰</div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Quick Turnaround</h3>
+                <p className="text-gray-600">Fast and accurate results</p>
+              </div>
             </div>
-            {/* Clinical Pathology Card */}
-            <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-5 md:p-6 border-t-4 border-indigo-500">
-              <div className="text-4xl mb-4">🩺</div>
-              <h4 className="text-lg md:text-xl font-bold text-gray-800 mb-3">Clinical Pathology</h4>
-              <p className="text-sm md:text-base text-gray-600 mb-4">
-                Urine analysis, stool examination, and other clinical diagnostic tests.
-              </p>
-              <a
-                href="/tests"
-                className="inline-block text-blue-600 hover:text-blue-800 font-semibold text-sm md:text-base"
-              >
-                Learn More →
-              </a>
+            <div className="flex items-start space-x-4">
+              <div className="text-3xl flex-shrink-0">🏥</div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Modern Facility</h3>
+                <p className="text-gray-600">State-of-the-art equipment</p>
+              </div>
+            </div>
+            <div className="flex items-start space-x-4">
+              <div className="text-3xl flex-shrink-0">👥</div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Expert Team</h3>
+                <p className="text-gray-600">Experienced pathologists and technicians</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      {/* Footer */}
-      <footer className="bg-blue-950 text-blue-200 py-8 md:py-10">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 text-center text-sm md:text-base mb-4">
-            <span className="font-medium">📍 2nd Floor Dwarkesh Chambers Near Bus Stand Halol</span>
-            <span className="hidden md:inline">•</span>
-            <a href="tel:+919409277144" className="font-bold hover:text-white transition-colors">📞 +91-94092 77144</a>
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-3 md:gap-6 text-sm md:text-base mb-4">
-            <a href="/about" className="text-blue-300 hover:text-white transition-colors">About</a>
-            <span className="text-blue-700">•</span>
-            <a href="/tests" className="text-blue-300 hover:text-white transition-colors">All Tests</a>
-            <span className="text-blue-700">•</span>
-            <a href="/industrial-health-checkup" className="text-blue-300 hover:text-white transition-colors">Health Checkup</a>
-            <span className="text-blue-700">•</span>
-            <a href="/contact" className="text-blue-300 hover:text-white transition-colors">Contact</a>
-          </div>
-          <div className="text-center text-sm md:text-base">
-            © 2024 City Pathology Laboratory. All rights reserved.
+
+      {/* Quick Contact Section */}
+      <section className="py-12 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">
+            Ready to Book Your Appointment?
+          </h2>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href="https://calendly.com/citypathologylaboratory/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 bg-white text-blue-600 hover:bg-blue-50 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            >
+              📅 Book on Calendly
+            </a>
+            <a
+              href="https://wa.me/919409277144"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            >
+              💬 WhatsApp Us
+            </a>
+            <a
+              href="tel:+919409277144"
+              className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            >
+              📞 Call Now
+            </a>
           </div>
         </div>
-      </footer>
+      </section>
     </main>
   );
 }
