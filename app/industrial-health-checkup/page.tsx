@@ -9,7 +9,6 @@ export default function IndustrialHealthCheckupPage() {
             Comprehensive occupational health screening and wellness packages tailored for factories, plants, and corporate teams in and around Halol.
           </p>
         </div>
-
         {/* Highlights */}
         <div className="grid-3 mb-8">
           <div className="card text-center">
@@ -20,7 +19,7 @@ export default function IndustrialHealthCheckupPage() {
           <div className="card text-center">
             <div className="icon-wrapper icon-gold mx-auto">🧪</div>
             <h3 className="font-bold text-lg mb-2">Comprehensive Tests</h3>
-            <p className="text-gray-600">CBC, LFT, KFT, Urine, Vision, Audiometry (tie-ups), ECG and more</p>
+            <p className="text-gray-600">CBC, LFT, KFT, Urine, Vision, Audiometry, PFT, ECG, X Ray</p>
           </div>
           <div className="card text-center">
             <div className="icon-wrapper mx-auto">🕒</div>
@@ -28,14 +27,12 @@ export default function IndustrialHealthCheckupPage() {
             <p className="text-gray-600">Priority processing and consolidated reports</p>
           </div>
         </div>
-
         {/* Packages */}
         <section className="section bg-white">
           <div className="section-header">
             <h2 className="section-title">Popular Packages</h2>
             <p className="section-subtitle">Customizable as per your industry and regulatory needs</p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Basic Package */}
             <div className="card border-2 border-blue-200 hover:border-blue-500 transition">
@@ -61,7 +58,7 @@ export default function IndustrialHealthCheckupPage() {
                   <span className="text-sm">General Physical Exam</span>
                 </li>
               </ul>
-              <a 
+              <a
                 href="https://calendly.com/citypathologylaboratory/30min"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -70,7 +67,6 @@ export default function IndustrialHealthCheckupPage() {
                 Book Now
               </a>
             </div>
-
             {/* Standard Package */}
             <div className="card border-2 border-amber-400 hover:border-amber-600 transition shadow-lg">
               <div className="bg-amber-500 text-white px-3 py-1 text-xs font-bold rounded-full inline-block mb-2">POPULAR</div>
@@ -100,7 +96,7 @@ export default function IndustrialHealthCheckupPage() {
                   <span className="text-sm">ECG (via tie-up)</span>
                 </li>
               </ul>
-              <a 
+              <a
                 href="https://calendly.com/citypathologylaboratory/30min"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -109,7 +105,6 @@ export default function IndustrialHealthCheckupPage() {
                 Book Now
               </a>
             </div>
-
             {/* Premium Package */}
             <div className="card border-2 border-blue-200 hover:border-blue-500 transition">
               <div className="text-center mb-4">
@@ -138,7 +133,7 @@ export default function IndustrialHealthCheckupPage() {
                   <span className="text-sm">Chest X-ray (via tie-up)</span>
                 </li>
               </ul>
-              <a 
+              <a
                 href="https://calendly.com/citypathologylaboratory/30min"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -149,7 +144,6 @@ export default function IndustrialHealthCheckupPage() {
             </div>
           </div>
         </section>
-
         {/* Why Choose Us */}
         <section className="section">
           <div className="section-header">
@@ -174,13 +168,12 @@ export default function IndustrialHealthCheckupPage() {
             </div>
           </div>
         </section>
-
         {/* CTA Section with Calendly */}
         <section className="gradient-bg-navy text-white rounded-2xl p-8 md:p-12 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Schedule Your Industrial Health Checkup Today</h2>
           <p className="text-xl mb-6 text-blue-100">Book online or contact us for group bookings and custom packages.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
+            <a
               href="https://calendly.com/citypathologylaboratory/30min"
               target="_blank"
               rel="noopener noreferrer"
@@ -188,7 +181,7 @@ export default function IndustrialHealthCheckupPage() {
             >
               📅 Book Appointment
             </a>
-            <a 
+            <a
               href="https://wa.me/919409277144"
               target="_blank"
               rel="noopener noreferrer"
