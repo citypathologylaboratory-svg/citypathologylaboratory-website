@@ -1,3 +1,5 @@
+"use client";
+
 export default function Home() {
   return (
     <main className="min-h-screen">
@@ -6,11 +8,13 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">Advanced Diagnostic Services</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white animate-fade-in">
+              Advanced Diagnostic Services
+            </h2>
             
             {/* Animated Plane with Ribbon */}
             <div className="relative h-64 mb-8">
-              <style jsx>{`
+              <style dangerouslySetInnerHTML={{ __html: `
                 @keyframes flyPlane {
                   0% {
                     transform: translateX(-100%) translateY(20px);
@@ -29,6 +33,17 @@ export default function Home() {
                   }
                   50% {
                     transform: translateY(5px) rotate(2deg);
+                  }
+                }
+                
+                @keyframes fadeIn {
+                  from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                  }
+                  to {
+                    opacity: 1;
+                    transform: translateY(0);
                   }
                 }
                 
@@ -75,7 +90,11 @@ export default function Home() {
                   border-bottom: 15px solid transparent;
                   border-right: 15px solid #3b82f6;
                 }
-              `}</style>
+                
+                .animate-fade-in {
+                  animation: fadeIn 1s ease-out;
+                }
+              ` }} />
               
               <div className="plane-container">
                 <div className="plane">
@@ -106,16 +125,16 @@ export default function Home() {
               </div>
             </div>
             
-            <p className="text-xl md:text-2xl mb-8 text-blue-50">
+            <p className="text-xl md:text-2xl mb-8 text-blue-50 animate-fade-in">
               Fine Needle Aspiration Cytology (FNAC) - Quick, accurate, and minimally invasive diagnostic testing now available at our laboratory.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
               <a 
                 href="https://wa.me/919409277144"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-whatsapp px-8 py-4 text-lg bg-green-600 hover:bg-green-700 rounded-lg transition-colors duration-300 font-semibold"
+                className="px-8 py-4 text-lg bg-green-600 hover:bg-green-700 rounded-lg transition-colors duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform"
               >
                 📱 WhatsApp for Instant Support
               </a>
@@ -123,7 +142,7 @@ export default function Home() {
                 href="https://calendly.com/citypathologylaboratory/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-primary px-8 py-4 text-lg bg-white text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-semibold"
+                className="px-8 py-4 text-lg bg-white text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform"
               >
                 📅 Book Appointment for Industrial Health Check Up
               </a>
