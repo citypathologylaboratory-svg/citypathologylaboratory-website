@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 import './globals.css';
 
@@ -21,7 +22,14 @@ export default function RootLayout({
             {/* Logo Section */}
             <div className="logo-section">
               <div className="logo-icon">
-                🧪
+                <Image 
+                  src="/logo.jpg" 
+                  alt="City Pathology Laboratory Logo" 
+                  width={60} 
+                  height={60}
+                  className="object-contain"
+                  priority
+                />
               </div>
               <div className="logo-text">
                 <div className="text-xl md:text-2xl font-bold text-blue-600">
@@ -35,26 +43,26 @@ export default function RootLayout({
 
             {/* Navigation Links */}
             <div className="nav-links">
-              <Link href="/" className="nav-link">
+              <Link className="nav-link" href="/">
                 🏠 Home
               </Link>
-              <Link href="/tests" className="nav-link">
+              <Link className="nav-link" href="/tests">
                 🔬 Tests
               </Link>
-              <Link href="/industrial-health-checkup" className="nav-link">
+              <Link className="nav-link" href="/industrial-health-checkup">
                 🏭 Industrial
               </Link>
-              <Link href="/about" className="nav-link">
+              <Link className="nav-link" href="/about">
                 ℹ️ About
               </Link>
-              <Link href="/contact" className="nav-link">
+              <Link className="nav-link" href="/contact">
                 📞 Contact
               </Link>
             </div>
 
             {/* CTA Buttons */}
             <div className="nav-cta">
-              <a 
+              <a
                 href="https://calendly.com/citypathologylaboratory/30min"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -77,7 +85,15 @@ export default function RootLayout({
             {/* Company Info */}
             <div>
               <div className="footer-logo">
-                <span className="text-3xl">🧪</span>
+                <span className="text-3xl">
+                  <Image 
+                    src="/logo.jpg" 
+                    alt="City Pathology Laboratory Logo" 
+                    width={48} 
+                    height={48}
+                    className="object-contain inline-block"
+                  />
+                </span>
                 <div>
                   <div className="text-xl font-bold text-orange-400">
                     City Pathology Laboratory
@@ -97,27 +113,27 @@ export default function RootLayout({
               <h4 className="text-lg font-bold mb-4 text-orange-400">Quick Links</h4>
               <ul className="space-y-3">
                 <li>
-                  <Link href="/" className="text-blue-50 hover:text-orange-300 transition">
+                  <Link className="text-blue-50 hover:text-orange-300 transition" href="/">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link href="/tests" className="text-blue-50 hover:text-orange-300 transition">
+                  <Link className="text-blue-50 hover:text-orange-300 transition" href="/tests">
                     Available Tests
                   </Link>
                 </li>
                 <li>
-                  <Link href="/industrial-health-checkup" className="text-blue-50 hover:text-orange-300 transition">
+                  <Link className="text-blue-50 hover:text-orange-300 transition" href="/industrial-health-checkup">
                     Industrial Health Checkup
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about" className="text-blue-50 hover:text-orange-300 transition">
+                  <Link className="text-blue-50 hover:text-orange-300 transition" href="/about">
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-blue-50 hover:text-orange-300 transition">
+                  <Link className="text-blue-50 hover:text-orange-300 transition" href="/contact">
                     Contact Us
                   </Link>
                 </li>
@@ -156,7 +172,7 @@ export default function RootLayout({
                 Schedule your appointment online or contact us directly.
               </p>
               <div className="space-y-2">
-                <a 
+                <a
                   href="https://calendly.com/citypathologylaboratory/30min"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -164,7 +180,7 @@ export default function RootLayout({
                 >
                   📅 Book Now
                 </a>
-                <a 
+                <a
                   href="https://wa.me/919409277144"
                   target="_blank"
                   rel="noopener noreferrer"
