@@ -11,7 +11,7 @@ export default function AboutUsPage() {
             About City Pathology Laboratory
           </h1>
           <p className="section-subtitle">
-            Your trusted healthcare partner in Halol, Gujarat, providing accurate 
+            Your trusted healthcare partner in Halol, providing accurate 
             diagnostic services with compassion and excellence since establishment.
           </p>
         </div>
@@ -34,271 +34,274 @@ export default function AboutUsPage() {
               </p>
               <p>
                 Founded with a vision to make quality healthcare accessible to all, our laboratory 
-                has grown to become a trusted name in diagnostic services. We combine cutting-edge 
-                technology with human expertise to deliver results that healthcare providers and 
-                patients can rely on with complete confidence.
+                has grown from a small diagnostic center to a comprehensive pathology facility. 
+                Located at 2nd Floor Dwarkesh Chambers Near Bus Stand Halol, we serve not just the local community but also support various industrial 
+                establishments in the region with comprehensive health checkup programs and occupational 
+                health services.
               </p>
               <p>
-                Located conveniently opposite the Old Bus Stand in Halol, we serve not just the 
-                local community but also support various industrial establishments in the region 
-                with comprehensive health checkup programs and occupational health services.
+                We understand that behind every test report is a person seeking answers, hope, and 
+                healing. That's why we combine cutting-edge technology with personalized care to 
+                deliver not just reports, but peace of mind.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Meet Our Expert Team */}
+        {/* Our Mission & Vision */}
         <section className="section">
-          <div className="section-header">
-            <h2 className="section-title">Meet Our Expert Pathologists</h2>
-            <p className="section-subtitle">
-              Our team of experienced and certified pathologists brings together decades 
-              of expertise in clinical pathology and occupational health.
-            </p>
-          </div>
-          
-          <div className="grid-2">
-            {/* Dr. Sunil Nagori */}
-            <div className="card slide-in">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-500 rounded-full flex items-center justify-center text-white text-xl font-bold shadow-lg">
-                  SN
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-blue-800">Dr. Sunil Nagori</h3>
-                  <p className="text-blue-600 font-medium">MBBS, DCP, CIH</p>
-                  <p className="text-sm text-gray-600">Chief Pathologist & Director</p>
-                </div>
-              </div>
-              <ul className="space-y-2 text-gray-700">
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-500 text-sm mt-1">▶</span>
-                  25+ years of expertise in clinical pathology & occupational health
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-500 text-sm mt-1">▶</span>
-                  Developed diagnostic protocols for Halol's community & industries
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-500 text-sm mt-1">▶</span>
-                  Leads operations with focus on ethics & transparency
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-500 text-sm mt-1">▶</span>
-                  Certified in Industrial Health (CIH) for occupational medicine
-                </li>
-              </ul>
-            </div>
-
-            {/* Dr. Shalin Nagori */}
-            <div className="card slide-in">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-400 rounded-full flex items-center justify-center text-white text-xl font-bold shadow-lg">
-                  SN
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-blue-800">Dr. Shalin Nagori</h3>
-                  <p className="text-blue-600 font-medium">MBBS, MD Pathology, PGCIH</p>
-                  <p className="text-sm text-gray-600">Senior Pathologist & Consultant</p>
-                </div>
-              </div>
-              <ul className="space-y-2 text-gray-700">
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 text-sm mt-1">▶</span>
-                  Specialist in diagnostic automation & patient communication
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 text-sm mt-1">▶</span>
-                  Promotes accessible healthcare & trains staff in best practices
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 text-sm mt-1">▶</span>
-                  Published author in THIP Magazine & educator in industrial health
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 text-sm mt-1">▶</span>
-                  Post Graduate Certificate in Industrial Health (PGCIH)
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Our Services & Specialties */}
-        <section className="section bg-white">
-          <div className="section-header">
-            <h2 className="section-title">Our Comprehensive Services</h2>
-            <p className="section-subtitle">
-              We offer a complete range of diagnostic services with state-of-the-art 
-              equipment and expert medical professionals.
-            </p>
-          </div>
-          
-          <div className="grid-3">
-            <div className="card fade-in">
-              <div className="icon-wrapper">
-                🧪
-              </div>
-              <h3 className="text-lg font-bold mb-2">Clinical Pathology</h3>
-              <ul className="text-sm text-gray-600 space-y-1">
-                • Complete Blood Count (CBC)<br />
-                • Blood Chemistry Panels<br />
-                • Liver & Kidney Function Tests<br />
-                • Diabetes Monitoring<br />
-                • Lipid Profiles
-              </ul>
-            </div>
-            
-            <div className="card fade-in">
-              <div className="icon-wrapper icon-gold">
-                🔬
-              </div>
-              <h3 className="text-lg font-bold mb-2">Specialized Testing</h3>
-              <ul className="text-sm text-gray-600 space-y-1">
-                • Hormone Testing<br />
-                • Cardiac Markers<br />
-                • Tumor Markers<br />
-                • Infectious Disease Screening<br />
-                • Allergy Testing
-              </ul>
-            </div>
-            
-            <div className="card fade-in">
-              <div className="icon-wrapper">
-                🏭
-              </div>
-              <h3 className="text-lg font-bold mb-2">Industrial Health</h3>
-              <ul className="text-sm text-gray-600 space-y-1">
-                • Pre-employment Medical Exams<br />
-                • Annual Health Checkups<br />
-                • Occupational Health Screening<br />
-                • Fitness for Duty Assessments<br />
-                • Corporate Health Packages
-              </ul>
-            </div>
-            
-            <div className="card fade-in">
-              <div className="icon-wrapper icon-gold">
-                📊
-              </div>
-              <h3 className="text-lg font-bold mb-2">Health Packages</h3>
-              <ul className="text-sm text-gray-600 space-y-1">
-                • Comprehensive Health Checkups<br />
-                • Age-specific Screening Packages<br />
-                • Preventive Health Programs<br />
-                • Family Health Packages<br />
-                • Executive Health Checkups
-              </ul>
-            </div>
-            
-            <div className="card fade-in">
-              <div className="icon-wrapper">
-                📱
-              </div>
-              <h3 className="text-lg font-bold mb-2">Digital Services</h3>
-              <ul className="text-sm text-gray-600 space-y-1">
-                • WhatsApp Report Delivery<br />
-                • Online Appointment Booking<br />
-                • Digital Report Storage<br />
-                • Test Result Notifications<br />
-                • Consultation Support
-              </ul>
-            </div>
-            
-            <div className="card fade-in">
-              <div className="icon-wrapper icon-gold">
-                ⏰
-              </div>
-              <h3 className="text-lg font-bold mb-2">Quick Turnaround</h3>
-              <ul className="text-sm text-gray-600 space-y-1">
-                • Same-day Results Available<br />
-                • Emergency Testing Services<br />
-                • Fast Report Processing<br />
-                • Priority Testing Options<br />
-                • Extended Operating Hours
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Our Mission & Values */}
-        <section className="section">
-          <div className="grid-2">
-            <div className="card slide-in">
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Mission */}
+            <div className="card">
               <div className="card-header">
-                <h3 className="text-2xl font-bold flex items-center gap-2">
-                  <span className="text-3xl">🎯</span>
+                <h2 className="text-3xl font-bold flex items-center gap-3">
+                  <span className="text-4xl">🎯</span>
                   Our Mission
-                </h3>
+                </h2>
               </div>
               <p className="text-gray-700 leading-relaxed">
-                To provide accurate, reliable, and accessible diagnostic services that empower 
-                healthcare providers and patients to make informed decisions about their health. 
-                We are committed to maintaining the highest standards of quality, ethics, and 
-                patient care in everything we do.
+                To provide accurate, timely, and accessible diagnostic services that empower 
+                patients and healthcare professionals to make informed decisions. We strive to 
+                maintain the highest standards of quality, ethics, and compassion in everything we do.
               </p>
-            </div>
-            
-            <div className="card slide-in">
-              <div className="card-header">
-                <h3 className="text-2xl font-bold flex items-center gap-2">
-                  <span className="text-3xl">💎</span>
-                  Our Values
-                </h3>
-              </div>
-              <ul className="space-y-2 text-gray-700">
-                <li className="flex items-center gap-2">
-                  <span className="text-blue-500">✓</span>
-                  <strong>Accuracy:</strong> Precise results you can trust
+              <ul className="mt-4 space-y-3">
+                <li className="flex items-start gap-2">
+                  <span className="text-2xl">✔️</span>
+                  <span className="text-gray-700">Deliver accurate and reliable test results</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-blue-500">✓</span>
-                  <strong>Ethics:</strong> Transparent and honest practices
+                <li className="flex items-start gap-2">
+                  <span className="text-2xl">✔️</span>
+                  <span className="text-gray-700">Maintain highest quality standards</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-blue-500">✓</span>
-                  <strong>Compassion:</strong> Patient-centered care always
+                <li className="flex items-start gap-2">
+                  <span className="text-2xl">✔️</span>
+                  <span className="text-gray-700">Provide compassionate patient care</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-blue-500">✓</span>
-                  <strong>Innovation:</strong> Embracing latest technology
+                <li className="flex items-start gap-2">
+                  <span className="text-2xl">✔️</span>
+                  <span className="text-gray-700">Make healthcare accessible to all</span>
                 </li>
               </ul>
+            </div>
+
+            {/* Vision */}
+            <div className="card">
+              <div className="card-header">
+                <h2 className="text-3xl font-bold flex items-center gap-3">
+                  <span className="text-4xl">🔭</span>
+                  Our Vision
+                </h2>
+              </div>
+              <p className="text-gray-700 leading-relaxed">
+                To be the most trusted and technologically advanced diagnostic center in Gujarat, 
+                known for our commitment to excellence, innovation, and patient-first approach. 
+                We envision a future where quality healthcare is within everyone's reach.
+              </p>
+              <div className="mt-6 p-6 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+                <p className="text-gray-700 italic">
+                  "Excellence in diagnostics, compassion in care, trust in every report."
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Contact & Action Section */}
-        <section className="section bg-gradient-to-br from-blue-100 to-white">
-          <div className="card text-center">
-            <h2 className="text-2xl font-bold mb-4 gradient-text">Ready to Experience Quality Healthcare?</h2>
-            <p className="text-gray-600 mb-6">
-              Contact City Pathology Laboratory today for reliable diagnostic services 
-              and personalized patient care.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="https://wa.me/919409277144"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-whatsapp px-8 py-3"
-              >
-                💬 Chat on WhatsApp
-              </a>
-              <a 
-                href="/contact"
-                className="btn btn-primary px-8 py-3"
-              >
-                📞 Contact Us
-              </a>
-              <a 
-                href="https://calendly.com/citypathologylaboratory/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-gold px-8 py-3"
-              >
-                📅 Book Appointment
-              </a>
+        {/* Our Values */}
+        <section className="section bg-white">
+          <div className="card">
+            <div className="card-header">
+              <h2 className="text-3xl font-bold flex items-center gap-3">
+                <span className="text-4xl">⭐</span>
+                Our Core Values
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Accuracy */}
+              <div className="text-center">
+                <div className="icon-wrapper mx-auto mb-4">
+                  🎯
+                </div>
+                <h3 className="text-xl font-bold mb-2">Accuracy</h3>
+                <p className="text-gray-600">
+                  Precision in every test, reliability in every result. We employ stringent 
+                  quality control measures to ensure the highest accuracy.
+                </p>
+              </div>
+
+              {/* Integrity */}
+              <div className="text-center">
+                <div className="icon-wrapper icon-gold mx-auto mb-4">
+                  🤝
+                </div>
+                <h3 className="text-xl font-bold mb-2">Integrity</h3>
+                <p className="text-gray-600">
+                  Ethical practices and transparent operations. We maintain complete honesty 
+                  in all our dealings and reporting.
+                </p>
+              </div>
+
+              {/* Compassion */}
+              <div className="text-center">
+                <div className="icon-wrapper mx-auto mb-4">
+                  ❤️
+                </div>
+                <h3 className="text-xl font-bold mb-2">Compassion</h3>
+                <p className="text-gray-600">
+                  Understanding the human side of healthcare. Every patient is treated with 
+                  dignity, respect, and empathy.
+                </p>
+              </div>
+
+              {/* Innovation */}
+              <div className="text-center">
+                <div className="icon-wrapper mx-auto mb-4">
+                  💡
+                </div>
+                <h3 className="text-xl font-bold mb-2">Innovation</h3>
+                <p className="text-gray-600">
+                  Embracing latest technology and methodologies to provide cutting-edge 
+                  diagnostic solutions.
+                </p>
+              </div>
+
+              {/* Excellence */}
+              <div className="text-center">
+                <div className="icon-wrapper icon-gold mx-auto mb-4">
+                  🏆
+                </div>
+                <h3 className="text-xl font-bold mb-2">Excellence</h3>
+                <p className="text-gray-600">
+                  Commitment to continuous improvement and maintaining the highest standards 
+                  in all aspects of our service.
+                </p>
+              </div>
+
+              {/* Accessibility */}
+              <div className="text-center">
+                <div className="icon-wrapper mx-auto mb-4">
+                  🌍
+                </div>
+                <h3 className="text-xl font-bold mb-2">Accessibility</h3>
+                <p className="text-gray-600">
+                  Making quality diagnostic services available and affordable to everyone in 
+                  our community.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose Us */}
+        <section className="section">
+          <div className="card">
+            <div className="card-header">
+              <h2 className="text-3xl font-bold flex items-center gap-3">
+                <span className="text-4xl">🌟</span>
+                Why Choose City Pathology Laboratory?
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="flex items-start gap-4">
+                <div className="icon-wrapper flex-shrink-0">
+                  🔬
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg mb-2">Advanced Technology</h3>
+                  <p className="text-gray-600">
+                    State-of-the-art equipment and latest diagnostic technologies for precise results.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="icon-wrapper flex-shrink-0">
+                  👨‍⚕️
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg mb-2">Expert Team</h3>
+                  <p className="text-gray-600">
+                    Highly qualified pathologists and lab technicians with years of experience.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="icon-wrapper icon-gold flex-shrink-0">
+                  ⏱️
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg mb-2">Quick Turnaround</h3>
+                  <p className="text-gray-600">
+                    Fast and efficient processing with most results available within 24 hours.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="icon-wrapper flex-shrink-0">
+                  📊
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg mb-2">Comprehensive Testing</h3>
+                  <p className="text-gray-600">
+                    Wide range of tests covering all aspects of diagnostic pathology.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="icon-wrapper flex-shrink-0">
+                  🔒
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg mb-2">Privacy & Confidentiality</h3>
+                  <p className="text-gray-600">
+                    Complete confidentiality and secure handling of all patient information.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="icon-wrapper icon-gold flex-shrink-0">
+                  💰
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg mb-2">Affordable Pricing</h3>
+                  <p className="text-gray-600">
+                    Competitive pricing without compromising on quality or accuracy.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="section">
+          <div className="card bg-gradient-to-r from-blue-500 to-blue-600 text-white">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold mb-4">
+                Ready to Experience Quality Healthcare?
+              </h2>
+              <p className="text-lg mb-8 text-blue-50">
+                Visit us at 2nd Floor Dwarkesh Chambers Near Bus Stand Halol or book your appointment online today.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a 
+                  href="/contact"
+                  className="btn btn-secondary"
+                >
+                  📞 Contact Us
+                </a>
+                <a 
+                  href="https://calendly.com/citypathologylaboratory/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-gold"
+                >
+                  📅 Book Appointment
+                </a>
+              </div>
             </div>
           </div>
         </section>
