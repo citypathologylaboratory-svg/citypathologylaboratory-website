@@ -103,7 +103,15 @@ export default function IndustrialHealthCheckupPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-600">✓</span>
+                  <span className="text-sm">SGPT</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600">✓</span>
                   <span className="text-sm">Kidney Function Test (KFT)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600">✓</span>
+                  <span className="text-sm">Creatinine</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-600">✓</span>
@@ -111,9 +119,22 @@ export default function IndustrialHealthCheckupPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-600">✓</span>
+                  <span className="text-sm">Audiometry</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600">✓</span>
+                  <span className="text-sm">PFT</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600">✓</span>
+                  <span className="text-sm">X-Ray</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600">✓</span>
                   <span className="text-sm">ECG (via tie-up)</span>
                 </li>
               </ul>
+              <div className="text-center text-blue-900 font-semibold mb-4">Price: ₹750</div>
               <a
                 href="https://calendly.com/citypathologylaboratory/30min"
                 target="_blank"
