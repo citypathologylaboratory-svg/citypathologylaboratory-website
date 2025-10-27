@@ -35,66 +35,57 @@ export default function Home() {
                   💬 WhatsApp
                 </button>
               </div>
-              
-              {/* Floating Achievement Badges */}
-              <div className="flex flex-wrap gap-6 items-center py-4">
-                <div className="bg-white rounded-xl shadow-lg px-6 py-4 border-2 border-blue-100 transform hover:scale-105 transition-all">
-                  <p className="text-3xl font-bold text-blue-600">35+</p>
-                  <p className="text-sm text-gray-600 font-semibold">Years Experience</p>
-                </div>
-                <div className="bg-white rounded-xl shadow-lg px-6 py-4 border-2 border-green-100 transform hover:scale-105 transition-all">
-                  <p className="text-3xl font-bold text-green-600">1M+</p>
-                  <p className="text-sm text-gray-600 font-semibold">Patients Served</p>
-                </div>
-              </div>
             </div>
             
-            {/* Right Content - Image & Visual Elements */}
-            <div className="relative">
-              <div className="relative z-10">
-                <img 
-                  src="/assets/hero-lab.jpg" 
-                  alt="City Pathology Laboratory" 
-                  className="rounded-2xl shadow-2xl"
-                />
+            {/* Right Content - Visual Elements */}
+            <div className="relative h-full">
+              <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-3xl p-8 shadow-2xl">
+                <div className="text-center space-y-6">
+                  <div className="text-6xl mb-4">🔬</div>
+                  <h3 className="text-2xl font-bold text-gray-900">Complete Diagnostic Services</h3>
+                  <p className="text-gray-700">NABL Accredited Lab with State-of-the-Art Equipment</p>
+                  <div className="grid grid-cols-2 gap-4 mt-8">
+                    <div className="bg-white rounded-lg p-4 shadow">
+                      <p className="text-3xl font-bold text-blue-600">30+</p>
+                      <p className="text-sm text-gray-600">Years Experience</p>
+                    </div>
+                    <div className="bg-white rounded-lg p-4 shadow">
+                      <p className="text-3xl font-bold text-green-600">24hr</p>
+                      <p className="text-sm text-gray-600">Fast TAT</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              
-              {/* Decorative Elements */}
-              <div className="absolute -top-4 -right-4 w-32 h-32 bg-blue-200 rounded-full opacity-50 blur-2xl"></div>
-              <div className="absolute -bottom-4 -left-4 w-40 h-40 bg-green-200 rounded-full opacity-50 blur-2xl"></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us Section - UNCHANGED */}
-      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+      {/* Why Choose Us Section - Quick Benefits Grid */}
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose Us</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Committed to excellence in diagnostics with patient care at the heart of everything we do.</p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">Why Choose Us?</h2>
+          <div className="grid md:grid-cols-4 gap-6">
             <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-100">
               <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                <span className="text-blue-600 text-3xl">👨‍⚕️</span>
+                <span className="text-blue-600 text-3xl">🏠</span>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Expert Pathologists</h3>
-              <p className="text-sm text-gray-600">Highly qualified doctors with decades of experience.</p>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Free Home Collection</h3>
+              <p className="text-sm text-gray-600">Convenient sample collection at your doorstep at no extra cost.</p>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-100">
               <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
                 <span className="text-green-600 text-3xl">✅</span>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Accurate Results</h3>
-              <p className="text-sm text-gray-600">State-of-the-art equipment ensuring precision.</p>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">NABL Accredited</h3>
+              <p className="text-sm text-gray-600">Certified lab ensuring highest quality standards and accuracy.</p>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-100">
               <div className="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mb-4">
-                <span className="text-purple-600 text-3xl">🏠</span>
+                <span className="text-purple-600 text-3xl">📱</span>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Home Collection</h3>
-              <p className="text-sm text-gray-600">Free sample collection at your convenience.</p>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Online Reports</h3>
+              <p className="text-sm text-gray-600">Get your reports instantly on WhatsApp and email.</p>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-100">
               <div className="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
@@ -107,7 +98,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Know Your Pathologist Section - UNCHANGED */}
+      {/* Know Your Pathologist Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -118,24 +109,24 @@ export default function Home() {
             <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 shadow-lg border border-blue-100">
               <div className="flex items-start gap-6">
                 <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">
-                  DS
+                  SN
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Dr. Suman Gupta</h3>
-                  <p className="text-sm text-blue-600 font-semibold mb-3">MD Pathology, MBBS</p>
-                  <p className="text-sm text-gray-700 leading-relaxed">With over 30 years of experience in clinical pathology, Dr. Gupta specializes in hematology and clinical biochemistry.</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Dr. Sunil Nagori</h3>
+                  <p className="text-sm text-blue-600 font-semibold mb-3">MD (Pathology), MBBS - Senior Pathologist</p>
+                  <p className="text-sm text-gray-700 leading-relaxed">Specializing in Hematology, Clinical Pathology, Laboratory quality management, accuracy and compassion.</p>
                 </div>
               </div>
             </div>
             <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 shadow-lg border border-green-100">
               <div className="flex items-start gap-6">
                 <div className="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">
-                  RG
+                  SN
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Dr. Rajesh Gupta</h3>
-                  <p className="text-sm text-green-600 font-semibold mb-3">MD Pathology, MBBS</p>
-                  <p className="text-sm text-gray-700 leading-relaxed">Expert in cytopathology and histopathology with special interest in FNAC and cancer diagnostics.</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Dr. Shalin Nagori</h3>
+                  <p className="text-sm text-green-600 font-semibold mb-3">MD (Pathology), MBBS</p>
+                  <p className="text-sm text-gray-700 leading-relaxed">Expert in Histopathology, Cytology, Modern diagnostics, patient-centered reporting.</p>
                 </div>
               </div>
             </div>
