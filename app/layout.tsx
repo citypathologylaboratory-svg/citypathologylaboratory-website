@@ -20,17 +20,18 @@ export default function RootLayout({
           type="text/javascript"
           src="https://assets.calendly.com/assets/external/widget.js"
           async
-        ></script>
+        >
+        </script>
       </head>
       <body>
         {/* Contact Info Bar */}
         <div className="bg-gradient-to-r from-blue-600 to-green-600 text-white py-2 text-sm">
           <div className="container mx-auto px-4 flex flex-wrap justify-between items-center gap-2">
             <div className="flex items-center gap-4">
-              <span>📧 citypathologyhalol@gmail.com</span>
+              <span>📧 citypathologylaboratory@gmail.com</span>
               <span>📞 +91 94092 77144</span>
             </div>
-            <span>🕐 Mon-Sat: 8 AM - 8 PM | Sun: 9 AM - 2 PM</span>
+            <span>🕐 Mon-Sat: 8 AM - 8 PM | Sunday: Closed</span>
           </div>
         </div>
 
@@ -40,8 +41,8 @@ export default function RootLayout({
             <div className="flex flex-wrap justify-between items-center gap-4">
               {/* Logo Section */}
               <Link className="flex items-center gap-3 hover:opacity-80 transition-opacity" href="/">
-                <img 
-                  src="/City Pathology Laboratory-Blue.png" 
+                <img
+                  src="/logo.jpg" 
                   alt="City Pathology Laboratory Logo" 
                   className="h-16 w-auto"
                 />
@@ -65,7 +66,7 @@ export default function RootLayout({
                 <Link className="text-gray-700 hover:text-blue-600 font-medium transition-colors" href="/contact">
                   Contact
                 </Link>
-                <a 
+                <a
                   href="https://calendly.com/citypathologyhalol/30min"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -111,9 +112,9 @@ export default function RootLayout({
                 <h3 className="text-xl font-bold mb-4">Contact Us</h3>
                 <ul className="space-y-2 text-blue-100">
                   <li>📍 2nd Floor, Dwarkesh Chambers, Near Bus Stand, Halol</li>
-                  <li>📧 citypathologyhalol@gmail.com</li>
+                  <li>📧 citypathologylaboratory@gmail.com</li>
                   <li>📞 +91 94092 77144</li>
-                  <li>🕐 Mon-Sat: 8 AM - 8 PM | Sun: 9 AM - 2 PM</li>
+                  <li>🕐 Mon-Sat: 8 AM - 8 PM | Sunday: Closed</li>
                 </ul>
               </div>
             </div>
