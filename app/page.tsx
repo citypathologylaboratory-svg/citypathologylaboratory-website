@@ -49,51 +49,52 @@ export default function Home() {
               </div>
             </div>
             
-            {/* Right Content - Hero Image */}
+            {/* Right Content - Image & Visual Elements */}
             <div className="relative">
-              <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-blue-100 transform hover:scale-105 transition-all duration-300">
+              <div className="relative z-10">
                 <img 
-                  src="/hero-lab-image.jpg" 
-                  alt="Professional pathology lab with modern equipment" 
-                  className="w-full h-auto object-cover"
+                  src="/assets/hero-lab.jpg" 
+                  alt="City Pathology Laboratory" 
+                  className="rounded-2xl shadow-2xl"
                 />
               </div>
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-500 rounded-full opacity-20 blur-2xl"></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-green-500 rounded-full opacity-20 blur-2xl"></div>
+              
+              {/* Decorative Elements */}
+              <div className="absolute -top-4 -right-4 w-32 h-32 bg-blue-200 rounded-full opacity-50 blur-2xl"></div>
+              <div className="absolute -bottom-4 -left-4 w-40 h-40 bg-green-200 rounded-full opacity-50 blur-2xl"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Why Choose Us Section - UNCHANGED */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose Us?</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Trusted by thousands of families for reliable, accurate, and convenient diagnostic services.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose Us</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">Committed to excellence in diagnostics with patient care at the heart of everything we do.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-100">
               <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4">
                 <span className="text-blue-600 text-3xl">👨‍⚕️</span>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Expert Team</h3>
-              <p className="text-sm text-gray-600">Certified pathologists with decades of combined experience.</p>
-            </div>
-            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-100">
-              <div className="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mb-4">
-                <span className="text-purple-600 text-3xl">📱</span>
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Online Reports</h3>
-              <p className="text-sm text-gray-600">Access your reports anytime, anywhere through our secure portal.</p>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Expert Pathologists</h3>
+              <p className="text-sm text-gray-600">Highly qualified doctors with decades of experience.</p>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-100">
               <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                <span className="text-green-600 text-3xl">🏠</span>
+                <span className="text-green-600 text-3xl">✅</span>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Accurate Results</h3>
+              <p className="text-sm text-gray-600">State-of-the-art equipment ensuring precision.</p>
+            </div>
+            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-100">
+              <div className="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                <span className="text-purple-600 text-3xl">🏠</span>
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Home Collection</h3>
-              <p className="text-sm text-gray-600">Free home sample collection at your convenience.</p>
+              <p className="text-sm text-gray-600">Free sample collection at your convenience.</p>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-100">
               <div className="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
