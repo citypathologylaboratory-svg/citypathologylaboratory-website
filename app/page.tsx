@@ -1,145 +1,139 @@
-'use client'
-
-import Image from 'next/image'
-import { useEffect, useMemo, useRef, useState } from 'react'
-
 export default function Home() {
-  // subtle visual improvements only
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => setMounted(true), [])
-
-  // Services data (unchanged content/order as previous working arc version)
-  const services = useMemo(
-    () => [
-      { label: 'CBC' },
-      { label: 'Blood Sugar' },
-      { label: 'Lipid Profile' },
-      { label: 'Liver Function' },
-      { label: 'Kidney Function' },
-      { label: 'Thyroid Profile' },
-      { label: 'Urine Routine' },
-      { label: 'HbA1c' },
-      { label: 'CRP' },
-      { label: 'Electrolytes' },
-      { label: 'Vitamin D' },
-      { label: 'Vitamin B12' },
-    ],
-    []
-  )
-
-  // Arc layout geometry (restored exactly)
-  const radius = 180 // px
-  const center = { x: 0, y: 0 }
-
-  // rotation animation (restored)
-  const [angle, setAngle] = useState(0)
-  const rafRef = useRef<number | null>(null)
-  useEffect(() => {
-    let last = performance.now()
-    const tick = (now: number) => {
-      const dt = Math.min(32, now - last)
-      last = now
-      setAngle((a) => (a + (dt * 0.006)) % 360) // subtle speed
-      rafRef.current = requestAnimationFrame(tick)
-    }
-    rafRef.current = requestAnimationFrame(tick)
-    return () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current)
-    }
-  }, [])
-
-  const itemCount = services.length
-  const arcSpan = 220 // degrees for arc layout (restored)
-  const startDeg = -110 // centered arc
-
   return (
-    <div className="antialiased text-slate-800 selection:bg-blue-100 selection:text-blue-900">
-      {/* Hero (restored structure; no modern nav/header insertions) */}
-      <section className="relative overflow-hidden">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12 md:py-16">
-          <div className="flex flex-col items-center text-center gap-6">
-            <div className="relative h-16 w-16">
-              <Image src="/logo.png" alt="City Pathology Laboratory" fill priority sizes="64px" />
+    <main className="min-h-screen">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-primary-600 to-primary-800 text-white py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl">
+            <h1 className="text-5xl font-bold mb-6">Welcome to City Pathology Laboratory</h1>
+            <p className="text-xl mb-8">Providing accurate, reliable diagnostic services with cutting-edge technology and expert pathologists.</p>
+            <div className="flex gap-4">
+              <a className="bg-white text-primary-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition" href="/book-appointment">
+                Book Appointment
+              </a>
+              <a className="bg-green-500 hover:bg-green-600 px-8 py-3 rounded-lg font-semibold transition" href="https://wa.me/919409277144" target="_blank" rel="noopener noreferrer">
+                WhatsApp for Appointments, Bookings, Queries
+              </a>
             </div>
-            <h1 className="text-3xl md:text-5xl font-semibold tracking-tight">
-              City Pathology Laboratory
-            </h1>
-            <p className="max-w-2xl text-base md:text-lg text-slate-600">
-              Accurate, reliable and timely diagnostics for your health decisions.
-            </p>
           </div>
         </div>
       </section>
-
-      {/* Our Services (RESTORED ARC LAYOUT) */}
-      <section className="relative">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10 md:py-14">
-          <div className="text-center mb-8 md:mb-10">
-            <h2 className="text-2xl md:text-3xl font-semibold">Our Services</h2>
-            <p className="mt-2 text-slate-600">Comprehensive test menu with quality assurance</p>
+      {/* Why Choose Us Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12 text-primary-700">Why Choose Us</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition">
+              <div className="text-primary-600 text-4xl mb-4">🔬</div>
+              <h3 className="text-2xl font-bold mb-3">Advanced Technology</h3>
+              <p className="text-gray-600">State-of-the-art equipment ensuring accurate and timely results for all diagnostic tests.</p>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition">
+              <div className="text-primary-600 text-4xl mb-4">👨‍⚕️</div>
+              <h3 className="text-2xl font-bold mb-3">Expert Pathologists</h3>
+              <p className="text-gray-600">Highly qualified and experienced pathologists dedicated to providing precise diagnostics.</p>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition">
+              <div className="text-primary-600 text-4xl mb-4">⚡</div>
+              <h3 className="text-2xl font-bold mb-3">Quick Results</h3>
+              <p className="text-gray-600">Fast turnaround time without compromising on quality and accuracy.</p>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition">
+              <div className="text-primary-600 text-4xl mb-4">🏥</div>
+              <h3 className="text-2xl font-bold mb-3">Comprehensive Tests</h3>
+              <p className="text-gray-600">Wide range of pathology and diagnostic tests available under one roof.</p>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition">
+              <div className="text-primary-600 text-4xl mb-4">💯</div>
+              <h3 className="text-2xl font-bold mb-3">Quality Assurance</h3>
+              <p className="text-gray-600">Strict quality control measures ensuring reliable and accurate test results.</p>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition">
+              <div className="text-primary-600 text-4xl mb-4">📱</div>
+              <h3 className="text-2xl font-bold mb-3">Easy Booking</h3>
+              <p className="text-gray-600">Convenient online appointment booking via Calendly and instant WhatsApp support.</p>
+            </div>
           </div>
-
-          {/* Arc container (restored exact structure) */}
-          <div className="relative flex items-center justify-center" style={{ height: 420 }}>
-            {/* center node (subtle card) */}
-            <div className="relative z-10 rounded-2xl shadow-sm ring-1 ring-black/5 bg-white/80 backdrop-blur px-5 py-4">
-              <div className="text-center">
-                <div className="text-sm uppercase tracking-wide text-slate-500">Laboratory</div>
-                <div className="text-lg font-medium">City Pathology</div>
+        </div>
+      </section>
+      {/* Doctors Profiles Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12 text-primary-700">Our Expert Pathologists</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            <div className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-primary-600">
+              <div className="w-32 h-32 bg-primary-100 rounded-full mx-auto mb-6 flex items-center justify-center text-6xl">
+                👨‍⚕️
               </div>
+              <h3 className="text-2xl font-bold text-center mb-2">Dr. Rajesh Kumar</h3>
+              <p className="text-primary-600 text-center mb-4 font-semibold">MD Pathology, Chief Pathologist</p>
+              <p className="text-gray-600 text-center mb-4">15+ years of experience in clinical pathology</p>
+              <ul className="text-gray-700 space-y-2">
+                ✓ Specialized in hematology and clinical chemistry
+                ✓ Former consultant at leading hospitals
+                ✓ Published researcher in diagnostic medicine
+              </ul>
             </div>
-
-            {/* items on arc */}
-            <div
-              className="absolute inset-0 pointer-events-none"
-              aria-hidden
-              style={{ transform: `rotate(${angle}deg)`, transition: mounted ? 'transform 120ms linear' : undefined }}
-            >
-              {services.map((s, i) => {
-                const t = i / Math.max(1, itemCount - 1)
-                const deg = startDeg + t * arcSpan
-                const rad = (deg * Math.PI) / 180
-                const x = center.x + radius * Math.cos(rad)
-                const y = center.y + radius * Math.sin(rad)
-                return (
-                  <div
-                    key={s.label}
-                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-                    style={{ transform: `translate(${x}px, ${y}px) rotate(${-angle}deg)` }}
-                  >
-                    <div className="pointer-events-auto whitespace-nowrap rounded-full bg-white shadow-sm ring-1 ring-black/5 px-4 py-2 text-sm font-medium text-slate-700 hover:shadow-md">
-                      {s.label}
-                    </div>
-                  </div>
-                )
-              })}
+            <div className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-primary-600">
+              <div className="w-32 h-32 bg-primary-100 rounded-full mx-auto mb-6 flex items-center justify-center text-6xl">
+                👩‍⚕️
+              </div>
+              <h3 className="text-2xl font-bold text-center mb-2">Dr. Priya Sharma</h3>
+              <p className="text-primary-600 text-center mb-4 font-semibold">MD Pathology, Senior Consultant</p>
+              <p className="text-gray-600 text-center mb-4">12+ years of experience in diagnostic pathology</p>
+              <ul className="text-gray-700 space-y-2">
+                ✓ Expert in histopathology and cytology
+                ✓ Specialized in cancer diagnostics
+                ✓ Certified in molecular pathology
+              </ul>
             </div>
-
-            {/* subtle arc guide (no structural change) */}
-            <svg className="absolute inset-0 m-auto" width="520" height="260" viewBox="0 0 520 260" aria-hidden>
-              <path d="M20,240 A240,240 0 0,1 500,240" fill="none" stroke="rgba(15,23,42,0.06)" strokeWidth="2" />
-            </svg>
           </div>
         </div>
       </section>
-
-      {/* About (structure preserved) */}
-      <section>
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 py-10 md:py-14">
-          <h2 className="text-2xl md:text-3xl font-semibold text-center">About</h2>
-          <p className="mt-4 text-slate-600 text-center">
-            NABL-compliant workflow, maintained by experienced pathologists with calibrated instrumentation.
-          </p>
+      {/* Services Overview */}
+      <section className="py-16 bg-primary-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12 text-primary-700">Our Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white p-6 rounded-lg shadow text-center">
+              <h4 className="text-xl font-bold mb-2 text-primary-700">Blood Tests</h4>
+              <p className="text-gray-600">Complete blood count, lipid profile, and more</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow text-center">
+              <h4 className="text-xl font-bold mb-2 text-primary-700">Urine Tests</h4>
+              <p className="text-gray-600">Routine and microscopic analysis</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow text-center">
+              <h4 className="text-xl font-bold mb-2 text-primary-700">Diabetes Screening</h4>
+              <p className="text-gray-600">HbA1c, fasting blood sugar, and OGTT</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow text-center">
+              <h4 className="text-xl font-bold mb-2 text-primary-700">Thyroid Profile</h4>
+              <p className="text-gray-600">Complete thyroid function tests</p>
+            </div>
+          </div>
+          <div className="text-center mt-8">
+            <a className="bg-primary-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-700 transition inline-block" href="/tests">
+              View All Tests
+            </a>
+          </div>
         </div>
       </section>
-
-      {/* Contact (structure preserved) */}
-      <section>
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 py-10 md:py-14">
-          <h2 className="text-2xl md:text-3xl font-semibold text-center">Contact</h2>
-          <p className="mt-4 text-slate-600 text-center">Call: +91-XXXXXXXXXX · Email: contact@citypathlab.com</p>
+      {/* CTA Section */}
+      <section className="py-16 bg-gradient-to-r from-primary-600 to-primary-800 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">Book your appointment today and experience quality diagnostic services.</p>
+          <div className="flex gap-4 justify-center">
+            <a className="bg-white text-primary-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition" href="/book-appointment">
+              Book Appointment
+            </a>
+            <a className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary-600 transition" href="/contact">
+              Contact Us
+            </a>
+          </div>
         </div>
       </section>
-    </div>
+    </main>
   )
 }
