@@ -1,5 +1,4 @@
 'use client';
-
 export default function Home() {
   return (
     <main className="min-h-screen">
@@ -7,9 +6,9 @@ export default function Home() {
       <section className="bg-gradient-to-br from-blue-600 via-blue-500 to-green-500 text-white py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
           <div className="mb-8">
-            <img 
-              src="/logo.jpg" 
-              alt="City Pathology Laboratory Logo" 
+            <img
+              src="/logo.jpg"
+              alt="City Pathology Laboratory Logo"
               className="mx-auto h-32 w-32 rounded-full border-4 border-orange-400 shadow-lg"
             />
           </div>
@@ -20,11 +19,11 @@ export default function Home() {
             Your Trusted Partner in Health Diagnostics
           </p>
           <p className="text-lg mb-10 max-w-3xl mx-auto text-blue-50">
-            Experience accurate and timely diagnostic services with state-of-the-art technology 
+            Experience accurate and timely diagnostic services with state-of-the-art technology
             and expert pathologists in Halol, Gujarat.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <a 
+            <a
               href="https://wa.me/919876543210"
               target="_blank"
               rel="noopener noreferrer"
@@ -32,7 +31,7 @@ export default function Home() {
             >
               📱 WhatsApp Us
             </a>
-            <a 
+            <a
               href="https://calendly.com/citypathologyhalol/pathology-appointment"
               target="_blank"
               rel="noopener noreferrer"
@@ -82,7 +81,7 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800">
             Our Services
           </h2>
-          <div className="relative w-full max-w-6xl mx-auto" style={{height: '600px'}}>
+          <div className="relative w-full max-w-6xl mx-auto" style={{ height: 600 }}>
             <style jsx>{`
               @keyframes rotate-arc {
                 0% { transform: rotate(0deg); }
@@ -122,39 +121,15 @@ export default function Home() {
                 border: 3px solid transparent;
                 transition: all 0.3s ease;
               }
-              .service-icon {
-                font-size: 2.5rem;
-                margin-bottom: 8px;
-              }
-              .service-title {
-                font-size: 0.8rem;
-                font-weight: 700;
-                text-align: center;
-                color: #1f2937;
-                line-height: 1.2;
-              }
+              .service-icon { font-size: 2.5rem; margin-bottom: 8px; }
+              .service-title { font-size: 0.8rem; font-weight: 700; text-align: center; color: #1f2937; line-height: 1.2; }
               @media (max-width: 768px) {
-                .service-arc {
-                  animation: none;
-                  position: relative;
-                  display: grid;
-                  grid-template-columns: repeat(2, 1fr);
-                  gap: 1rem;
-                }
-                .service-item {
-                  position: relative;
-                  width: 100%;
-                  height: 160px;
-                  margin: 0;
-                  top: auto;
-                  left: auto;
-                }
-                .service-card {
-                  border-radius: 1rem;
-                }
+                .service-arc { animation: none; position: relative; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+                .service-item { position: relative; width: 100%; height: 160px; margin: 0; top: auto; left: auto; }
+                .service-card { border-radius: 1rem; }
               }
             `}</style>
-            
+
             <div className="service-arc relative w-full h-full">
               {[
                 { icon: '🔬', title: 'Pathological Investigation', angle: 0, color: '#3b82f6' },
@@ -174,16 +149,9 @@ export default function Home() {
                 const angleRad = (service.angle * Math.PI) / 180;
                 const x = Math.cos(angleRad) * radius;
                 const y = Math.sin(angleRad) * radius;
-                
+
                 return (
-                  <div 
-                    key={index}
-                    className="service-item"
-                    style={{
-                      transform: `translate(${x}px, ${y}px)`,
-                      animationDelay: `${index * 0.1}s`
-                    }}
-                  >
+                  <div key={index} className="service-item" style={{ transform: `translate(${x}px, ${y}px)`, animationDelay: `${index * 0.1}s` }}>
                     <div className="service-card" style={{ borderColor: service.color }}>
                       <div className="service-icon">{service.icon}</div>
                       <div className="service-title">{service.title}</div>
@@ -192,7 +160,7 @@ export default function Home() {
                 );
               })}
             </div>
-            
+
             {/* Center Circle */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-gradient-to-br from-blue-600 to-green-600 rounded-full flex items-center justify-center shadow-2xl z-0">
               <div className="text-center">
@@ -204,18 +172,39 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Book Appointment Section */}
+      {/* Know Your Pathologist Section (replaces Book Appointment) */}
       <section className="py-16 bg-gradient-to-r from-blue-600 to-green-600">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-white">
-            Book Your Appointment Today
+            Know Your Pathologist
           </h2>
-          <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-2xl p-8">
-            <div 
-              className="calendly-inline-widget" 
-              data-url="https://calendly.com/citypathologyhalol/pathology-appointment?hide_gdpr_banner=1" 
-              style={{minWidth: '320px', height: '630px'}}
-            ></div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Dr. Sunil Nagori */}
+            <div className="bg-white rounded-xl shadow-2xl p-6 flex items-start gap-4">
+              <div className="h-20 w-20 rounded-full bg-orange-100 flex items-center justify-center text-3xl">🧪</div>
+              <div>
+                <h3 className="text-2xl font-bold text-gray-800">Dr. Sunil Nagori</h3>
+                <p className="text-sm font-semibold text-orange-600">MD (Pathology), MBBS</p>
+                <p className="mt-3 text-gray-600">
+                  Senior Pathologist with extensive experience in diagnostic hematology, clinical pathology,
+                  and laboratory quality management. Leading the lab with a focus on accuracy and compassion.
+                </p>
+              </div>
+            </div>
+
+            {/* Dr. Shalin Nagori */}
+            <div className="bg-white rounded-xl shadow-2xl p-6 flex items-start gap-4">
+              <div className="h-20 w-20 rounded-full bg-blue-100 flex items-center justify-center text-3xl">🔬</div>
+              <div>
+                <h3 className="text-2xl font-bold text-gray-800">Dr. Shalin Nagori</h3>
+                <p className="text-sm font-semibold text-blue-600">MD (Pathology), MBBS</p>
+                <p className="mt-3 text-gray-600">
+                  Experienced Pathologist specializing in histopathology and cytology, with strong interest
+                  in modern diagnostics and patient-centered reporting.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -231,8 +220,8 @@ export default function Home() {
               <div className="text-5xl mb-4">📍</div>
               <h3 className="text-xl font-bold mb-3 text-gray-800">Location</h3>
               <p className="text-gray-600">
-                2nd Floor, Dwarkesh Chambers<br/>
-                Near Bus Stand, Halol<br/>
+                2nd Floor, Dwarkesh Chambers
+                Near Bus Stand, Halol
                 Gujarat, India
               </p>
             </div>
@@ -240,7 +229,7 @@ export default function Home() {
               <div className="text-5xl mb-4">📞</div>
               <h3 className="text-xl font-bold mb-3 text-gray-800">Phone</h3>
               <p className="text-gray-600">
-                +91 98765 43210<br/>
+                +91 98765 43210
                 citypathologyhalol@gmail.com
               </p>
             </div>
@@ -248,7 +237,7 @@ export default function Home() {
               <div className="text-5xl mb-4">⏰</div>
               <h3 className="text-xl font-bold mb-3 text-gray-800">Quick Actions</h3>
               <div className="flex flex-col gap-3">
-                <a 
+                <a
                   href="https://wa.me/919876543210"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -256,7 +245,7 @@ export default function Home() {
                 >
                   WhatsApp
                 </a>
-                <a 
+                <a
                   href="tel:+919876543210"
                   className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-semibold transition-colors"
                 >
