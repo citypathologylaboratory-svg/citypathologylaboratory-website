@@ -28,7 +28,7 @@ export default function RootLayout({
           <div className="container mx-auto px-4 flex flex-wrap justify-between items-center gap-2">
             <div className="flex items-center gap-4">
               <span>📧 citypathologyhalol@gmail.com</span>
-              <span>📞 +91 98765 43210</span>
+              <span>📞 +91 94092 77144</span>
             </div>
             <span>🕐 Mon-Sat: 8 AM - 8 PM | Sun: 9 AM - 2 PM</span>
           </div>
@@ -39,7 +39,7 @@ export default function RootLayout({
           <div className="container mx-auto px-4 py-3">
             <div className="flex flex-wrap justify-between items-center gap-4">
               {/* Logo Section */}
-              <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+              <Link className="flex items-center gap-3 hover:opacity-80 transition-opacity" href="/">
                 <img 
                   src="/City Pathology Laboratory-Blue.png" 
                   alt="City Pathology Laboratory Logo" 
@@ -53,20 +53,20 @@ export default function RootLayout({
 
               {/* Navigation Links */}
               <div className="flex flex-wrap gap-6 items-center">
-                <Link href="/about" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+                <Link className="text-gray-700 hover:text-blue-600 font-medium transition-colors" href="/about">
                   About
                 </Link>
-                <Link href="/tests" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+                <Link className="text-gray-700 hover:text-blue-600 font-medium transition-colors" href="/tests">
                   Tests
                 </Link>
-                <Link href="/industrial-health-checkup" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+                <Link className="text-gray-700 hover:text-blue-600 font-medium transition-colors" href="/industrial-health-checkup">
                   Industrial Health Checkup
                 </Link>
-                <Link href="/contact" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+                <Link className="text-gray-700 hover:text-blue-600 font-medium transition-colors" href="/contact">
                   Contact
                 </Link>
-                <a
-                  href="https://calendly.com/citypathologyhalol/pathology-appointment"
+                <a 
+                  href="https://calendly.com/citypathologyhalol/30min"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all hover:scale-105"
@@ -99,10 +99,10 @@ export default function RootLayout({
               <div>
                 <h3 className="text-xl font-bold mb-4">Quick Links</h3>
                 <ul className="space-y-2">
-                  <li><Link href="/about" className="text-blue-100 hover:text-white transition-colors">About Us</Link></li>
-                  <li><Link href="/tests" className="text-blue-100 hover:text-white transition-colors">Our Tests</Link></li>
-                  <li><Link href="/industrial-health-checkup" className="text-blue-100 hover:text-white transition-colors">Industrial Health Checkup</Link></li>
-                  <li><Link href="/contact" className="text-blue-100 hover:text-white transition-colors">Contact Us</Link></li>
+                  <li><Link className="text-blue-100 hover:text-white transition-colors" href="/about">About Us</Link></li>
+                  <li><Link className="text-blue-100 hover:text-white transition-colors" href="/tests">Our Tests</Link></li>
+                  <li><Link className="text-blue-100 hover:text-white transition-colors" href="/industrial-health-checkup">Industrial Health Checkup</Link></li>
+                  <li><Link className="text-blue-100 hover:text-white transition-colors" href="/contact">Contact Us</Link></li>
                 </ul>
               </div>
 
@@ -112,14 +112,14 @@ export default function RootLayout({
                 <ul className="space-y-2 text-blue-100">
                   <li>📍 2nd Floor, Dwarkesh Chambers, Near Bus Stand, Halol</li>
                   <li>📧 citypathologyhalol@gmail.com</li>
-                  <li>📞 +91 98765 43210</li>
+                  <li>📞 +91 94092 77144</li>
                   <li>🕐 Mon-Sat: 8 AM - 8 PM | Sun: 9 AM - 2 PM</li>
                 </ul>
               </div>
             </div>
 
             <div className="border-t border-blue-400 mt-8 pt-6 text-center text-blue-100">
-              <p>&copy; 2025 City Pathology Laboratory. All rights reserved.</p>
+              <p>© 2025 City Pathology Laboratory. All rights reserved.</p>
             </div>
           </div>
         </footer>
