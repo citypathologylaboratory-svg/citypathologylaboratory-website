@@ -71,7 +71,6 @@ export default function Home() {
               <ul className="text-gray-700 space-y-2">
                 ✓ Specialized in hematology and clinical chemistry
                 ✓ Former consultant at leading hospitals
-                ✓ Published researcher in diagnostic medicine
               </ul>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-primary-600">
@@ -84,7 +83,6 @@ export default function Home() {
               <ul className="text-gray-700 space-y-2">
                 ✓ Expert in histopathology and cytology
                 ✓ Specialized in cancer diagnostics
-                ✓ Certified in molecular pathology
               </ul>
             </div>
           </div>
