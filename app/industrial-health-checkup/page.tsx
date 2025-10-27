@@ -107,10 +107,6 @@ export default function IndustrialHealthCheckupPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-600">✓</span>
-                  <span className="text-sm">Lipid Profile</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-green-600">✓</span>
                   <span className="text-sm">Audiometry</span>
                 </li>
                 <li className="flex items-start gap-2">
