@@ -1,3 +1,5 @@
+'use client';
+
 export default function Home() {
   return (
     <main className="min-h-screen">
@@ -174,7 +176,7 @@ export default function Home() {
                 const y = Math.sin(angleRad) * radius;
                 
                 return (
-                  <div
+                  <div 
                     key={index}
                     className="service-item"
                     style={{
