@@ -65,9 +65,9 @@ export default function Home() {
               <div className="w-32 h-32 bg-primary-100 rounded-full mx-auto mb-6 flex items-center justify-center text-6xl">
                 👨‍⚕️
               </div>
-              <h3 className="text-2xl font-bold text-center mb-2">Dr. Rajesh Kumar</h3>
-              <p className="text-primary-600 text-center mb-4 font-semibold">MD Pathology, Chief Pathologist</p>
-              <p className="text-gray-600 text-center mb-4">15+ years of experience in clinical pathology</p>
+              <h3 className="text-2xl font-bold text-center mb-2">Dr. Sunil Nagori</h3>
+              <p className="text-primary-600 text-center mb-4 font-semibold">MBBS, DCP, CIH</p>
+              <p className="text-gray-600 text-center mb-4">Consultant Pathologist and Industrial Physician</p>
               <ul className="text-gray-700 space-y-2">
                 ✓ Specialized in hematology and clinical chemistry
                 ✓ Former consultant at leading hospitals
@@ -78,9 +78,9 @@ export default function Home() {
               <div className="w-32 h-32 bg-primary-100 rounded-full mx-auto mb-6 flex items-center justify-center text-6xl">
                 👩‍⚕️
               </div>
-              <h3 className="text-2xl font-bold text-center mb-2">Dr. Priya Sharma</h3>
-              <p className="text-primary-600 text-center mb-4 font-semibold">MD Pathology, Senior Consultant</p>
-              <p className="text-gray-600 text-center mb-4">12+ years of experience in diagnostic pathology</p>
+              <h3 className="text-2xl font-bold text-center mb-2">Dr. Shalin Nagori</h3>
+              <p className="text-primary-600 text-center mb-4 font-semibold">MBBS, MD (Path), PGCIH</p>
+              <p className="text-gray-600 text-center mb-4">Consultant Pathologist and Industrial Physician</p>
               <ul className="text-gray-700 space-y-2">
                 ✓ Expert in histopathology and cytology
                 ✓ Specialized in cancer diagnostics
