@@ -40,7 +40,7 @@ export default function IndustrialHealthCheckupPage() {
                 <h3 className="text-2xl font-bold text-blue-900">Basic</h3>
                 <p className="text-gray-500 text-sm">Pre-employment / Periodic</p>
               </div>
-              <ul className="space-y-2 mb-6">
+              <ul className="space-y-2 mb-4">
                 <li className="flex items-start gap-2">
                   <span className="text-green-600">✓</span>
                   <span className="text-sm">Complete Blood Count (CBC)</span>
@@ -57,7 +57,25 @@ export default function IndustrialHealthCheckupPage() {
                   <span className="text-green-600">✓</span>
                   <span className="text-sm">General Physical Exam</span>
                 </li>
+                {/* Added tests as requested */}
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600">✓</span>
+                  <span className="text-sm">Vision</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600">✓</span>
+                  <span className="text-sm">Form 32</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600">✓</span>
+                  <span className="text-sm">Form 33</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600">✓</span>
+                  <span className="text-sm">Blood Group</span>
+                </li>
               </ul>
+              <div className="text-center text-blue-900 font-semibold mb-4">Price: ₹400</div>
               <a
                 href="https://calendly.com/citypathologylaboratory/30min"
                 target="_blank"
