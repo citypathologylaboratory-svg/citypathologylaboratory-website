@@ -41,7 +41,7 @@ export default function RootLayout({
             <div className="flex flex-wrap justify-between items-center gap-4">
               {/* Logo Section */}
               <Link className="flex items-center gap-3 hover:opacity-80 transition-opacity" href="/">
-                <img
+                <img 
                   src="/logo.jpg" 
                   alt="City Pathology Laboratory Logo" 
                   className="h-16 w-auto"
@@ -51,7 +51,7 @@ export default function RootLayout({
                   <div className="text-sm text-gray-600">Halol, Gujarat</div>
                 </div>
               </Link>
-
+              
               {/* Navigation Links */}
               <div className="flex flex-wrap gap-6 items-center">
                 <Link className="text-gray-700 hover:text-blue-600 font-medium transition-colors" href="/about">
@@ -67,12 +67,10 @@ export default function RootLayout({
                   Contact
                 </Link>
                 <a
-                  href="https://calendly.com/citypathologyhalol/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all hover:scale-105"
+                  href="/industrial-health-checkup"
+                  className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-4 py-2 rounded-full font-semibold hover:shadow-lg transition-all hover:scale-105 text-sm md:text-base"
                 >
-                  Book Appointment
+                  Book Industrial Health Check Up Appointment
                 </a>
               </div>
             </div>
@@ -95,7 +93,7 @@ export default function RootLayout({
                   Professional diagnostic services with state-of-the-art equipment and expert pathologists.
                 </p>
               </div>
-
+              
               {/* Quick Links */}
               <div>
                 <h3 className="text-xl font-bold mb-4">Quick Links</h3>
@@ -106,7 +104,7 @@ export default function RootLayout({
                   <li><Link className="text-blue-100 hover:text-white transition-colors" href="/contact">Contact Us</Link></li>
                 </ul>
               </div>
-
+              
               {/* Contact Info */}
               <div>
                 <h3 className="text-xl font-bold mb-4">Contact Us</h3>
@@ -118,7 +116,7 @@ export default function RootLayout({
                 </ul>
               </div>
             </div>
-
+            
             <div className="border-t border-blue-400 mt-8 pt-6 text-center text-blue-100">
               <p>© 2025 City Pathology Laboratory. All rights reserved.</p>
             </div>
