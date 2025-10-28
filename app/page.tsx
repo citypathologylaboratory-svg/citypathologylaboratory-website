@@ -1,9 +1,10 @@
 'use client';
-
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Home() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [rotation, setRotation] = useState(0);
+  const animationRef = useRef<number>();
+  
   const services = [
     'PATHOLOGICAL INVESTIGATION',
     'INDUSTRIAL HEALTH CHECK UP',
@@ -17,10 +18,26 @@ export default function Home() {
   ];
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((current) => (current + 1) % services.length);
-    }, 3000);
-    return () => clearInterval(interval);
+    let lastTime = Date.now();
+    
+    const animate = () => {
+      const currentTime = Date.now();
+      const deltaTime = currentTime - lastTime;
+      lastTime = currentTime;
+      
+      // Continuous rotation: 360 degrees in 30 seconds (12 degrees per second)
+      setRotation(prev => (prev + (deltaTime / 1000) * 12) % 360);
+      
+      animationRef.current = requestAnimationFrame(animate);
+    };
+    
+    animationRef.current = requestAnimationFrame(animate);
+    
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
   }, []);
 
   return (
@@ -44,33 +61,47 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Arc-Style Carousel (London Eye style) */}
+          {/* Arc-Style Carousel (London Eye style - Continuous Rotation) */}
           <div className="relative h-96 md:h-[500px] flex items-center justify-center">
             {services.map((service, index) => {
-              const angle = ((index - activeIndex) * (180 / services.length)) - 90;
-              const isActive = index === activeIndex;
-              const distance = Math.abs(index - activeIndex);
+              const angleStep = 360 / services.length;
+              const angle = (rotation + (index * angleStep)) % 360;
+              const angleRad = ((angle - 90) * Math.PI) / 180;
+              
               const radius = 280;
-              const x = Math.cos((angle * Math.PI) / 180) * radius;
-              const y = Math.sin((angle * Math.PI) / 180) * radius;
-              const scale = isActive ? 1.2 : Math.max(0.6, 1 - distance * 0.15);
-              const opacity = Math.max(0.3, 1 - distance * 0.2);
+              const x = Math.cos(angleRad) * radius;
+              const y = Math.sin(angleRad) * radius;
+              
+              // Determine which item is at the bottom center (active position)
+              const normalizedAngle = (angle + 90) % 360;
+              const distanceFromBottom = Math.abs(normalizedAngle - 180);
+              const isActive = distanceFromBottom < angleStep / 2;
+              
+              // Scale based on vertical position (larger at bottom)
+              const scaleY = Math.sin(angleRad);
+              const scale = isActive ? 1.2 : Math.max(0.6, 0.8 + scaleY * 0.3);
+              
+              // Opacity based on position
+              const opacity = Math.max(0.3, 0.5 + scaleY * 0.5);
+              
+              // Z-index based on y position
+              const zIndex = Math.round(10 + y / 10);
               
               return (
                 <div
                   key={service}
-                  className="absolute transition-all duration-1000 ease-in-out"
+                  className="absolute transition-none"
                   style={{
                     transform: `translate(${x}px, ${y}px) scale(${scale})`,
                     opacity: opacity,
-                    zIndex: isActive ? 20 : 10 - distance
+                    zIndex: zIndex
                   }}
                 >
                   <div className={`${
                     isActive 
                       ? 'bg-white text-blue-800 shadow-2xl border-4 border-orange-500' 
                       : 'bg-white/80 text-gray-700 shadow-lg border-2 border-white'
-                  } rounded-2xl px-6 py-4 md:px-8 md:py-6 backdrop-blur-sm transition-all duration-500`}>
+                  } rounded-2xl px-6 py-4 md:px-8 md:py-6 backdrop-blur-sm transition-all duration-300`}>
                     <p className={`${
                       isActive 
                         ? 'text-base md:text-2xl font-black' 
@@ -86,7 +117,7 @@ export default function Home() {
 
           {/* WhatsApp Button below carousel */}
           <div className="flex justify-center mt-16">
-            <a 
+            <a
               className="bg-white text-blue-800 hover:bg-blue-50 font-bold py-4 px-8 rounded-xl shadow-xl transform hover:scale-105 transition-all duration-200 inline-flex items-center gap-2"
               href="https://wa.me/919409277144"
               target="_blank"
