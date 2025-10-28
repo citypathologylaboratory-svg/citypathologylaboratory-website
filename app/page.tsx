@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <main className="min-h-screen">
-      {/* Hero Section - Redesigned */}
+      {/* Hero Section - Redesigned with Pathologist Featured */}
       <section className="relative bg-gradient-to-br from-white via-blue-50 to-white overflow-hidden">
         <div className="container mx-auto px-4 py-16 md:py-24">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -12,6 +12,13 @@ export default function Home() {
                 <span className="text-sm font-bold uppercase tracking-wide">🎯 FNAC TEST AVAILABLE</span>
               </div>
               
+              {/* Pathologist Name Badge - Prominent */}
+              <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-2xl shadow-xl border-2 border-blue-300">
+                <p className="text-sm font-semibold uppercase tracking-wider mb-1">👨‍⚕️ Expert Care By</p>
+                <h2 className="text-2xl md:text-3xl font-bold">Dr. Sunil Nagori & Dr. Shalin Nagori</h2>
+                <p className="text-sm mt-1 opacity-90">MD (Pathology), MBBS • 30+ Years Combined Experience</p>
+              </div>
+
               {/* Main Headline - Bold & Professional */}
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
                 Trusted Diagnostics
