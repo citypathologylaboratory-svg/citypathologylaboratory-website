@@ -1,30 +1,29 @@
 export default function Home() {
   return (
     <main className="min-h-screen">
-      {/* Hero Section - Modern Design */}
-      <section className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 overflow-hidden">
+      {/* Hero Section - Updated with Royal Blue, Orange, White Theme */}
+      <section className="relative bg-gradient-to-br from-blue-800 via-orange-500 to-white overflow-hidden" style={{background: 'linear-gradient(135deg, #0038A8 0%, #FF7F00 50%, #FFFFFF 100%)'}}>
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
-
         <div className="container mx-auto px-4 py-20 md:py-28 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="space-y-6 text-white">
               {/* FNAC Badge */}
-              <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-5 py-2.5 rounded-full border border-white/30">
-                <span className="text-sm font-semibold">🎯 FNAC TEST AVAILABLE</span>
+              <div className="inline-flex items-center gap-2 bg-orange-500/90 backdrop-blur-sm px-5 py-2.5 rounded-full border border-white/30">
+                <span className="text-sm font-semibold text-white">🎯 FNAC TEST AVAILABLE</span>
               </div>
               
               {/* Main Headline */}
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight">
-                Trusted
-                <span className="block bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
-                  Diagnostics
+                <span className="text-white">City Pathology Laboratory</span>
+                <span className="block bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
+                  Trusted Diagnostics
                 </span>
-                <span className="block text-4xl md:text-5xl lg:text-6xl mt-2">
+                <span className="block text-4xl md:text-5xl lg:text-6xl mt-2 text-white">
                   At Your Doorstep
                 </span>
               </h1>
@@ -35,7 +34,6 @@ export default function Home() {
                 <h2 className="text-xl md:text-2xl font-bold">Dr. Sunil Nagori & Dr. Shalin Nagori</h2>
                 <p className="text-sm text-white/70 mt-1">MD (Pathology), MBBS • 30+ Years Combined Experience</p>
               </div>
-
               {/* Subtitle */}
               <p className="text-lg md:text-xl text-white/90 leading-relaxed">
                 Expert pathologists delivering accurate results with fast online booking, free home sample collection, and trusted service.
@@ -43,12 +41,12 @@ export default function Home() {
               
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-4 pt-4">
-                <button className="bg-white text-blue-600 hover:bg-blue-50 font-bold py-4 px-8 rounded-xl shadow-xl transform hover:scale-105 transition-all duration-200">
-                  📅 Book Appointment
-                </button>
-                <button className="bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 border-2 border-white/30 font-bold py-4 px-8 rounded-xl transform hover:scale-105 transition-all duration-200">
+                <a href="https://wa.me/919409277144" target="_blank" rel="noopener noreferrer" className="bg-white text-blue-800 hover:bg-blue-50 font-bold py-4 px-8 rounded-xl shadow-xl transform hover:scale-105 transition-all duration-200 inline-flex items-center gap-2">
                   💬 WhatsApp Us
-                </button>
+                </a>
+                <a href="tel:+919409277144" className="bg-orange-500/90 backdrop-blur-sm text-white hover:bg-orange-600 border-2 border-white/30 font-bold py-4 px-8 rounded-xl transform hover:scale-105 transition-all duration-200 inline-flex items-center gap-2">
+                  📞 Call Now
+                </a>
               </div>
             </div>
             
@@ -82,7 +80,7 @@ export default function Home() {
                   
                   <div className="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-all">
                     <div className="flex items-center gap-4">
-                      <div className="bg-purple-100 rounded-full w-14 h-14 flex items-center justify-center">
+                      <div className="bg-orange-100 rounded-full w-14 h-14 flex items-center justify-center">
                         <span className="text-3xl">⚡</span>
                       </div>
                       <div>
@@ -160,8 +158,8 @@ export default function Home() {
             </div>
             
             <div className="bg-white rounded-xl p-6 shadow-lg">
-              <div className="bg-purple-100 rounded-full w-12 h-12 flex items-center justify-center mb-4">
-                <span className="text-purple-600 text-2xl">🎯</span>
+              <div className="bg-orange-100 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                <span className="text-orange-600 text-2xl">🎯</span>
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-3">FNAC Specialist</h3>
               <p className="text-gray-600 text-sm">Fine Needle Aspiration Cytology (FNAC) available with expert analysis and quick results.</p>
