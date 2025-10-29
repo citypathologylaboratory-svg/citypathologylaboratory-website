@@ -4,14 +4,11 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'City Pathology Laboratory - Halol',
-  description: 'Professional diagnostic services in Halol, Gujarat. Expert pathology lab offering comprehensive testing with accurate results.',
+  description:
+    'Professional diagnostic services in Halol, Gujarat. Expert pathology lab offering comprehensive testing with accurate results.',
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
@@ -20,8 +17,7 @@ export default function RootLayout({
           type="text/javascript"
           src="https://assets.calendly.com/assets/external/widget.js"
           async
-        >
-        </script>
+        />
       </head>
       <body>
         {/* Contact Info Bar */}
@@ -41,9 +37,9 @@ export default function RootLayout({
             <div className="flex flex-wrap justify-between items-center gap-4">
               {/* Logo Section */}
               <Link className="flex items-center gap-3 hover:opacity-80 transition-opacity" href="/">
-                <img 
-                  src="/logo.jpg" 
-                  alt="City Pathology Laboratory Logo" 
+                <img
+                  src="/logo.jpg"
+                  alt="City Pathology Laboratory Logo"
                   className="h-16 w-auto"
                 />
                 <div>
@@ -51,7 +47,7 @@ export default function RootLayout({
                   <div className="text-sm text-gray-600">Halol, Gujarat</div>
                 </div>
               </Link>
-              
+
               {/* Navigation Links */}
               <div className="flex flex-wrap gap-6 items-center">
                 <Link className="text-gray-700 hover:text-blue-600 font-medium transition-colors" href="/about">
@@ -66,12 +62,12 @@ export default function RootLayout({
                 <Link className="text-gray-700 hover:text-blue-600 font-medium transition-colors" href="/contact">
                   Contact
                 </Link>
-                <a
+                <Link
                   href="/industrial-health-checkup"
                   className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-4 py-2 rounded-full font-semibold hover:shadow-lg transition-all hover:scale-105 text-sm md:text-base"
                 >
                   Book Industrial Health Check Up Appointment
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -79,6 +75,8 @@ export default function RootLayout({
 
         {/* Main Content */}
         <main>
+          {/* Added doctors' names below the main header/title whitespace */}
+          <div className="text-center text-gray-700 mt-4">Our Doctor: Dr Sunil Nagori and Dr Shalin Nagori</div>
           {children}
         </main>
 
@@ -93,18 +91,34 @@ export default function RootLayout({
                   Professional diagnostic services with state-of-the-art equipment and expert pathologists.
                 </p>
               </div>
-              
+
               {/* Quick Links */}
               <div>
                 <h3 className="text-xl font-bold mb-4">Quick Links</h3>
                 <ul className="space-y-2">
-                  <li><Link className="text-blue-100 hover:text-white transition-colors" href="/about">About Us</Link></li>
-                  <li><Link className="text-blue-100 hover:text-white transition-colors" href="/tests">Our Tests</Link></li>
-                  <li><Link className="text-blue-100 hover:text-white transition-colors" href="/industrial-health-checkup">Industrial Health Checkup</Link></li>
-                  <li><Link className="text-blue-100 hover:text-white transition-colors" href="/contact">Contact Us</Link></li>
+                  <li>
+                    <Link className="text-blue-100 hover:text-white transition-colors" href="/about">
+                      About Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="text-blue-100 hover:text-white transition-colors" href="/tests">
+                      Our Tests
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="text-blue-100 hover:text-white transition-colors" href="/industrial-health-checkup">
+                      Industrial Health Checkup
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="text-blue-100 hover:text-white transition-colors" href="/contact">
+                      Contact Us
+                    </Link>
+                  </li>
                 </ul>
               </div>
-              
+
               {/* Contact Info */}
               <div>
                 <h3 className="text-xl font-bold mb-4">Contact Us</h3>
@@ -116,9 +130,9 @@ export default function RootLayout({
                 </ul>
               </div>
             </div>
-            
+
             <div className="border-t border-blue-400 mt-8 pt-6 text-center text-blue-100">
-              <p>© 2025 City Pathology Laboratory. All rights reserved.</p>
+              © 2025 City Pathology Laboratory. All rights reserved.
             </div>
           </div>
         </footer>
