@@ -8,7 +8,11 @@ export const metadata: Metadata = {
     'Professional diagnostic services in Halol, Gujarat. Expert pathology lab offering comprehensive testing with accurate results.',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <head>
@@ -45,50 +49,53 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <div>
                   <div className="text-xl md:text-2xl font-bold text-blue-600">City Pathology Laboratory</div>
                   <div className="text-sm text-gray-600">Halol, Gujarat</div>
+                  <div className="text-xs text-gray-500 mt-1">
+                    <div>Dr Sunil Nagori (MBBS, D.C.P., C.I.H) – Consultant Pathologist and Industrial Physician</div>
+                    <div>Dr Shalin Nagori (MBBS, M.D.(Path), PGCIH) – Consultant Pathologist and Industrial Physician</div>
+                  </div>
                 </div>
               </Link>
 
               {/* Navigation Links */}
-              <div className="flex flex-wrap gap-6 items-center">
-                <Link className="text-gray-700 hover:text-blue-600 font-medium transition-colors" href="/about">
-                  About
-                </Link>
-                <Link className="text-gray-700 hover:text-blue-600 font-medium transition-colors" href="/tests">
-                  Tests
-                </Link>
-                <Link className="text-gray-700 hover:text-blue-600 font-medium transition-colors" href="/industrial-health-checkup">
-                  Industrial Health Checkup
-                </Link>
-                <Link className="text-gray-700 hover:text-blue-600 font-medium transition-colors" href="/contact">
-                  Contact
-                </Link>
-                <Link
-                  href="/industrial-health-checkup"
-                  className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-4 py-2 rounded-full font-semibold hover:shadow-lg transition-all hover:scale-105 text-sm md:text-base"
-                >
-                  Book Industrial Health Check Up Appointment
-                </Link>
-              </div>
+              <ul className="flex gap-6 text-gray-700 font-medium">
+                <li>
+                  <Link className="hover:text-blue-600 transition-colors" href="/about">
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link className="hover:text-blue-600 transition-colors" href="/tests">
+                    Our Tests
+                  </Link>
+                </li>
+                <li>
+                  <Link className="hover:text-blue-600 transition-colors" href="/industrial-health-checkup">
+                    Industrial Health Checkup
+                  </Link>
+                </li>
+                <li>
+                  <Link className="hover:text-blue-600 transition-colors" href="/contact">
+                    Contact Us
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
         </nav>
 
         {/* Main Content */}
-        <main>
-          {/* Added doctors' names below the main header/title whitespace */}
-          <div className="text-center text-gray-700 mt-4">Our Doctor: Dr Sunil Nagori and Dr Shalin Nagori</div>
-          {children}
-        </main>
+        <main className="min-h-screen">{children}</main>
 
         {/* Footer */}
-        <footer className="bg-gradient-to-r from-blue-600 via-blue-500 to-green-500 text-white mt-12">
-          <div className="container mx-auto px-4 py-8">
+        <footer className="bg-gradient-to-r from-blue-600 to-green-600 text-white py-10 mt-16">
+          <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* About Section */}
               <div>
-                <h3 className="text-xl font-bold mb-4">City Pathology Laboratory</h3>
-                <p className="text-blue-100 mb-4">
-                  Professional diagnostic services with state-of-the-art equipment and expert pathologists.
+                <h3 className="text-xl font-bold mb-4">About Us</h3>
+                <p className="text-blue-100 leading-relaxed">
+                  City Pathology Laboratory provides professional diagnostic services in Halol, Gujarat. We are committed to
+                  delivering accurate and timely test results with state-of-the-art equipment and experienced staff.
                 </p>
               </div>
 
@@ -130,7 +137,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </ul>
               </div>
             </div>
-
             <div className="border-t border-blue-400 mt-8 pt-6 text-center text-blue-100">
               © 2025 City Pathology Laboratory. All rights reserved.
             </div>
