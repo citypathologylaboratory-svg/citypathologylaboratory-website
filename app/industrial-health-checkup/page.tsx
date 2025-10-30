@@ -128,41 +128,19 @@ export default function IndustrialHealthCheckupPage() {
                 Book Now
               </a>
             </div>
-            {/* Premium Package */}
+            {/* Customized Package */}
             <div className="card border-2 border-blue-200 hover:border-blue-500 transition">
               <div className="text-center mb-4">
-                <h3 className="text-2xl font-bold text-blue-900">Premium</h3>
-                <p className="text-gray-500 text-sm">Executive / Annual health</p>
+                <h3 className="text-2xl font-bold text-blue-900">Enquire for Customized Package</h3>
+                <p className="text-gray-500 text-sm">Contact us for tailored solutions for your factory team, as per your requirements.</p>
               </div>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start gap-2">
-                  <span className="text-green-600">✓</span>
-                  <span className="text-sm">All Standard tests</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-green-600">✓</span>
-                  <span className="text-sm">Thyroid Profile</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-green-600">✓</span>
-                  <span className="text-sm">HbA1c (Diabetes marker)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-green-600">✓</span>
-                  <span className="text-sm">Vision & Audiometry</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-green-600">✓</span>
-                  <span className="text-sm">Chest X-ray (via tie-up)</span>
-                </li>
-              </ul>
               <a
-                href="https://calendly.com/citypathologylaboratory/30min"
+                href="https://wa.me/919409277144"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-primary w-full text-center"
+                className="btn btn-whatsapp w-full text-center"
               >
-                Book Now
+                📱 WhatsApp Us
               </a>
             </div>
           </div>
