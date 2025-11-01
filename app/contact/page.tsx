@@ -265,13 +265,6 @@ export default function ContactPage() {
             <p className="text-gray-600">Ample parking space available for your convenience</p>
           </div>
           
-          <div className="card text-center">
-            <div className="icon-wrapper icon-gold mx-auto">
-              ♿
-            </div>
-            <h3 className="text-lg font-bold mb-2">Accessible</h3>
-            <p className="text-gray-600">Wheelchair accessible facility for all patients</p>
-          </div>
           
           <div className="card text-center">
             <div className="icon-wrapper mx-auto">
