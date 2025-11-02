@@ -24,6 +24,14 @@ export default function RootLayout({
         />
       </head>
       <body>
+        {/* Animated Ribbon at the very top */}
+        <div className="fixed top-0 left-0 right-0 bg-gradient-to-r from-red-500 to-orange-500 text-white py-2 text-center font-bold z-[100] blink-animation">
+          FNAC Test Available 🔬 Book Now!
+        </div>
+        
+        {/* Spacer for the fixed ribbon */}
+        <div className="h-12"></div>
+        
         {/* Contact Info Bar */}
         <div className="bg-gradient-to-r from-blue-600 to-green-600 text-white py-2 text-sm">
           <div className="container mx-auto px-4 flex flex-wrap justify-between items-center gap-2">
@@ -137,6 +145,7 @@ export default function RootLayout({
                 </ul>
               </div>
             </div>
+
             <div className="border-t border-blue-400 mt-8 pt-6 text-center text-blue-100">
               © 2025 City Pathology Laboratory. All rights reserved.
             </div>
