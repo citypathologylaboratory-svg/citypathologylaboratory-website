@@ -1,51 +1,72 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* CSS Variables */
 :root {
-  /* Updated Color Palette */
-  --primary: #1976D2;
-  --primary-hover: #1565C0;
-  --secondary: #43A047;
-  --background: #F5F7FA;
-  --card-container: #FFFFFF;
-  --button: #1976D2;
-  --button-hover: #1565C0;
-  --text: #222C36;
-  --heading: #0D47A1;
+  /* Primary Colors */
+  --primary: #2563eb;
+  --primary-hover: #1e40af;
+  --primary-light: #dbeafe;
+  
+  /* Secondary Colors */
+  --secondary: #10b981;
+  --secondary-hover: #059669;
+  --secondary-light: #d1fae5;
+  
+  /* Neutral Colors */
+  --background: #ffffff;
+  --foreground: #111827;
+  --card: #f9fafb;
+  --card-border: #e5e7eb;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
   line-height: 1.6;
-  background: var(--background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   line-height: 1.2;
-  color: var(--heading);
+  margin-bottom: 1rem;
 }
 
-h1 { font-size: 3rem; }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 2rem; }
-h4 { font-size: 1.5rem; }
-h5 { font-size: 1.25rem; }
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.125rem; }
 h6 { font-size: 1rem; }
 
 p {
   margin-bottom: 1rem;
-  color: var(--text);
 }
 
 a {
@@ -58,116 +79,143 @@ a:hover {
   color: var(--primary-hover);
 }
 
-/* Layout */
+button {
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Layout Components */
 .container {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
 .section {
-  padding: 4rem 2rem;
+  padding: 4rem 0;
 }
 
 .section-title {
   font-size: 2.5rem;
+  font-weight: 800;
   text-align: center;
   margin-bottom: 3rem;
-  color: var(--primary);
 }
 
-/* Buttons */
+.section-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-top: -2rem;
+  margin-bottom: 3rem;
+}
+
+/* Card Styles */
+.card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Button Styles */
 .btn {
   display: inline-block;
-  padding: 0.875rem 2rem;
-  font-size: 1rem;
-  font-weight: 600;
+  padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
-  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
   transition: all 0.3s ease;
   border: none;
-  text-align: center;
+  cursor: pointer;
 }
 
 .btn-primary {
-  background: var(--button);
-  color: var(--card-container);
+  background: var(--primary);
+  color: white;
 }
 
 .btn-primary:hover {
-  background: var(--button-hover);
+  background: var(--primary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(25, 118, 210, 0.3);
+  box-shadow: var(--shadow-md);
 }
 
 .btn-secondary {
   background: var(--secondary);
-  color: var(--card-container);
+  color: white;
 }
 
 .btn-secondary:hover {
+  background: var(--secondary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(67, 160, 71, 0.3);
+  box-shadow: var(--shadow-md);
 }
 
-/* Cards */
-.card {
-  background: var(--card-container);
-  border-radius: 1rem;
-  padding: 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
 }
 
-/* Grid Layouts */
-.grid-2 {
+/* Grid System */
+.grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .grid-3 {
-  display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
 }
 
 .grid-4 {
-  display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
 }
 
-/* Forms */
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="date"],
-select,
-textarea {
+/* Form Styles */
+input,
+textarea,
+select {
   width: 100%;
-  padding: 0.875rem 1rem;
-  border: 2px solid var(--background);
+  padding: 0.75rem;
+  border: 1px solid var(--card-border);
   border-radius: 0.5rem;
+  font-family: inherit;
   font-size: 1rem;
-  font-family: 'Inter', sans-serif;
-  transition: border-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 input:focus,
-select:focus,
-textarea:focus {
+textarea:focus,
+select:focus {
   outline: none;
   border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-light);
 }
 
 textarea {
-  min-height: 150px;
   resize: vertical;
 }
 
@@ -215,3 +263,22 @@ textarea {
     grid-template-columns: 1fr;
   }
 }
+
+/* ========== START RIBBON ANIMATION SECTION ==========
+ * The following code adds an animated ribbon at the top of the page.
+ * To remove/reverse this feature, simply delete or comment out this entire section.
+ * Section ends at: END RIBBON ANIMATION SECTION
+ */
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-slide-right {
+  animation: slideRight 15s linear infinite;
+}
+/* ========== END RIBBON ANIMATION SECTION ========== */
