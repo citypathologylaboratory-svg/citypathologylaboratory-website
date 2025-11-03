@@ -24,13 +24,20 @@ export default function RootLayout({
         />
       </head>
       <body>
-        {/* Animated Ribbon at the very top */}
-        <div className="fixed top-0 left-0 right-0 bg-gradient-to-r from-red-500 to-orange-500 text-white py-2 text-center font-bold z-[100] blink-animation">
-          FNAC Test Available 🔬 Book Now!
+        {/* ========== START ANIMATED RIBBON SECTION ==========
+         * The following code adds a fixed animated ribbon at the top of the page.
+         * To remove/reverse this feature, simply delete or comment out this entire section.
+         * Section ends at: END ANIMATED RIBBON SECTION
+         */}
+        <div className="fixed top-0 left-0 right-0 bg-gradient-to-r from-red-500 to-orange-500 text-white py-2 text-center font-bold z-[100] overflow-hidden">
+          <div className="animate-slide-right whitespace-nowrap">
+            FNAC Test Available 🔬 Book Now!
+          </div>
         </div>
         
         {/* Spacer for the fixed ribbon */}
         <div className="h-12"></div>
+        {/* ========== END ANIMATED RIBBON SECTION ========== */}
         
         {/* Contact Info Bar */}
         <div className="bg-gradient-to-r from-blue-600 to-green-600 text-white py-2 text-sm">
@@ -47,63 +54,74 @@ export default function RootLayout({
         <nav className="bg-white shadow-md sticky top-0 z-50">
           <div className="container mx-auto px-4 py-3">
             <div className="flex flex-wrap justify-between items-center gap-4">
-              {/* Logo Section */}
-              <Link className="flex items-center gap-3 hover:opacity-80 transition-opacity" href="/">
-                <img
-                  src="/logo.jpg"
-                  alt="City Pathology Laboratory Logo"
-                  className="h-16 w-auto"
-                />
-                <div>
-                  <div className="text-xl md:text-2xl font-bold text-blue-600">City Pathology Laboratory</div>
-                  <div className="text-sm text-gray-600">Halol, Gujarat</div>
-                  <div className="text-xs text-gray-500 mt-1">
-                    <div>Dr Sunil Nagori (MBBS, D.C.P., C.I.H) – Consultant Pathologist and Industrial Physician</div>
-                    <div>Dr Shalin Nagori (MBBS, M.D.(Path), PGCIH) – Consultant Pathologist and Industrial Physician</div>
-                  </div>
+              {/* Logo */}
+              <Link href="/" className="flex items-center">
+                <div className="text-2xl font-bold gradient-text">
+                  City Pathology Laboratory
                 </div>
               </Link>
 
               {/* Navigation Links */}
-              <ul className="flex gap-6 text-gray-700 font-medium">
-                <li>
-                  <Link className="hover:text-blue-600 transition-colors" href="/about">
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link className="hover:text-blue-600 transition-colors" href="/tests">
-                    Our Tests
-                  </Link>
-                </li>
-                <li>
-                  <Link className="hover:text-blue-600 transition-colors" href="/industrial-health-checkup">
-                    Industrial Health Checkup
-                  </Link>
-                </li>
-                <li>
-                  <Link className="hover:text-blue-600 transition-colors" href="/contact">
-                    Contact Us
-                  </Link>
-                </li>
-              </ul>
+              <div className="flex gap-6 items-center">
+                <Link
+                  href="/"
+                  className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                >
+                  Home
+                </Link>
+                <Link
+                  href="/about"
+                  className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                >
+                  About
+                </Link>
+                <Link
+                  href="/tests"
+                  className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                >
+                  Tests
+                </Link>
+                <Link
+                  href="/industrial-health-checkup"
+                  className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                >
+                  Industrial Health Checkup
+                </Link>
+                <Link
+                  href="/contact"
+                  className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                >
+                  Contact
+                </Link>
+
+                {/* Book Appointment Button */}
+                <button
+                  onClick={() =>
+                    (window as any).Calendly.initPopupWidget({
+                      url: 'https://calendly.com/citypathologylaboratory',
+                    })
+                  }
+                  className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-2 rounded-full font-bold hover:shadow-lg transition-all"
+                >
+                  Book Appointment
+                </button>
+              </div>
             </div>
           </div>
         </nav>
 
         {/* Main Content */}
-        <main className="min-h-screen">{children}</main>
+        {children}
 
         {/* Footer */}
-        <footer className="bg-gradient-to-r from-blue-600 to-green-600 text-white py-10 mt-16">
+        <footer className="bg-gradient-to-r from-blue-600 to-green-600 text-white py-12">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* About Section */}
               <div>
                 <h3 className="text-xl font-bold mb-4">About Us</h3>
-                <p className="text-blue-100 leading-relaxed">
-                  City Pathology Laboratory provides professional diagnostic services in Halol, Gujarat. We are committed to
-                  delivering accurate and timely test results with state-of-the-art equipment and experienced staff.
+                <p className="text-blue-100">
+                  City Pathology Laboratory in Halol offers comprehensive diagnostic services with state-of-the-art equipment and expert pathologists.
                 </p>
               </div>
 
