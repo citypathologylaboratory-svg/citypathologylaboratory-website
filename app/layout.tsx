@@ -2,12 +2,7 @@
 import Link from 'next/link';
 import './globals.css';
 
-import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-    title: 'City Pathology Laboratory - Halol',
-    description: 'Professional diagnostic services in Halol, Gujarat. Expert pathology lab offering comprehensive testing with accurate results.',
-  };
 
 
 
