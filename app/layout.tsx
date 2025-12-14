@@ -1,12 +1,8 @@
+'use client';
 import Link from 'next/link';
-import type { Metadata } from 'next';
 import './globals.css';
 
-export const metadata: Metadata = {
-  title: 'City Pathology Laboratory - Halol',
-  description:
-    'Professional diagnostic services in Halol, Gujarat. Expert pathology lab offering comprehensive testing with accurate results.',
-};
+
 
 export default function RootLayout({
   children,
