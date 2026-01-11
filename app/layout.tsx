@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import { useEffect } from 'react';
 import './globals.css';
 
 export default function RootLayout({
@@ -7,11 +8,30 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const handleBookAppointment = () => {
+    if (typeof window !== 'undefined' && (window as any).Calendly) {
+      (window as any).Calendly.initPopupWidget({
+        url: 'https://calendly.com/citypathologylaboratory',
+      });
+    } else {
+      // Fallback: Direct link if Calendly widget fails to load
+      window.open('https://calendly.com/citypathologylaboratory', '_blank');
+    }
+  };
+
+  useEffect(() => {
+    // Ensure Calendly script loads properly
+    const script = document.querySelector('script[src*="calendly"]');
+    if (script && !(window as any).Calendly) {
+      console.log('Calendly script loaded, waiting for initialization...');
+    }
+  }, []);
+
   return (
     <html lang="en">
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lato:wght@400;500;700&display=swap" rel="stylesheet" />
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async />
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async defer />
       </head>
       <body className="font-lato bg-white text-gray-900">
         <div className="fixed top-0 left-0 right-0 bg-gradient-to-r from-red-500 via-orange-500 to-red-500 text-white py-2.5 text-center font-bold z-[100] overflow-hidden shadow-md">
@@ -73,12 +93,8 @@ export default function RootLayout({
               </div>
 
               <button
-                onClick={() =>
-                  (window as any).Calendly.initPopupWidget({
-                    url: 'https://calendly.com/citypathologylaboratory',
-                  })
-                }
-                className="bg-gradient-to-r from-blue-600 to-teal-600 text-white px-4 sm:px-6 py-2.5 rounded-lg font-semibold hover:shadow-lg hover:from-blue-700 hover:to-teal-700 transition-all duration-200 text-sm sm:text-base"
+                onClick={handleBookAppointment}
+                className="bg-gradient-to-r from-blue-600 to-teal-600 text-white px-4 sm:px-6 py-2.5 rounded-lg font-semibold hover:shadow-lg hover:from-blue-700 hover:to-teal-700 transition-all duration-200 text-sm sm:text-base cursor-pointer"
               >
                 Book Now
               </button>
