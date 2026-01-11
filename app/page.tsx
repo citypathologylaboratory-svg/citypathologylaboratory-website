@@ -1,3 +1,4 @@
+// Refactored Hero Section with Split Layout
 'use client';
 import { useEffect, useRef, useState } from 'react';
 
