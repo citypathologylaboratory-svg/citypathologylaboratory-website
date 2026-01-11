@@ -36,18 +36,6 @@ export default function Home() {
                 </button>
               </div>
 
-              {/* Floating Achievement Badges */}
-              <div className="flex flex-wrap gap-6 items-center py-4">
-                <div className="bg-white rounded-xl shadow-lg px-6 py-4 border-2 border-blue-100 transform hover:scale-105 transition-all">
-                  <p className="text-3xl font-bold text-blue-600">35+</p>
-                  <p className="text-sm text-gray-600 font-semibold">Years Experience</p>
-                </div>
-                <div className="bg-white rounded-xl shadow-lg px-6 py-4 border-2 border-green-100 transform hover:scale-105 transition-all">
-                  <p className="text-3xl font-bold text-green-600">1M+</p>
-                  <p className="text-sm text-gray-600 font-semibold">Patients Served</p>
-                </div>
-              </div>
-            </div>
 
             {/* Right Content - Image & Visual Elements */}
             <div className="relative">
