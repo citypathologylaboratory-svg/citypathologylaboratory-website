@@ -74,16 +74,6 @@ export default function Home() {
             <p className="text-lg sm:text-xl text-gray-700 font-semibold max-w-2xl mx-auto drop-shadow-md">
               We come to you • Fast • Reliable • Professional
             </p>
-            <div className="pt-6">
-              <a
-                href="https://calendly.com/citypathologylaboratory"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-gradient-to-r from-blue-600 to-teal-600 text-white px-8 py-3 rounded-lg font-bold text-lg hover:shadow-2xl hover:from-blue-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105"
-              >
-                Book Collection Now
-              </a>
-            </div>
           </div>
         </div>
       </section>
