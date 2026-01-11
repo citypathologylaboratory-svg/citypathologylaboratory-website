@@ -1,5 +1,7 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
+import Hero from './Hero';
+
 export default function Home() {
   const [rotation, setRotation] = useState(0);
   const animationRef = useRef<number>();
@@ -42,6 +44,8 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Hero, navbar, and other existing sections remain unchanged above */}
+            <Hero />
+      
 
       {/* REPLACED SECTION: Why Choose City Pathology Laboratory? (Card-style) */}
       <section className="py-16 bg-gray-50">
