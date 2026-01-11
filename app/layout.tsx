@@ -2,10 +2,6 @@
 import Link from 'next/link';
 import './globals.css';
 
-
-
-
-
 export default function RootLayout({
   children,
 }: {
@@ -14,155 +10,148 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Calendly widget script */}
-        <script
-          type="text/javascript"
-          src="https://assets.calendly.com/assets/external/widget.js"
-          async
-        />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lato:wght@400;500;700&display=swap" rel="stylesheet" />
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async />
       </head>
-      <body>
-        {/* ========== START ANIMATED RIBBON SECTION ==========
-         * The following code adds a fixed animated ribbon at the top of the page.
-         * To remove/reverse this feature, simply delete or comment out this entire section.
-         * Section ends at: END ANIMATED RIBBON SECTION
-         */}
-        <div className="fixed top-0 left-0 right-0 bg-gradient-to-r from-red-500 to-orange-500 text-white py-2 text-center font-bold z-[100] overflow-hidden">
-          <div className="animate-slide-right whitespace-nowrap">
+      <body className="font-lato bg-white text-gray-900">
+        <div className="fixed top-0 left-0 right-0 bg-gradient-to-r from-red-500 via-orange-500 to-red-500 text-white py-2.5 text-center font-bold z-[100] overflow-hidden shadow-md">
+          <div className="animate-slide-right whitespace-nowrap text-sm sm:text-base">
             FNAC Test Available 🔬 Book Now!
           </div>
         </div>
-        
-        {/* Spacer for the fixed ribbon */}
-        <div className="h-12"></div>
-        {/* ========== END ANIMATED RIBBON SECTION ========== */}
-        
-        {/* Contact Info Bar */}
-        <div className="bg-gradient-to-r from-blue-600 to-green-600 text-white py-2 text-sm">
-          <div className="container mx-auto px-4 flex flex-wrap justify-between items-center gap-2">
-            <div className="flex items-center gap-4">
-              <span>📧 citypathologylaboratory@gmail.com</span>
-              <span>📞 +91 94092 77144</span>
+
+        <div className="h-12" />
+
+        <div className="bg-gradient-to-r from-blue-600 to-teal-600 text-white py-3 text-sm shadow-md">
+          <div className="max-w-7xl mx-auto px-4 flex flex-wrap justify-between items-center gap-3">
+            <div className="flex items-center gap-4 flex-wrap">
+              <span className="flex items-center gap-1">
+                <span>📧</span>
+                <a href="mailto:citypathologylaboratory@gmail.com" className="hover:text-blue-100 transition-colors">
+                  citypathologylaboratory@gmail.com
+                </a>
+              </span>
+              <span className="hidden sm:flex items-center gap-1">
+                <span>📞</span>
+                <a href="tel:+919409277144" className="hover:text-blue-100 transition-colors">
+                  +91 94092 77144
+                </a>
+              </span>
             </div>
-            <span>🕐 Mon-Sat: 8 AM - 8 PM | Sunday: Closed</span>
+            <span className="flex items-center gap-1">
+              <span>🕐</span>
+              <span>Mon-Sat: 8 AM - 8 PM | Sunday: Closed</span>
+            </span>
           </div>
         </div>
 
-        {/* Navigation Bar */}
-        <nav className="bg-white shadow-md sticky top-0 z-50">
-          <div className="container mx-auto px-4 py-3">
-            <div className="flex flex-wrap justify-between items-center gap-4">
-              {/* Logo */}
+        <nav className="bg-white border-b border-gray-200 sticky top-12 z-50 shadow-sm">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="flex justify-between items-center h-16">
               <Link href="/" className="flex items-center">
-                <div className="text-2xl font-bold gradient-text">
-                  City Pathology Laboratory
+                <div className="font-bold text-lg sm:text-xl bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
+                  City Pathology
                 </div>
               </Link>
 
-              {/* Navigation Links */}
-              <div className="flex gap-6 items-center">
-                <Link
-                  href="/"
-                  className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
-                >
+              <div className="hidden md:flex gap-1 items-center">
+                <Link href="/" className="px-3 py-2 text-gray-700 hover:text-blue-600 font-medium transition-colors rounded-lg hover:bg-blue-50">
                   Home
                 </Link>
-                <Link
-                  href="/about"
-                  className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
-                >
+                <Link href="/about" className="px-3 py-2 text-gray-700 hover:text-blue-600 font-medium transition-colors rounded-lg hover:bg-blue-50">
                   About
                 </Link>
-                <Link
-                  href="/tests"
-                  className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
-                >
+                <Link href="/tests" className="px-3 py-2 text-gray-700 hover:text-blue-600 font-medium transition-colors rounded-lg hover:bg-blue-50">
                   Tests
                 </Link>
-                <Link
-                  href="/industrial-health-checkup"
-                  className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
-                >
-                  Industrial Health Checkup
+                <Link href="/industrial-health-checkup" className="px-3 py-2 text-gray-700 hover:text-blue-600 font-medium transition-colors rounded-lg hover:bg-blue-50">
+                  Industrial Health
                 </Link>
-                <Link
-                  href="/contact"
-                  className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
-                >
+                <Link href="/contact" className="px-3 py-2 text-gray-700 hover:text-blue-600 font-medium transition-colors rounded-lg hover:bg-blue-50">
                   Contact
                 </Link>
-
-                {/* Book Appointment Button */}
-                <button
-                  onClick={() =>
-                    (window as any).Calendly.initPopupWidget({
-                      url: 'https://calendly.com/citypathologylaboratory',
-                    })
-                  }
-                  className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-2 rounded-full font-bold hover:shadow-lg transition-all"
-                >
-                  Book Appointment
-                </button>
               </div>
+
+              <button
+                onClick={() =>
+                  (window as any).Calendly.initPopupWidget({
+                    url: 'https://calendly.com/citypathologylaboratory',
+                  })
+                }
+                className="bg-gradient-to-r from-blue-600 to-teal-600 text-white px-4 sm:px-6 py-2.5 rounded-lg font-semibold hover:shadow-lg hover:from-blue-700 hover:to-teal-700 transition-all duration-200 text-sm sm:text-base"
+              >
+                Book Now
+              </button>
             </div>
           </div>
         </nav>
 
-        {/* Main Content */}
-        {children}
+        <main className="min-h-screen">{children}</main>
 
-        {/* Footer */}
-        <footer className="bg-gradient-to-r from-blue-600 to-green-600 text-white py-12">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* About Section */}
-              <div>
-                <h3 className="text-xl font-bold mb-4">About Us</h3>
-                <p className="text-blue-100">
+        <footer className="bg-gradient-to-b from-gray-900 to-black text-white py-12 sm:py-16">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+              <div className="space-y-4">
+                <h3 className="text-lg font-bold text-blue-300">About Us</h3>
+                <p className="text-gray-300 text-sm leading-relaxed">
                   City Pathology Laboratory in Halol offers comprehensive diagnostic services with state-of-the-art equipment and expert pathologists.
                 </p>
               </div>
 
-              {/* Quick Links */}
-              <div>
-                <h3 className="text-xl font-bold mb-4">Quick Links</h3>
+              <div className="space-y-4">
+                <h3 className="text-lg font-bold text-blue-300">Quick Links</h3>
                 <ul className="space-y-2">
                   <li>
-                    <Link className="text-blue-100 hover:text-white transition-colors" href="/about">
+                    <Link className="text-gray-300 hover:text-white transition-colors text-sm" href="/about">
                       About Us
                     </Link>
                   </li>
                   <li>
-                    <Link className="text-blue-100 hover:text-white transition-colors" href="/tests">
+                    <Link className="text-gray-300 hover:text-white transition-colors text-sm" href="/tests">
                       Our Tests
                     </Link>
                   </li>
                   <li>
-                    <Link className="text-blue-100 hover:text-white transition-colors" href="/industrial-health-checkup">
+                    <Link className="text-gray-300 hover:text-white transition-colors text-sm" href="/industrial-health-checkup">
                       Industrial Health Checkup
                     </Link>
                   </li>
                   <li>
-                    <Link className="text-blue-100 hover:text-white transition-colors" href="/contact">
+                    <Link className="text-gray-300 hover:text-white transition-colors text-sm" href="/contact">
                       Contact Us
                     </Link>
                   </li>
                 </ul>
               </div>
 
-              {/* Contact Info */}
-              <div>
-                <h3 className="text-xl font-bold mb-4">Contact Us</h3>
-                <ul className="space-y-2 text-blue-100">
-                  <li>📍 2nd Floor, Dwarkesh Chambers, Near Bus Stand, Halol</li>
-                  <li>📧 citypathologylaboratory@gmail.com</li>
-                  <li>📞 +91 94092 77144</li>
-                  <li>🕐 Mon-Sat: 8 AM - 8 PM | Sunday: Closed</li>
+              <div className="space-y-4">
+                <h3 className="text-lg font-bold text-blue-300">Contact Us</h3>
+                <ul className="space-y-2 text-gray-300 text-sm">
+                  <li className="flex items-start gap-2">
+                    <span>📍</span>
+                    <span>2nd Floor, Dwarkesh Chambers, Near Bus Stand, Halol</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span>📧</span>
+                    <a href="mailto:citypathologylaboratory@gmail.com" className="hover:text-white transition-colors">
+                      citypathologylaboratory@gmail.com
+                    </a>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span>📞</span>
+                    <a href="tel:+919409277144" className="hover:text-white transition-colors">
+                      +91 94092 77144
+                    </a>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span>🕐</span>
+                    <span>Mon-Sat: 8 AM - 8 PM | Sunday: Closed</span>
+                  </li>
                 </ul>
               </div>
             </div>
 
-            <div className="border-t border-blue-400 mt-8 pt-6 text-center text-blue-100">
+            <div className="border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
               © 2025 City Pathology Laboratory. All rights reserved.
             </div>
           </div>
