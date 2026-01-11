@@ -53,3 +53,5 @@ module.exports = {
   },
   plugins: [],
 }
+
+// Animation configuration for hero section scooter arrival effect
