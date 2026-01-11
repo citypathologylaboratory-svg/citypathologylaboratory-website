@@ -36,6 +36,58 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
+      {/* ===== HERO SECTION - HOME COLLECTION ===== */}
+      <section className="relative w-full h-screen max-h-[600px] sm:max-h-[700px] overflow-hidden bg-gradient-to-b from-blue-50 to-white flex items-center justify-center">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-teal-400 rounded-full blur-3xl"></div>
+        </div>
+
+        {/* Phlebotomist Scooter Animation Container */}
+        <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+          {/* Animated zooming scooter with phlebotomist */}
+          <div className="relative w-full h-full flex items-center justify-center">
+            {/* SVG-based animated illustration of scooter and phlebotomist */}
+            <div className="animate-scooter-zoom w-96 h-96 flex items-center justify-center">
+              {/* Simplified scooter + phlebotomist illustration using emojis and shapes */}
+              <div className="text-9xl drop-shadow-2xl filter blur-[0.5px]">
+                🏍️
+              </div>
+              <div className="absolute text-6xl -ml-32 -mt-12 drop-shadow-lg">
+                👨‍⚕️
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Text Overlay - HOME COLLECTION AVAILABLE */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 px-4">
+          <div className="space-y-4 animate-fade-in">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600 drop-shadow-lg">
+              HOME COLLECTION
+            </h1>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white drop-shadow-xl" style={{textShadow: '2px 2px 8px rgba(0,0,0,0.3), 0 0 20px rgba(0,114,230,0.5)'}}>
+              AVAILABLE
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-700 font-semibold max-w-2xl mx-auto drop-shadow-md">
+              We come to you • Fast • Reliable • Professional
+            </p>
+            <div className="pt-6">
+              <a
+                href="https://calendly.com/citypathologylaboratory"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-gradient-to-r from-blue-600 to-teal-600 text-white px-8 py-3 rounded-lg font-bold text-lg hover:shadow-2xl hover:from-blue-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105"
+              >
+                Book Collection Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== WHY CHOOSE SECTION - KEPT UNCHANGED ===== */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-4">Why Choose City Pathology Laboratory?</h2>
@@ -103,3 +155,5 @@ export default function Home() {
     </main>
   );
 }
+
+/* Add CSS animations for the hero section in globals.css */
