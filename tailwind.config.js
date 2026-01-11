@@ -52,18 +52,6 @@ module.exports = {
     },
   },
   plugins: [],
-        keyframes: {
-                  scooter: {
-                              '0%': { transform: 'translateX(-120%)' },
-                              '20%': { transform: 'translateX(-10%)' },
-                              '50%': { transform: 'translateX(0%)' },
-                              '80%': { transform: 'translateX(10%)' },
-                              '100%': { transform: 'translateX(130%)' },
-                            },
-                },
-        animation: {
-                  scooter: 'scooter 12s ease-in-out infinite',
-                },
   
 }
 
