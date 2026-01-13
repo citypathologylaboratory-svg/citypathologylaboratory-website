@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
+import Hero from './components/Hero';
 export default function Home() {
   const [rotation, setRotation] = useState(0);
   const animationRef = useRef<number>();
@@ -41,12 +42,12 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
-      {/* Hero, navbar, and other existing sections remain unchanged above */}
-          
+            <Hero />
+{/* Hero section with video background and home collection promotion above */}          
       
 
       {/* REPLACED SECTION: Why Choose City Pathology Laboratory? (Card-style) */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50"> id="why-choose"
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-extrabold text-gray-900 text-center">Why Choose City Pathology Laboratory?</h2>
           <p className="mt-4 text-gray-600 text-center max-w-3xl mx-auto">
