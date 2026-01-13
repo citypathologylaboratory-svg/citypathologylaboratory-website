@@ -30,7 +30,7 @@ export default function Hero() {
 
           {/* Descriptive tagline with premium feel */}
           <p className="text-lg lg:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light">
-            Expert Pathology Testing & <span className="text-teal-300 font-semibold">Free Home Collection Service</span> for complete peace of mind
+            Expert Pathology Testing & <span className="text-teal-300 font-semibold">Home Collection</span> for complete peace of mind
           </p>
 
           {/* Trust badge */}
